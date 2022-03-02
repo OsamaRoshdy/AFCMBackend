@@ -8,24 +8,23 @@ use Illuminate\Http\Request;
 
 class BlockObserver
 {
-
     use ImageTrait;
+
+    public function creating(Block $block)
+    {
+        $block->slug_en = str_slug($block->title_en);
+        $block->slug_ar = str_slug($block->title_ar);
+        $block->image_name = $this->storeImage(request()->image_name, 'blocks');
+    }
+
 
     public function created(Block $block)
     {
-        if (request()->image_name) {
-            $image_name = $this->storeImage(request()->image_name, 'blocks');
-        }
         if (request()->images) {
             foreach (request()->images as $image) {
                 $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
             }
         }
-        $block->update([
-           'image_name' => $image_name ?? $block->image_name,
-           'slug_en' => str_slug($block->title_en),
-           'slug_ar' => slug_ar($block->title_ar),
-        ]);
     }
 
     /**
@@ -36,19 +35,17 @@ class BlockObserver
      */
     public function updated(Block $block)
     {
-        if (request()->image_name) {
-            $image_name = $this->updateImage(request()->image_name, $block->image_name, 'blocks');
-        }
         if (request()->images) {
             foreach (request()->images as $image) {
                 $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
             }
         }
-        $block->update([
-            'image_name' => $image_name ?? $block->image_name,
-            'slug_en' => str_slug($block->title_en),
-            'slug_ar' => slug_ar($block->title_ar),
-        ]);
+        $block->slug_en = str_slug($block->title_en);
+        $block->slug_ar = str_slug($block->title_ar);
+        if (request()->image_name) {
+            $block->image_name = $this->updateImage(request()->image_name, $block->image_name, 'blocks');
+        }
+        $block->save();
     }
 
     /**
