@@ -41,6 +41,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+                'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -51,6 +52,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -61,6 +64,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 3,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -71,6 +76,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 4,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -81,6 +88,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 5,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -91,6 +100,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 6,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -101,6 +112,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 7,
                 'type' => 1,
+                'created_at' => now()
+
             ],
 //          End Parent links
 //_________________________________
@@ -113,6 +126,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -123,6 +138,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -133,6 +150,8 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 3,
                 'type' => 1,
+                'created_at' => now()
+
             ],
             [
                 'menu_link_id' => 1,
@@ -143,6 +162,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 4,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -153,6 +173,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 5,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -163,6 +184,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 6,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -173,6 +195,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 7,
                 'type' => 1,
+'created_at' => now()
             ],
 //_________________________________
             [
@@ -184,6 +207,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -194,6 +218,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
 //_________________________________
             [
@@ -205,6 +230,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -215,6 +241,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -225,6 +252,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -235,6 +263,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
 //__________________________________
             [
@@ -246,6 +275,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -256,6 +286,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -266,6 +297,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 3,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -276,6 +308,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 4,
                 'type' => 1,
+'created_at' => now()
             ],
 //___________________________________
             [
@@ -287,6 +320,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -297,6 +331,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
 //__________________________________
             [
@@ -308,6 +343,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -318,6 +354,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
 //___________________________________
             [
@@ -329,6 +366,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 1,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -339,6 +377,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 2,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -349,6 +388,7 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 3,
                 'type' => 1,
+'created_at' => now()
             ],
             [
                 'menu_link_id' => 1,
@@ -359,8 +399,109 @@ class LinkSeeder extends Seeder
                 'route' => '#',
                 'sort' => 4,
                 'type' => 1,
+'created_at' => now()
             ],
+
+
+
+
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'كيف تنضم',
+                'name_en' => 'How To Join',
+                'route' => '#',
+                'sort' => 1,
+                'type' => Link::TYPE_INTERNAL,
+                'created_at' => now()
+            ],
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'الأخبار و الأحداث',
+                'name_en' => 'News & Events',
+                'route' => '#',
+                'sort' => 2,
+                'type' => Link::TYPE_INTERNAL,
+                'created_at' => now()
+            ],
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'أخبار طبية',
+                'name_en' => 'Medical News',
+                'route' => '#',
+                'sort' => 3,
+                'type' => Link::TYPE_INTERNAL,
+                'created_at' => now()
+            ],
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'منشورات AFCM',
+                'name_en' => 'AFCM Publications',
+                'route' => '#',
+                'sort' => 4,
+                'type' => Link::TYPE_INTERNAL,
+                'created_at' => now()
+            ],
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'الوصول إلى الخدمات الذاتية',
+                'name_en' => 'Self Services Access',
+                'route' => '#',
+                'sort' => 5,
+                'type' => Link::TYPE_INTERNAL,
+                'created_at' => now()
+            ],
+
+
+
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => 40,
+                'name_ar' => 'الوصول الى بريد AFCM',
+                'name_en' => 'Access AFCM Mail',
+                'route' => 'https://mail.afcm.edu.eg/interface/root',
+                'sort' => 1,
+                'type' => Link::TYPE_EXTERNAL,
+                'created_at' => now()
+            ],
+
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => 40,
+                'name_ar' => 'الوصول الى SIS',
+                'name_en' => 'Access SIS',
+                'route' => 'https://xess.afcm.edu.eg/StudentSelfService',
+                'sort' => 2,
+                'type' => Link::TYPE_EXTERNAL,
+                'created_at' => now()
+            ],
+
+            [
+                'menu_link_id' => 3,
+                'block_id' => null,
+                'link_id' => 40,
+                'name_ar' => 'الوصول الى LMS',
+                'name_en' => 'Access LMS',
+                'route' => 'https://afcm.brightspace/d2l/login',
+                'sort' => 3,
+                'type' => Link::TYPE_EXTERNAL,
+                'created_at' => now()
+            ],
+
         ];
+
+
 
 
         Link::insert($data);

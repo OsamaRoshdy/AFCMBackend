@@ -16,7 +16,7 @@ class LinksController extends CommonController
     public function index(Request $request,$menuLink)
     {
         if ($request->ajax()) {
-            return $this->makeDatatable(Link::latest(), $this->module, true);
+            return $this->makeDatatable(Link::where('menu_link_id', $menuLink)->latest(), $this->module, true);
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],

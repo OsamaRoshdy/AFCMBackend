@@ -99,6 +99,42 @@ class BlockSeeder extends Seeder
                 'sort' => 4,
                 'type' => Block::TYPE_SECTIONS,
             ],
+
+            [
+                'title_ar' => 'لمحة سريعة  ',
+                'title_en' => 'AFCM In Glance',
+                'content_ar' => '<p>دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات حتى الحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس</p>',
+                'content_en' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'glance',
+                'date' => today(),
+                'sort' => 5,
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
+            [
+                'title_ar' => 'لماذا نحن',
+                'title_en' => 'Why Join AFCM ?	',
+                'content_ar' => '<p>بدء الطالب في نتائج AFCM في العديد من المزايا</p>
+
+<p>دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات حتى الحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس دراسة لمدة ست سنوات للحصول على درجة البكالوريوس</p>',
+                'content_en' => '<p>Begin a student at the AFCM results in many advantages</p>
+
+<p>&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree&nbsp;Study for six years to get the bachelore degree</p>',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'why_afcm',
+                'date' => today(),
+                'sort' => 6,
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
+
             [
                 'title_ar' => 'آخر الأحداث والأخبار',
                 'title_en' => 'Latest Events & News',

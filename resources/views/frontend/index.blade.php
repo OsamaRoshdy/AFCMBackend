@@ -170,20 +170,17 @@
                 <div class="glance">
                     <div class="logo">
                         <a class="logo__img" href="http://localhost/AFCM/en">
-                            <img src="AFMC-project/assets/images/logo.png" alt="Logo">
+                            <img src="{{ asset('/AFMC-project/assets/images/logo.png') }}" alt="Logo">
                         </a>
-                        <a class="logo__dis" href="http://localhost/AFCM/en">
-                            AFCM in Glance
+                        <a class="logo__dis" href="#">
+                            {{ getSection('glance')->title }}
                         </a>
                     </div>
 
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        {!! getSection('glance')->content !!}
                     </p>
 
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
 
                     <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </a>
@@ -196,69 +193,12 @@
                 <div class="why_join">
                     <div class="logo">
 
-                        <a class="logo__dis" href="http://localhost/AFCM/en">
-                            Why join AFCM ?
+                        <a class="logo__dis" href="#">
+                            {{ getSection('why_afcm')->title  }}
                         </a>
                     </div>
 
-                    <p>
-                        Begin a student at the AFCM results in many advantages
-                    </p>
-
-                    <p>
-                                <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-                        <span>
-                                    <img src="icons/check.png" class="check" alt="">
-
-                                    Study for six years to get the bachelore degree
-                                </span>
-
-
-                    </p>
+                    {!! getSection('why_afcm')->content !!}
 
                     <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </a>

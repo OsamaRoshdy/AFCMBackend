@@ -50,6 +50,7 @@ Route::group(['middleware' => 'admin:admin'], function () {
 
 
     Route::resource('menu_links/{menu_link}/links', \App\Http\Controllers\Backend\LinksController::class)->except(['show', 'edit', 'update', 'destroy']);
+    Route::post('menu_links/{menu_link}/links', [\App\Http\Controllers\Backend\LinksController::class, 'store'])->name('links.store');
     Route::get('menu_links/links/{link}/edit', [\App\Http\Controllers\Backend\LinksController::class, 'edit'])->name('links.edit');
     Route::get('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'edit'])->name('links.show');
     Route::put('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'update'])->name('links.update');
