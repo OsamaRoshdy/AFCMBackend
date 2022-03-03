@@ -35,7 +35,10 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::resource('main_pages', \App\Http\Controllers\Backend\MainPageController::class);
     Route::resource('menu_links', \App\Http\Controllers\Backend\MenuLinksController::class);
     Route::resource('news', \App\Http\Controllers\Backend\NewsController::class);
+    Route::resource('events', \App\Http\Controllers\Backend\EventController::class);
+    Route::resource('sections', \App\Http\Controllers\Backend\SectionController::class);
     Route::resource('pages', \App\Http\Controllers\Backend\PageController::class);
+    Route::delete('block_images/{block_images}', [\App\Http\Controllers\Backend\NewsController::class, 'deleteBlockImage'])->name('block_images.destroy');
 
 
     Route::resource('menu_links/{menu_link}/links', \App\Http\Controllers\Backend\LinksController::class)->except(['show', 'edit', 'update', 'destroy']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Block;
 use App\Models\Link;
 use App\Models\MenuLinks;
 use App\Models\Page;
@@ -29,9 +30,9 @@ class LinksController extends CommonController
 
     public function create($menuLink)
     {
-        $pages = Page::pluck('title_' . app()->getLocale(), 'id');
+        $blocks = Block::whereIn('type', [Block::TYPE_PAGES, Block::TYPE_EVENTS, Block::TYPE_NEWS])->pluck('title_'. app()->getLocale(), 'id');
         $links = Link::where('menu_link_id', $menuLink)->pluck('name_' . app()->getLocale(), 'id');
-        return view('backend.' . $this->module . '.create', compact('pages', 'links', 'menuLink'))
+        return view('backend.' . $this->module . '.create', compact('blocks','links', 'menuLink'))
             ->with(['module' => $this->module, 'action' => 'create']);
     }
 
@@ -45,6 +46,7 @@ class LinksController extends CommonController
         $data['menu_link_id'] = $menuLink;
         Link::create($data);
         toast(__('common.added_successfully'), 'success', 'top-right');
+        return back();
         return redirect()->route('dashboard.' . $this->module . '.index', $menuLink);
     }
 

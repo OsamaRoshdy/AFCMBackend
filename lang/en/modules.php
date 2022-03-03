@@ -12,7 +12,12 @@ return array(
     'payment_methods' => 'Payment Methods',
     'special_ads' => 'Special Ads',
     'settings' => 'Setting',
-    'pages' => 'Page',
+    'main_pages' => 'Main Pages',
+    'menu_links' => 'Menu Links',
+    'pages' => 'Pages',
+    'sections' => 'Sections',
+    'events' => 'Events',
+    'news' => 'News',
     'faqs' => 'FAQ',
     'metas' => 'Meta Tags',
 );

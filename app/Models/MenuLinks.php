@@ -19,7 +19,7 @@ class MenuLinks extends Model
         return app()->getLocale() === 'en' ? $this->name_en : $this->name_ar;
     }
 
-    public function page() :belongsTo
+    public function mainPage() :belongsTo
     {
         return $this->belongsTo(MainPage::class);
     }

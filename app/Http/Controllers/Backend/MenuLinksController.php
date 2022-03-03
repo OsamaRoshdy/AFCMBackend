@@ -14,7 +14,7 @@ class MenuLinksController extends CommonController
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return $this->makeDatatable(MenuLinks::with('page'), $this->module, true, function ($builder) {
+            return $this->makeDatatable(MenuLinks::with('mainPage'), $this->module, true, function ($builder) {
                 $builder->addColumn('links', function ($record) {
                     $string = '';
                     $string .= '<a style="color:red" href=' .  route('dashboard.links.index', $record->id)  .'>';

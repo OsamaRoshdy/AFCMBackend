@@ -3,21 +3,26 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Foundation\Traits\ImageTrait;
+use App\Http\Requests\Backend\BlockRequest;
+use App\Models\Block;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
 class PageController extends CommonController
 {
+    use ImageTrait;
     protected string $module = 'pages';
 
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return $this->makeDatatable(Page::latest(),$this->module, true);
+            return $this->makeDatatable(Block::where('type', Block::TYPE_PAGES)->latest(),$this->module, true);
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],
             'title_' . app()->getLocale() => ['title' => __('common.name'), 'searchable' => true, 'orderable' => true],
+            'description_' . app()->getLocale() => ['title' => __('common.description'), 'searchable' => true, 'orderable' => true],
             'status' => ['title' => __('common.status'), 'searchable' => true, 'orderable' => true],
         ];
         $html = $this->tableHtmlBuilder($this->htmlBuilder,$columns,true, true);
@@ -30,34 +35,35 @@ class PageController extends CommonController
             ->with(['module' => $this->module, 'action' => 'create']);
     }
 
-    public function store(Request $request)
+    public function store(BlockRequest $request)
     {
-        $request->validate([
-            'title_en' => 'required',
-            'title_ar' => 'required'
-        ]);
-        Page::create($request->all());
+        $data = $request->except(['image_name', 'images']);
+        $data['type'] = Block::TYPE_PAGES;
+        Block::create($data);
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
 
-    public function edit(Page $page)
+    public function edit($id)
     {
-        return view('backend.' . $this->module . '.edit', compact( 'page'))
+        $block = Block::find($id)->load('images');
+        return view('backend.' . $this->module . '.edit', compact( 'block'))
             ->with(['module' => $this->module, 'action' => 'edit']);
     }
 
-    public function update(Request $request,Page $page)
+    public function update(Request $request,$id)
     {
-        $data = $request->except(['image']);
-        $page->update($data);
+        $block = Block::find($id);
+        $data = $request->except(['image_name', 'images']);
+        $block->update($data);
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
 
-    public function destroy(Page $page)
+    public function destroy($id)
     {
-        $page->delete();
+        $block = Block::find($id);
+        $block->delete();
         toast(__('common.deleted_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }

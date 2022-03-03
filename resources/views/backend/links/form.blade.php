@@ -34,12 +34,87 @@
         @endif
     </div>
 </div>
+
 <div class="form-group row">
-    {{ Form::label('country', __('common.page'), ['class' => 'col-sm-3']) }}
+    {{ Form::label('type', __('common.type'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
-        {{ Form::select('page_id',$pages,old('main_page_id'), ['class' => 'form-control search', 'id' => 'page_id', 'placeholder' => __('common.select')]) }}
-        @if ($errors->has("page_id"))
-            <span class="form-text text-danger">{{$errors->first('page_id')}}</span>
+        {{ Form::select('type',[ 1 =>'internal Link',  2 =>'external Link'],old('type'), ['class' => 'form-control search', 'id' => 'type', 'placeholder' => __('common.type')]) }}
+        @if ($errors->has("type"))
+            <span class="form-text text-danger">{{$errors->first('type')}}</span>
         @endif
     </div>
 </div>
+
+
+
+
+
+
+@section('scripts')
+    <script>
+        $('#type').change(function () {
+            let type = this.value
+            if (type == 1) {
+                $('#externalLink').remove()
+                $('#internalLink').remove()
+                $('#blockDev').remove()
+                appendInternal()
+
+            }
+            else if (type == 2) {
+                $('#internalLink').remove()
+                $('#blockDev').remove()
+                appendExternal();
+            }
+            else {
+                $('#internalLink').remove()
+                $('#externalLink').remove()
+                $('#blockDev').remove()
+            }
+        })
+
+        function appendExternal() {
+            $('#form-body').append(`
+            <div class="form-group row" id="externalLink">
+                {{ Form::label('route', __('common.externalLink'), ['class' => 'col-sm-3']) }}
+                <div class="col-sm-9">
+                    {{ Form::text('route',old('route') ?? '#', ['class' => 'form-control', 'placeholder' => __('common.route')]) }}
+                    @if ($errors->has("route"))
+                        <span class="form-text text-danger">{{$errors->first('route')}}</span>
+                    @endif
+                </div>
+            </div>
+        `)
+        }
+
+        function appendInternal() {
+
+            $('#form-body').append(`
+            <div class="form-group row" id="internalLink">
+                {{ Form::label('type', __('common.internalLink'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+{{ Form::text('route',old('route') ?? '#', ['class' => 'form-control', 'placeholder' => __('common.route')]) }}
+            @if ($errors->has("route"))
+            <span class="form-text text-danger">{{$errors->first('route')}}</span>
+                    @endif
+            </div>
+        </div>
+`)
+            $('#form-body').append(`
+            <div class="form-group row" id="blockDev">
+                {{ Form::label('block_id', __('common.block'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+{{ Form::select('block_id',$blocks,old('block_id'), ['class' => 'form-control search','id'=>'block_id', 'placeholder' => __('common.select')]) }}
+            @if ($errors->has("route"))
+            <span class="form-text text-danger">{{$errors->first('block_id')}}</span>
+                    @endif
+            </div>
+        </div>
+`)
+
+            $("#block_id").select2();
+        }
+
+
+    </script>
+@endsection

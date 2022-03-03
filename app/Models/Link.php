@@ -10,7 +10,10 @@ class Link extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name_ar', 'name_en', 'status', 'sort', 'route', 'menu_link_id', 'page_id', 'link_id'];
+    const TYPE_INTERNAL= 1;
+    const TYPE_EXTERNAL = 2;
+
+    protected $fillable = ['name_ar', 'name_en', 'status', 'sort' ,'route', 'menu_link_id', 'block_id', 'link_id', 'type'];
 
     protected $appends = ['name'];
 

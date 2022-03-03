@@ -6,18 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Http\Foundation\Traits\ImageTrait;
 use App\Http\Requests\Backend\BlockRequest;
 use App\Models\Block;
-use App\Models\BlockImage;
 use Illuminate\Http\Request;
 
-class NewsController extends CommonController
+class EventController extends CommonController
 {
     use ImageTrait;
-    protected string $module = 'news';
+    protected string $module = 'events';
 
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return $this->makeDatatable(Block::where('type', Block::TYPE_NEWS)->latest(),$this->module, true);
+            return $this->makeDatatable(Block::where('type', Block::TYPE_EVENTS)->latest(),$this->module, true);
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],
@@ -38,7 +37,7 @@ class NewsController extends CommonController
     public function store(BlockRequest $request)
     {
         $data = $request->except(['image_name', 'images']);
-        $data['type'] = Block::TYPE_NEWS;
+        $data['type'] = Block::TYPE_EVENTS;
         Block::create($data);
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
@@ -68,12 +67,4 @@ class NewsController extends CommonController
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
 
-    public function deleteBlockImage($blockImage)
-    {
-        $blockImage = BlockImage::find($blockImage);
-        $this->deleteImage($blockImage->image_name, 'blocks');
-        $blockImage->delete();
-        toast(__('common.deleted_successfully'),'success','top-right');
-        return redirect()->back();
-    }
 }

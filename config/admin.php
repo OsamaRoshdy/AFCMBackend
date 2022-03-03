@@ -25,10 +25,18 @@ return [
             'name' => 'news',
             'icon' => 'flaticon-graphic',
         ],
-//        [
-//            'name' => 'pages',
-//            'icon' => 'flaticon-graphic',
-//        ],
+        [
+            'name' => 'events',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
+            'name' => 'sections',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
+            'name' => 'pages',
+            'icon' => 'flaticon-graphic',
+        ],
     ]
 
 

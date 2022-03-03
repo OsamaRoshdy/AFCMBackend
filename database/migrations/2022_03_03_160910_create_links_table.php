@@ -22,7 +22,7 @@ return new class extends Migration
                 ->on('menu_links')
                 ->onDelete('CASCADE');
 
-            $table->unsignedBigInteger('block_id')->index();
+            $table->unsignedBigInteger('block_id')->nullable()->index();
             $table->foreign('block_id')
                 ->references('id')
                 ->on('blocks')
@@ -36,8 +36,10 @@ return new class extends Migration
 
             $table->string('name_ar');
             $table->string('name_en');
+            $table->string('route')->default('#');
             $table->integer('sort')->default(1);
             $table->boolean('status')->default(0);
+            $table->integer('type');
 
             $table->timestamps();
         });
