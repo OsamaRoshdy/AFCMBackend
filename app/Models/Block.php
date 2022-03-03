@@ -19,6 +19,7 @@ class Block extends Model
 
     protected $appends = ['title', 'slug', 'description', 'content', 'image', 'button'];
 
+    protected $casts = ['date' => 'date'];
     protected $fillable = [
         'slug_en', 'slug_ar',
         'title_en', 'title_ar',
@@ -69,5 +70,15 @@ class Block extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function scopeActive($query)
+    {
+        $query->where('status', 1);
+    }
+
+    public function scopeUpCommingEvents($query)
+    {
+        $query->where('type', self::TYPE_EVENTS)->where('date', '>', today());
     }
 }

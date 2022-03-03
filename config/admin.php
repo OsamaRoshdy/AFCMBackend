@@ -47,6 +47,14 @@ return [
             'name' => 'sliders',
             'icon' => 'flaticon-graphic',
         ],
+        [
+            'name' => 'statistics',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
+            'name' => 'departments',
+            'icon' => 'flaticon-graphic',
+        ],
     ],
 
 

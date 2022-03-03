@@ -13,19 +13,36 @@ class BlockObserver
     public function creating(Block $block)
     {
         $block->slug_en = str_slug($block->title_en);
-        $block->slug_ar = str_slug($block->title_ar);
+        $block->slug_ar = slug_ar($block->title_ar);
 //        $block->image_name = $this->storeImage(request()->image_name, 'blocks');
     }
 
 
     public function created(Block $block)
     {
-//        if (request()->images) {
-//            foreach (request()->images as $image) {
-//                $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
-//            }
-//        }
+        if (request()->images) {
+            foreach (request()->images as $image) {
+                $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
+            }
+        }
     }
+
+
+
+    public function updateing(Block $block)
+    {
+        if (request()->images) {
+            foreach (request()->images as $image) {
+                $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
+            }
+        }
+        $block->slug_en = str_slug($block->title_en);
+        $block->slug_ar = slug_ar($block->title_ar);
+        if (request()->image_name) {
+            $block->image_name = $this->updateImage(request()->image_name, $block->image_name, 'blocks');
+        }
+    }
+
 
     /**
      * Handle the Block "updated" event.

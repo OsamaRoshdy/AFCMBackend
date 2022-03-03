@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SliderGroupSeeder::class);
         $this->call(SliderSeeder::class);
         $this->call(BlockSeeder::class);
+        $this->call(StatisticSeeder::class);
     }
 }

@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
 
-            $table->string('slug_en')->nullable();
+            $table->text('slug_en')->nullable();
 
-            $table->string('slug_ar')->nullable();
+            $table->text('slug_ar')->nullable();
 
-            $table->string('title_ar')->nullable();
+            $table->text('title_ar')->nullable();
 
-            $table->string('title_en')->nullable();
+            $table->text('title_en')->nullable();
 
             $table->mediumText('description_en')->nullable();
 
@@ -46,7 +46,7 @@ return new class extends Migration
 
             $table->string('button_ar')->nullable();
 
-            $table->string('unique_name')->unique();
+            $table->string('unique_name')->nullable()->unique();
 
             $table->unsignedBigInteger('category_id')->nullable()->index();
 

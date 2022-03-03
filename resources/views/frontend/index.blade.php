@@ -111,37 +111,23 @@
                     <div class="events">
                         <h2>{{ getSection('home_upcoming_events')->title }}</h2>
                         <p>{{ getSection('home_upcoming_events')->description }}</p>
-                        <div class="card mb-3 hvr-forward">
+                        @foreach($events as $event)
+                            <div class="card mb-3 hvr-forward">
                             <div class="row g-0">
                                 <div class="col-md-5">
-                                    <img src="AFMC-project/assets/media/image.png" class="img-fluid rounded-start" alt="">
+                                    <img src="{{ $event->image }}" class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
                                         <h5 class="card-title">Monday - 20 / 2 / 2022</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">{{ $event->title }}</p>
                                         <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card mb-3 hvr-forward">
-                            <div class="row g-0">
-                                <div class="col-md-5">
-                                    <img src="AFMC-project/assets/media/image.png" class="img-fluid rounded-start" alt="">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Monday - 20 / 2 / 2022</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -160,34 +146,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-lg-3">
+                    @foreach($statistics as $statistic)
+                        <div class="col-md-6 col-lg-3">
                         <div class="box">
-                            <i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>
-                            <h1>6589</h1>
-                            <span>Graduates</span>
+                            <i class="{{ $statistic->icon }}" aria-hidden="true"></i>
+                            <h1>{{ $statistic->count }}</h1>
+                            <span>{{ $statistic->name }}</span>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box">
-                            <i class="fa fa-address-card" aria-hidden="true"></i>
-                            <h1>9</h1>
-                            <span>Years Of Experience</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <h1>2696</h1>
-                            <span>Students</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box">
-                            <i class="fa fa-user-secret" aria-hidden="true"></i>
-                            <h1>256</h1>
-                            <span>Education Staff</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
