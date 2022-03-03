@@ -41,6 +41,10 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::delete('block_images/{block_images}', [\App\Http\Controllers\Backend\NewsController::class, 'deleteBlockImage'])->name('block_images.destroy');
 
 
+    Route::resource('slider_groups', \App\Http\Controllers\Backend\SliderGroupController::class);
+    Route::resource('sliders', \App\Http\Controllers\Backend\SliderController::class);
+
+
     Route::resource('menu_links/{menu_link}/links', \App\Http\Controllers\Backend\LinksController::class)->except(['show', 'edit', 'update', 'destroy']);
     Route::get('menu_links/links/{link}/edit', [\App\Http\Controllers\Backend\LinksController::class, 'edit'])->name('links.edit');
     Route::get('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'edit'])->name('links.show');

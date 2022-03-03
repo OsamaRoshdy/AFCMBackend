@@ -1,0 +1,41 @@
+// Media Queries
+@mixin breakpoint($point) {
+  @if $point == _1440 {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  } @else if $point == _1200 {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point == _992 {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == _768 {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == _480 {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+// Containers Media Queries
+@mixin con-breakpoint($point) {
+  @if $point == xl {
+    @media only screen and (min-width: 1367px) {
+      @content;
+    }
+  } @else if $point == xxl {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    }
+  } @else if $point == xxxl {
+    @media only screen and (min-width: 1900px) {
+      @content;
+    }
+  }
+}

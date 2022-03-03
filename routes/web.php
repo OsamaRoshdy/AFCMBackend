@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index']);
 Route::get('switch/{lang}', function ($lang) {
     Session::put('app_locale', $lang);
     return back();

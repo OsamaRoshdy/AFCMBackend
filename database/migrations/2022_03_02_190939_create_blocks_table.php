@@ -40,6 +40,14 @@ return new class extends Migration
 
             $table->integer('type');
 
+            $table->integer('sort')->default(1);
+
+            $table->string('button_en')->nullable();
+
+            $table->string('button_ar')->nullable();
+
+            $table->string('unique_name')->unique();
+
             $table->unsignedBigInteger('category_id')->nullable()->index();
 
             $table->foreign('category_id')

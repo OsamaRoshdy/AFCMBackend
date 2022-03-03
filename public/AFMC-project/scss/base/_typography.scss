@@ -1,0 +1,189 @@
+body {
+  font-family: $regularFont;
+  color: $bodyFontColor;
+  font-size: $bodyFontSize;
+  text-align: start;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none
+  }
+}
+
+.section-title {
+  text-transform: capitalize;
+  font: {
+    size: $bigTitleFontSize;
+    family: $BlackFont;
+  }
+  color: $mainFontColor;
+  margin-bottom: 25px;
+
+  &--white {
+    color: $whiteFontColor;
+  }
+
+  @include breakpoint(_992) {
+    font-size: $socialLinksFontSize;
+  }
+}
+
+.internals-title {
+  color: $secondaryFontColor;
+  font-family: $BlackFont;
+  font-size: $bigTitleFontSize;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.block-title {
+  font-size: $titleFontSize;
+  color: $mainFontColor;
+  font-family: $mediumFont;
+  position: relative;
+  padding-#{$left}: 15px;
+  text-transform: capitalize;
+
+  &:before {
+    content: '';
+    display: block;
+    background-color: $mainColor;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    #{$left}: 0;
+  }
+
+  span {
+    color: $secondaryFontColor;
+    font-size: $bodyFontSize;
+    text-transform: capitalize;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+.block-title-secondary {
+  color: $secondaryFontColor;
+  font-family: $mediumFont;
+  font-size: $logoFontSize;
+  text-transform: capitalize;
+}
+
+.big-title {
+  font-size: $bigTitleFontSize;
+  color: $greyFontColor;
+  &--secondary {
+    color: $secondaryFontColor;
+  }
+}
+.semi-big-title {
+  font-size: $semiBigFontSize;
+  font-family: $boldFont;
+  color: $mainColor;
+}
+
+.secondary-dis {
+  color: $secondaryFontColor;
+  font-size: $titleFontSize;
+  font-family: $boldFont;
+}
+
+
+
+.footer__title {
+  display: inline-block;
+  font-size: $titleFontSize;
+  font-family: $boldFont;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: $mainFontColor;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $footerTitleBorder;
+    margin-top: 10px;
+  }
+}
+
+.article-block {
+  article {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.check-list {
+  li {
+    font-size: $titleFontSize;
+    color: $greyFontColor;
+    p {
+      display: flex;
+      &:before {
+        content: "\f26e";
+        font-family: bootstrap-icons;
+        font-weight: bold;
+        color: $secondaryFontColor;
+        font-size: $bigTitleFontSize;
+        line-height: $bigTitleFontSize;
+        margin-#{$right}: 20px;
+      }
+
+    }
+    ul.check-list {
+      width: 100%;
+      margin-#{$left}: 55px;
+    }
+  }
+
+  &--small {
+    li {
+      font-size: $bodyFontSize;
+      p {
+        &:before {
+          font-size: $socialLinksFontSize;
+          line-height: $socialLinksFontSize;
+        }
+      }
+    }
+  }
+}
+
+article {
+  p {
+    &:not(:last-child) {
+      margin-bottom: 15px
+    }
+  }
+}
+
+.card-title {
+  font-family: $boldFont;
+  font-size: $logoFontSize;
+  color: $greyFontColor;
+}
+
+.main-accordion {
+  .accordion-item {
+    border: none;
+    margin-bottom: 8px;
+  }
+  .accordion-button {
+    background-color: lighten($bodyFontColor, 50%);
+    color: $accordionFontColor;
+    font-family: $boldFont;
+    text-transform: capitalize;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

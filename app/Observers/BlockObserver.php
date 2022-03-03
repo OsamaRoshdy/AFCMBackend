@@ -14,17 +14,17 @@ class BlockObserver
     {
         $block->slug_en = str_slug($block->title_en);
         $block->slug_ar = str_slug($block->title_ar);
-        $block->image_name = $this->storeImage(request()->image_name, 'blocks');
+//        $block->image_name = $this->storeImage(request()->image_name, 'blocks');
     }
 
 
     public function created(Block $block)
     {
-        if (request()->images) {
-            foreach (request()->images as $image) {
-                $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
-            }
-        }
+//        if (request()->images) {
+//            foreach (request()->images as $image) {
+//                $block->images()->create(['image_name' => $this->storeImage($image, 'blocks')]);
+//            }
+//        }
     }
 
     /**

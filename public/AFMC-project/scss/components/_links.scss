@@ -1,0 +1,41 @@
+.link {
+  text-decoration: none;
+  text-transform: capitalize;
+  &--default {
+    color: $whiteFontColor;
+    &:hover {
+      color: darken($whiteFontColor, 10%);
+    }
+  }
+  &--nav {
+    text-transform: uppercase;
+    font-family: $mediumFont;
+  }
+  &--main-clr {
+    color: $mainFontColor;
+    &:hover {
+      color: lighten($mainFontColor, 20%);
+    }
+    &:focus {
+      color: lighten($mainFontColor, 20%);
+    }
+  }
+
+  &--red-clr {
+    color: $linkFontColor;
+    &:hover {
+      color: lighten($linkFontColor, 10%);
+    }
+    &:focus {
+      color: lighten($linkFontColor, 10%);
+    }
+  }
+
+  &__footer {
+    color: $footerFontColor;
+    font-family: $mediumFont;
+    &:hover {
+      color: lighten($footerFontColor, 10%);
+    }
+  }
+}

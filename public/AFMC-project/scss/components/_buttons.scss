@@ -1,0 +1,35 @@
+.btn {
+  color: $mainColor;
+  @include border-radius(0);
+  text-transform: capitalize  ;
+  &--default {
+    border: 1px solid $mainColor;
+  }
+  &--secondary {
+    color: $whiteFontColor;
+    background-color: $secondaryColor;
+  }
+  &--white {
+    color: $whiteFontColor;
+    border-color: $inputsBorderColor;
+    &:hover {
+      color: darken($whiteFontColor, 10%);
+    }
+  }
+  &--grey {
+    color: $whiteFontColor;
+    background-color: $greyFontColor;
+    &:hover {
+      color: darken($whiteFontColor, 10%);
+    }
+  }
+  &--white-bg {
+    background-color: $white;
+    color: $mainFontColor;
+    font-family: $boldFont;
+  }
+
+  @include breakpoint(_992) {
+    font-size: $bodyFontSize;
+  }
+}

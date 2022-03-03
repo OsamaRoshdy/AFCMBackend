@@ -52,3 +52,33 @@ if (!function_exists('slug_ar')) {
 
         return $string;    }
 }
+
+if (!function_exists('getMainPages')) {
+    function getMainPages() {
+       $mainPages = \App\Models\MainPage::where('id','!=' ,1)->get();
+        return $mainPages;
+    }
+}
+
+if (!function_exists('getMainPage')) {
+    function getMainPage($id) {
+       $mainPage = \App\Models\MainPage::find($id);
+        return $mainPage;
+    }
+}
+
+if (!function_exists('bottom_header')) {
+    function bottom_header() {
+       $links = \App\Models\Link::parents()->with('children')->get();
+        return $links;
+    }
+}
+
+if (!function_exists('getSection')) {
+    function getSection($uniqueName) {
+       $section = \App\Models\Block::where('type', \App\Models\Block::TYPE_SECTIONS)->where('unique_name', $uniqueName)->first();
+       return $section;
+    }
+}
+
+

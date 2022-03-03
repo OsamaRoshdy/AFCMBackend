@@ -1,0 +1,41 @@
+.section {
+  &--padding {
+    padding: 60px 0;
+  }
+  &--bg {
+    background-color: $sectionBackground;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      max-width: 40%;
+      max-height: 25px;
+      overflow: hidden;
+      margin: 0;
+    }
+  }
+  &__title {
+    span {
+      color: $secondaryFontColor;
+      font-size: $titleFontSize;
+      text-transform: capitalize;
+    }
+  }
+
+  @include breakpoint(_992) {
+    &__header {
+      p {
+        display: none;
+      }
+    }
+
+    &__title {
+      span {
+        font-size: $smallFontSize;
+      }
+    }
+  }
+}
+

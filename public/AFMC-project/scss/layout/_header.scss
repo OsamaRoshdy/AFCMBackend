@@ -1,0 +1,311 @@
+.header {
+  .navbar {
+    display: block;
+    padding-bottom: 0;
+
+    .container {
+      display: block;
+    }
+    .collapse-navbar {
+      display: flex;
+      margin-top: 15px;
+      background-color: $inputsBackground;
+      &--mobile {
+        position: fixed;
+        top: 0;
+        right: 0;
+        @include transition(all, 0.4s);
+
+        height: 100%;
+        background-color: $dropdownBackground;
+        z-index: 100;
+        padding: 0;
+        margin: 0;
+
+        @include translate(100%, 0);
+        visibility: hidden;
+        width: 0;
+
+        .accordion-item {
+          background-color: $dropdownBackground;
+          border: none;
+          .accordion-header {
+            margin: 0 15px;
+            .link {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-transform: capitalize;
+              font-family: "robo_bold";
+              font-size: 16px;
+              color: #333;
+            }
+          }
+          &:not(:last-child) {
+            border-bottom: 1px dashed rgba($placeholderFontColor, .2);
+          }
+        }
+      }
+    }
+    .navbar-toggle {
+      font-size: 50px;
+      line-height: 0;
+      padding: 0;
+      display: none;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .nav-link {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    @include breakpoint(_992) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+      .navbar-nav {
+        .link--main-clr {
+          color: $whiteFontColor;
+          &:hover {
+            color: darken($whiteFontColor, 20%)
+          }
+        }
+      }
+      .navbar-toggle {
+        display: block;
+      }
+      .collapse-navbar {
+        display: none;
+      }
+      .collapse-navbar--mobile {
+        .navbar-toggle {
+          font-size: 30px;
+          margin-top: 15px;
+          margin-bottom: 30px;
+          margin-#{$right}: 15px;
+          margin-#{$left}: auto;
+        }
+        &.visible {
+          width: 100%;
+          @include translate(0, 0);
+          visibility: visible;
+
+        }
+      }
+
+    }
+
+    @include breakpoint(_768) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .navbar-nav {
+    justify-content: space-between;
+    .nav-link {
+      font-size: $titleFontSize;
+      font-family: $boldFont;
+      &.active {
+        color: $linkFontColor;
+        &:hover {
+          color: lighten($linkFontColor, 10%);
+        }
+      }
+    }
+  }
+
+  &__top {
+    background: linear-gradient(to #{$right}, $secondaryColor 25%, $mainColor 0);
+    .container {
+      @extend %d-flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__sites {
+      background-color: $secondaryColor;
+      display: flex;
+      li {
+        background-color: $secondaryColor;
+        height: 100%;
+        margin-#{$right}: 15px;
+        a {
+          padding: 15px 10px;
+        }
+      }
+    }
+
+    @include breakpoint(_768) {
+      background: $mainColor;
+
+      .container {
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 100%;
+      }
+      &__sites {
+        background-color: transparent;
+        li {
+          background-color: transparent;
+        }
+
+        .link--nav {
+          font-size: $smallFontSize;
+        }
+      }
+
+      &__lang {
+        .dropdown-toggle {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include breakpoint(_480) {
+      &__sites {
+        li {
+          margin-#{$right}: 5px;
+
+        }
+
+        .link--nav {
+          padding: 10px 5px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    &__up {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .input-btn {
+        width: 40%;
+      }
+    }
+
+    @include breakpoint(_992) {
+      &__up {
+        flex-wrap: wrap;
+        .input-btn {
+          width: 60%;
+        }
+        .logo {
+          flex-basis: 100%;
+          margin: 0 0 15px;
+          text-align: center;
+        }
+      }
+    }
+
+    @include breakpoint(_480) {
+      &__up {
+        .input-btn {
+          width: 80%;
+
+        }
+      }
+    }
+  }
+
+  &--staff {
+    .navbar-nav {
+      border-top: 1px solid $whiteFontColor;
+    }
+    .navbar {
+      padding-top: 20px;
+    }
+    .header__top {
+      background: $white;
+      &__sites {
+        background-color: $white;
+        li {
+          background-color: $white;
+          .link {
+            color: $greyFontColor;
+          }
+        }
+      }
+
+      &__lang {
+        .dropdown {
+          .link {
+            padding: 15px 20px;
+            background-color: $secondaryColor;
+          }
+        }
+      }
+    }
+
+    .header__bottom {
+      background-color: $mainColor;
+    }
+
+    .navbar {
+      .collapse-navbar {
+        background-color: transparent;
+      }
+    }
+
+    .logo {
+      &__dis {
+        color: $whiteFontColor;
+        &:hover {
+          color: $whiteFontColor;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-#{$right}: 25px;
+  > * {
+    &:not(:last-child) {
+      margin-#{$right}: 15px;
+    }
+  }
+  &__img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+  }
+  &__dis {
+    text-transform: uppercase;
+    font-family: $BlackFont;
+    font-size: $logoFontSize;
+    color: $blackFontColor;
+    text-align: center;
+    &:hover {
+      color: $blackFontColor;
+
+    }
+    span {
+      display: block;
+    }
+  }
+
+  @include breakpoint(_992) {
+    display: block;
+    > * {
+      margin: 0;
+      &:not(:last-child) {
+        margin: 0 auto 15px;
+      }
+    }
+    &__img {
+      width: 80px;
+      height: 80px;
+    }
+    &__dis {
+      font-size: $bodyFontSize;
+    }
+  }
+}

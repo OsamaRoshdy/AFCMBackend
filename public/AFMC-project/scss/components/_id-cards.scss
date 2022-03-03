@@ -1,0 +1,16 @@
+.id-card {
+  &__item {
+    margin-bottom: 30px;
+  }
+  &__img {
+    background-position: center;
+    background-size: cover;
+    padding: 50%;
+    display: block;
+  }
+
+  &__dis {
+    padding: 20px;
+    text-align: center;
+  }
+}

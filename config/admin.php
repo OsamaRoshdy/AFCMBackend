@@ -37,7 +37,17 @@ return [
             'name' => 'pages',
             'icon' => 'flaticon-graphic',
         ],
-    ]
+    ],
+    'frontend' =>[
+        [
+            'name' => 'slider_groups',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
+            'name' => 'sliders',
+            'icon' => 'flaticon-graphic',
+        ],
+    ],
 
 
 

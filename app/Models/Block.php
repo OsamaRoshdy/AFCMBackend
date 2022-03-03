@@ -17,15 +17,17 @@ class Block extends Model
     const TYPE_EVENTS = 3; // section
     const TYPE_PAGES = 4; // section
 
-    protected $appends = ['title', 'slug', 'description', 'content', 'image'];
+    protected $appends = ['title', 'slug', 'description', 'content', 'image', 'button'];
 
     protected $fillable = [
         'slug_en', 'slug_ar',
         'title_en', 'title_ar',
+        'button_en', 'button_ar',
         'description_en', 'description_ar',
         'content_en', 'content_ar',
         'image_name', 'status', 'date',
-        'type', 'category_id'
+        'type', 'category_id',
+        'unique_name', 'sort'
     ];
 
     public function getImageAttribute()
@@ -36,6 +38,11 @@ class Block extends Model
     public function getTitleAttribute()
     {
         return app()->getLocale() === 'en' ? $this->title_en : $this->title_ar;
+    }
+
+    public function getButtonAttribute()
+    {
+        return app()->getLocale() === 'en' ? $this->button_en : $this->button_ar;
     }
 
     public function getDescriptionAttribute()

@@ -1,0 +1,39 @@
+.video-presentation {
+  &__iframe {
+    height: 550px;
+  }
+
+  &__float {
+    position: absolute;
+    top: 0;
+    #{$left}: 30px;
+    @include translate(0, -50%);
+    span {
+      background-color: $secondaryColor;
+      color: $whiteFontColor;
+      font-family: $BlackFont;
+      font-size: $bigTitleFontSize;
+      padding: 10px 35px;
+    }
+  }
+  &__dis {
+    position: relative;
+    background-color: $mainColor;
+    padding: 40px 30px 30px;
+  }
+
+  &__num {
+    span {
+      color: $whiteFontColor;
+      font-size: $megaFontSize;
+      font-family: $boldFont;
+      border-bottom: 1px solid $dropdownBackground;
+    }
+    p {
+      margin: 0;
+      color: $whiteFontColor;
+      font-size: $socialLinksFontSize;
+
+    }
+  }
+}

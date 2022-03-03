@@ -22,14 +22,29 @@ class Link extends Model
         return app()->getLocale() === 'en' ? $this->name_en : $this->name_ar;
     }
 
-    public function page()
-    {
-        return $this->belongsTo(Page::class);
-    }
-
     public function menuLink()
     {
         return $this->belongsTo(MenuLinks::class);
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(__CLASS__, 'link_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(__CLASS__, 'link_id')->orderBy('sort', 'ASC');
+    }
+
+    public function hasChildren()
+    {
+        return $this->children()->exists();
+    }
+
+    public function scopeParents()
+    {
+        return $this->where('link_id', null);
     }
 
 }

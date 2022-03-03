@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(MainPageSeeder::class);
         $this->call(MenuLinksSeeder::class);
+        $this->call(LinkSeeder::class);
+        $this->call(SliderGroupSeeder::class);
+        $this->call(SliderSeeder::class);
+        $this->call(BlockSeeder::class);
     }
 }

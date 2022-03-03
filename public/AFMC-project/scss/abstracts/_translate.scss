@@ -1,0 +1,74 @@
+/*------ Translate ------*/
+/*----- Translate Variables -----*/
+
+//font family ------
+$BlackFont: 'robo_black';
+$boldFont: 'robo_bold';
+$mediumFont: 'robo_medium';
+$regularFont: 'robo_regular';
+$lightFont: 'robo_light';
+
+//directions -------
+$left: left;
+$right: right;
+$flex-direction: row;
+
+$chevronDoubleRight: "\f280";
+$chevronDoubleLeft: "\f27f";
+$chevronRight: "\f285";
+$chevronLeft: "\f284";
+$arrowRight: "\f138";
+$arrowLeft: "\f12f";
+$arrowRightShort: "\f135";
+$arrowLeftShort: "\f12c";
+
+$isRtl: ltr;
+
+/*------ The Switch ------*/
+@if $isRtl == rtl
+{
+  //directions -------
+  $left: right;
+  $right: left;
+  $flex-direction:row-reverse;
+
+  //font family ------
+  $BlackFont: 'taj_black';
+  $boldFont: 'taj_bold';
+  $mediumFont: 'taj_medium';
+  $regularFont: 'taj_regular';
+  $lightFont: 'taj_light';
+
+  $chevronDoubleRight: "\f27f";
+  $chevronDoubleLeft: "\f280";
+  $chevronLeft: "\f285";
+  $chevronRight: "\f284";
+  $arrowRight: "\f12f";
+  $arrowLeft: "\f138";
+  $arrowRightShort: "\f12c";
+  $arrowLeftShort: "\f135";
+
+}
+@else {
+  //directions -------
+  $left: left;
+  $right: right;
+  $flex-direction:row;
+
+  //font family ------
+  $BlackFont: 'robo_black';
+  $boldFont: 'robo_bold';
+  $mediumFont: 'robo_medium';
+  $regularFont: 'robo_regular';
+  $lightFont: 'robo_light';
+
+  $chevronDoubleRight: "\f280";
+  $chevronDoubleLeft: "\f27f";
+  $chevronRight: "\f285";
+  $chevronLeft: "\f284";
+  $arrowRight: "\f138";
+  $arrowLeft: "\f12f";
+  $arrowRightShort: "\f135";
+  $arrowLeftShort: "\f12c";
+
+}

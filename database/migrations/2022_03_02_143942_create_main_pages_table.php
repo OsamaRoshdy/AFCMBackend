@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name_en');
             $table->boolean('status')->default(0);
             $table->string('slug');
+            $table->integer('sort')->default(1);
             $table->timestamps();
         });
     }

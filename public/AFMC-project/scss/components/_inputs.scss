@@ -1,0 +1,33 @@
+.input, .textarea {
+  height: 40px;
+  width: 100%;
+  border: 1px solid $inputsBorderColor;
+  background-color: $inputsBackground;
+  color: $mainColor;
+  padding: 5px 15px;
+  @include border-radius(0);
+  @include transition(all, 0.5s);
+  @include placeHolder {
+    font-size: $smallFontSize;
+    color: $placeholderFontColor;
+  }
+  &:focus {
+    box-shadow: 0 1px 0 0 $secondaryColor;
+  }
+}
+.textarea {
+  min-height: 10rem;
+}
+.invalid-tooltip {
+  display: none;
+}
+
+.input-btn {
+  position: relative;
+  .btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    #{$right}: 0;
+  }
+}

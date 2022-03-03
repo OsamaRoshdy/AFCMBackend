@@ -1,0 +1,130 @@
+.footer {
+  &__top {
+    padding: 50px 0;
+    .container {
+      > * {
+        text-align: center  ;
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+      }
+    }
+    background-color: $mainColor;
+    p {
+      color: $whiteFontColor;
+    }
+    .input-btn {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+  &__main {
+    padding: 50px 0;
+  }
+  &__title {
+    margin-bottom: 35px !important;
+  }
+  &__block {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__links {
+    li {
+      margin-bottom: 10px;
+      a {
+        i {
+          font-size: $titleFontSize;
+          margin-#{$right}: 7px;
+        }
+      }
+    }
+  }
+  &__contact {
+    li {
+      display: flex;
+      margin-bottom: 25px;
+      i {
+        font-size: $logoFontSize;
+        margin-#{$right}: 10px;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: $secondaryColor;
+    padding: 20px 0;
+    .container {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      > * {
+        margin-bottom: 0;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    li {
+      &:not(:last-child) {
+        margin-#{$right}: 20px;
+      }
+      a {
+        i {
+          font-size: $socialLinksFontSize;
+        }
+      }
+    }
+  }
+  &__copyright {
+    color: $whiteFontColor;
+    font-size: $titleFontSize;
+    font-family: $boldFont;
+  }
+
+
+  @include breakpoint(_992) {
+    &__top {
+      .input-btn {
+        width: 100%;
+      }
+    }
+
+    .logo {
+      display: none;
+    }
+
+    &__block {
+      margin-bottom: 25px;
+    }
+
+    &__title {
+      margin-bottom: 15px !important;
+    }
+
+    &__bottom {
+      padding: 10px 0;
+    }
+
+    &__social-links {
+      li {
+        a {
+          i {
+            font-size: $logoFontSize;
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      font-size: $smallFontSize;
+    }
+  }
+}
