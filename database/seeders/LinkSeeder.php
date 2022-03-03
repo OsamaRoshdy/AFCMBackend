@@ -500,9 +500,323 @@ class LinkSeeder extends Seeder
             ],
 
         ];
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => null,
+            'name_ar' => 'الطلاب الجدد',
+            'name_en' => 'New Students',
+            'route' => '#',
+            'sort' => 1,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => null,
+            'name_ar' => 'الأخبار و الأحداث',
+            'name_en' => 'News & Events',
+            'route' => '#',
+            'sort' => 2,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => null,
+            'name_ar' => 'حياة الحرم الجامعي',
+            'name_en' => 'AFCM Campus Life',
+            'route' => '#',
+            'sort' => 3,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => null,
+            'name_ar' => 'الشؤون الأكاديمية',
+            'name_en' => 'Academic Matters',
+            'route' => '#',
+            'sort' => 4,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => null,
+            'name_ar' => 'الموارد',
+            'name_en' => 'Resources',
+            'route' => '#',
+            'sort' => 5,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => null,
+            'name_ar' => 'الحياة الذاتية للطلاب',
+            'name_en' => 'Self Services Access',
+            'route' => '#',
+            'sort' => 6,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 44,
+            'name_ar' => 'قبل وصولك',
+            'name_en' => 'Before You Arrive',
+            'route' => '#',
+            'sort' => 1,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 44,
+            'name_ar' => 'اسابيعك الأولي',
+            'name_en' => 'Your First Weeks',
+            'route' => '#',
+            'sort' => 2,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 44,
+            'name_ar' => 'كلمة الخريجين',
+            'name_en' => 'Graduate Speech',
+            'route' => '#',
+            'sort' =>3,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'التقييم',
+            'name_en' => 'Accommodation',
+            'route' => '#',
+            'sort' =>1,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'تسهيلات اكاديمية',
+            'name_en' => 'Academic Facilities',
+            'route' => '#',
+            'sort' =>2,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'تسهيلات اخري',
+            'name_en' => 'Other Facilities',
+            'route' => '#',
+            'sort' =>3,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'خدمات تقنية فرع النظم',
+            'name_en' => 'It Services',
+            'route' => '#',
+            'sort' =>4,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'الانشطة العلمية',
+            'name_en' => 'Scientific Activites',
+            'route' => '#',
+            'sort' =>5,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'الانشطة الرياضية',
+            'name_en' => 'Sports Activites',
+            'route' => '#',
+            'sort' =>6,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 46,
+            'name_ar' => 'الانشطة الفنية',
+            'name_en' => 'Artistic Activites',
+            'route' => '#',
+            'sort' =>7,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 47,
+            'name_ar' => 'ارشاد الطلاب',
+            'name_en' => 'Student Guidance',
+            'route' => '#',
+            'sort' =>1,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 47,
+            'name_ar' => 'نظام التقييم',
+            'name_en' => 'Assessment System',
+            'route' => '#',
+            'sort' =>2,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 60,
+            'name_ar' => 'المرشد التعليمي',
+            'name_en' => 'Study Guidance',
+            'route' => '#',
+            'sort' =>1,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 60,
+            'name_ar' => 'المرشد الاكاديمي',
+            'name_en' => 'Academic Counseling',
+            'route' => '#',
+            'sort' =>2,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 60,
+            'name_ar' => 'المرشد الوظيفي',
+            'name_en' => 'Career Counseling',
+            'route' => '#',
+            'sort' =>3,
+            'type' => Link::TYPE_INTERNAL,
+            'created_at' => now()
+        ];
 
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 48,
+            'name_ar' => 'بنك المعرفة المصري',
+            'name_en' => 'EKB',
+            'route' => 'https://www.ekb.eg/',
+            'sort' =>1,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 48,
+            'name_ar' => 'Q-Bank',
+            'name_en' => 'Q-Bank',
+            'route' => 'https://www.canadaqbank.com/',
+            'sort' =>2,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 48,
+            'name_ar' => 'المكتبة الالكترونية',
+            'name_en' => 'E-Library',
+            'route' => 'http://medlib.mod.gov.eg/',
+            'sort' =>3,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 2,
+            'block_id' => null,
+            'link_id' => 48,
+            'name_ar' => 'الوصول الي موقع أكادمية',
+            'name_en' => 'Incision Academy Access',
+            'route' => 'https://academy.incision.care/',
+            'sort' =>4,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
 
-
+//-------------------------------------
+        $data[] = [
+            'menu_link_id' => 3,
+            'block_id' => null,
+            'link_id' => 49,
+            'name_ar' => 'الوصول الى بريد AFCM',
+            'name_en' => 'Access AFCM Mail',
+            'route' => 'https://mail.afcm.edu.eg/interface/root',
+            'sort' => 1,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 3,
+            'block_id' => null,
+            'link_id' => 49,
+            'name_ar' => 'الوصول الى SIS',
+            'name_en' => 'Access SIS',
+            'route' => 'https://xess.afcm.edu.eg/StudentSelfService',
+            'sort' => 2,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
+        $data[] = [
+            'menu_link_id' => 3,
+            'block_id' => null,
+            'link_id' => 49,
+            'name_ar' => 'الوصول الى LMS',
+            'name_en' => 'Access LMS',
+            'route' => 'https://afcm.brightspace/d2l/login',
+            'sort' => 3,
+            'type' => Link::TYPE_EXTERNAL,
+            'created_at' => now()
+        ];
 
         Link::insert($data);
 
