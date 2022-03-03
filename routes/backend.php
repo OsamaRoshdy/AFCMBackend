@@ -45,6 +45,8 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::resource('sliders', \App\Http\Controllers\Backend\SliderController::class);
     Route::resource('statistics', \App\Http\Controllers\Backend\StatisticController::class);
     Route::resource('departments', \App\Http\Controllers\Backend\DepartmentController::class);
+    Route::resource('partners', \App\Http\Controllers\Backend\PartnerController::class);
+    Route::resource('media', \App\Http\Controllers\Backend\MediaController::class);
 
 
     Route::resource('menu_links/{menu_link}/links', \App\Http\Controllers\Backend\LinksController::class)->except(['show', 'edit', 'update', 'destroy']);

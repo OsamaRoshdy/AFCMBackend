@@ -55,6 +55,10 @@ return [
             'name' => 'departments',
             'icon' => 'flaticon-graphic',
         ],
+        [
+            'name' => 'partners',
+            'icon' => 'flaticon-graphic',
+        ],
     ],
 
 

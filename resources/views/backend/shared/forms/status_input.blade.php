@@ -1,21 +1,24 @@
+@php
+    $name = $name ?? 'status';
+@endphp
 <div class="form-group row">
-    {{ Form::label('status',__('common.status') ,['class' => 'col-sm-3']) }}
+    {{ Form::label($name,__('common.' . $name) ,['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         <div class="radio-list">
             <label class="radio radio-outline radio-success">
-                {{ Form::radio('status', 1, null,['checked'=>'checked']) }}
+                {{ Form::radio($name, 1, null,['checked'=>'checked']) }}
                 <span></span>
                 {{ __('common.enable')  }}
             </label>
             <label class="radio radio-outline radio-danger">
-                {{ Form::radio('status', 0, null,[]) }}
+                {{ Form::radio($name, 0, null,[]) }}
                 <span></span>
                 {{ __('common.disable')   }}
             </label>
         </div>
     </div>
-    @if ($errors->has("status"))
-        <span class="form-text text-danger">{{$errors->first('status')}}</span>
+    @if ($errors->has($name))
+        <span class="form-text text-danger">{{$errors->first($name)}}</span>
     @endif
 </div>
 
