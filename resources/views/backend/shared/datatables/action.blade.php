@@ -1,7 +1,7 @@
 @php
-    $disableShow = ['admins'];
+    $show = [];
     $disableEdit = [];
-    $disableDelete = [];
+    $disableDelete = ['main_pages', 'menu_links', 'links', 'slider_groups'];
 @endphp
 <td nowrap="nowrap">
     <div class="dropdown dropdown-inline">
@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 @endif
-                @if(!in_array($module, $disableShow))
+                @if(in_array($module, $show))
                     <li class="nav-item">
                     <a class="nav-link" href="{{ route('dashboard.' . $module . '.show', $model) }}">
                         <i class="nav-icon la la-leaf"></i>

@@ -53,7 +53,7 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::post('menu_links/{menu_link}/links', [\App\Http\Controllers\Backend\LinksController::class, 'store'])->name('links.store');
     Route::get('menu_links/links/{link}/edit', [\App\Http\Controllers\Backend\LinksController::class, 'edit'])->name('links.edit');
     Route::get('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'edit'])->name('links.show');
-    Route::put('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'update'])->name('links.update');
+    Route::patch('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'update'])->name('links.update');
     Route::delete('menu_links/links/{link}', [\App\Http\Controllers\Backend\LinksController::class, 'destroy'])->name('links.destroy');
 
 

@@ -20,4 +20,9 @@ return array(
     'news' => 'News',
     'faqs' => 'FAQ',
     'metas' => 'Meta Tags',
+    'slider_groups' => 'Slider Groups',
+    'sliders' => 'Sliders',
+    'statistics' => 'Statistics',
+    'departments' => 'Departments',
+    'partners' => 'Partners',
 );

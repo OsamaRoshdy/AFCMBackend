@@ -23,6 +23,7 @@ class StatisticSeeder extends Seeder
                 'icon' => 'fa fa-graduation-cap fa-5x',
                 'sort' => 1,
                 'status' => 1,
+                'created_at' => now(),
             ],
             [
                 'name_ar' => 'سنوات من الخبرة',
@@ -31,6 +32,8 @@ class StatisticSeeder extends Seeder
                 'icon' => 'fa fa-address-card',
                 'sort' => 1,
                 'status' => 1,
+                'created_at' => now(),
+
             ],
             [
                 'name_ar' => 'الطلاب',
@@ -39,6 +42,8 @@ class StatisticSeeder extends Seeder
                 'icon' => 'fa fa-user',
                 'sort' => 1,
                 'status' => 1,
+                'created_at' => now(),
+
             ],
             [
                 'name_ar' => 'طاقم التعليم',
@@ -47,6 +52,8 @@ class StatisticSeeder extends Seeder
                 'icon' => 'fa fa-user-secret',
                 'sort' => 1,
                 'status' => 1,
+                'created_at' => now(),
+
             ],
 
         ];

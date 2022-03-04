@@ -46,24 +46,23 @@ class LinksController extends CommonController
         $data['menu_link_id'] = $menuLink;
         Link::create($data);
         toast(__('common.added_successfully'), 'success', 'top-right');
-        return back();
         return redirect()->route('dashboard.' . $this->module . '.index', $menuLink);
     }
 
     public function edit(Link $link)
     {
-        $pages = Page::pluck('title_' . app()->getLocale(), 'id');
+        $blocks = Block::whereIn('type', [Block::TYPE_PAGES, Block::TYPE_EVENTS, Block::TYPE_NEWS])->pluck('title_'. app()->getLocale(), 'id');
         $links = Link::where(['menu_link_id' => $link->menu_link_id,  'id'=> ['!==', $link->id]])->pluck('name_' . app()->getLocale(), 'id');
-        return view('backend.' . $this->module . '.edit', compact( 'link', 'links', 'pages'))
+        return view('backend.' . $this->module . '.edit', compact( 'link', 'links', 'blocks'))
             ->with(['module' => $this->module, 'action' => 'edit', 'menuLink' => $link->menu_link_id]);
     }
 
-    public function update(Request $request, $menuLink, Link $link)
+    public function update(Request $request, Link $link)
     {
         $data = $request->except(['image']);
         $link->update($data);
         toast(__('common.updated_successfully'), 'success', 'top-right');
-        return redirect()->route('dashboard.' . $this->module . '.index', $menuLink);
+        return redirect()->route('dashboard.' . $this->module . '.index', $link->menu_link_id);
     }
 
     public function destroy(Link $link)

@@ -7,7 +7,9 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    @include('backend.shared.forms.status_input')
+                    @if($mainPage->id !== 1)
+                        @include('backend.shared.forms.status_input')
+                    @endif
                     @include('backend.' . $module . '.form')
                 </div>
                 <div class="col-sm-2"></div>

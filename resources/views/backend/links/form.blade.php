@@ -45,6 +45,16 @@
     </div>
 </div>
 
+<div class="form-group row">
+    {{ Form::label('route', __('common.route'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::text('route',old('route'), ['class' => 'form-control', 'placeholder' => __('common.route')]) }}
+        @if ($errors->has("route"))
+            <span class="form-text text-danger">{{$errors->first('route')}}</span>
+        @endif
+    </div>
+</div>
+
 
 
 
@@ -55,51 +65,18 @@
         $('#type').change(function () {
             let type = this.value
             if (type == 1) {
-                $('#externalLink').remove()
-                $('#internalLink').remove()
                 $('#blockDev').remove()
                 appendInternal()
-
             }
             else if (type == 2) {
-                $('#internalLink').remove()
                 $('#blockDev').remove()
-                appendExternal();
             }
             else {
-                $('#internalLink').remove()
-                $('#externalLink').remove()
                 $('#blockDev').remove()
             }
         })
 
-        function appendExternal() {
-            $('#form-body').append(`
-            <div class="form-group row" id="externalLink">
-                {{ Form::label('route', __('common.externalLink'), ['class' => 'col-sm-3']) }}
-                <div class="col-sm-9">
-                    {{ Form::text('route',old('route') ?? '#', ['class' => 'form-control', 'placeholder' => __('common.route')]) }}
-                    @if ($errors->has("route"))
-                        <span class="form-text text-danger">{{$errors->first('route')}}</span>
-                    @endif
-                </div>
-            </div>
-        `)
-        }
-
         function appendInternal() {
-
-            $('#form-body').append(`
-            <div class="form-group row" id="internalLink">
-                {{ Form::label('type', __('common.internalLink'), ['class' => 'col-sm-3']) }}
-            <div class="col-sm-9">
-{{ Form::text('route',old('route') ?? '#', ['class' => 'form-control', 'placeholder' => __('common.route')]) }}
-            @if ($errors->has("route"))
-            <span class="form-text text-danger">{{$errors->first('route')}}</span>
-                    @endif
-            </div>
-        </div>
-`)
             $('#form-body').append(`
             <div class="form-group row" id="blockDev">
                 {{ Form::label('block_id', __('common.block'), ['class' => 'col-sm-3']) }}

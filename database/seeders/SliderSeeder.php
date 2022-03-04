@@ -24,6 +24,7 @@ class SliderSeeder extends Seeder
                 'status' => 1,
                 'image_name' => $i . '.jpg',
                 'slider_group_id' => 1,
+                'created_at' => now()
             ];
         }
 

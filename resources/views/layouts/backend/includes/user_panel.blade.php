@@ -39,7 +39,7 @@
 								</span>
                     </a>
                     {{ Form::open(['route' => 'dashboard.logout']) }}
-                        {{ Form::submit(__('sign_out'), ['class'=> 'btn btn-sm btn-light-primary font-weight-bolder py-2 px-5']) }}
+                        {{ Form::submit(__('common.sign_out'), ['class'=> 'btn btn-sm btn-light-primary font-weight-bolder py-2 px-5']) }}
                     {{ Form::close() }}
                 </div>
             </div>

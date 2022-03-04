@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="form-group row">
-    {{ Form::label('email', __('admins.email'), ['class' => 'col-sm-3']) }}
+    {{ Form::label('email', __('common.email'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         {{ Form::email('email', old('email'), ['class' => 'form-control', 'id' => 'email']) }}
         @if ($errors->has("email"))
@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="form-group row">
-    {{ Form::label('password_confirmation', __('admins.role'), ['class' => 'col-sm-3']) }}
+    {{ Form::label('password_confirmation', __('common.role'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         {{ Form::select('role',$roles,old('role'), ['class' => 'form-control search', 'id' => 'password_confirmation']) }}
         @if ($errors->has("role"))
@@ -26,7 +26,7 @@
     </div>
 </div>
 <div class="form-group row">
-    {{ Form::label('password', __('admins.password'), ['class' => 'col-sm-3']) }}
+    {{ Form::label('password', __('common.password'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         {{ Form::password('password', ['class' => 'form-control', 'id' => 'password']) }}
         @if ($errors->has("password"))
@@ -35,7 +35,7 @@
     </div>
 </div>
 <div class="form-group row">
-    {{ Form::label('password_confirmation', __('admins.password_confirmation'), ['class' => 'col-sm-3']) }}
+    {{ Form::label('password_confirmation', __('common.password_confirmation'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         {{ Form::password('password_confirmation', ['class' => 'form-control', 'id' => 'password_confirmation']) }}
         @if ($errors->has("password_confirmation"))
