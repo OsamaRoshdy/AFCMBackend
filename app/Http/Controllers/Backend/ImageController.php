@@ -37,7 +37,7 @@ class ImageController extends CommonController
             'image_name' => 'required',
         ]);
         $data = $request->except(['image_name']);
-        $data['image_name'] = $this->storeImage($request->image_name, 'images');
+        $data['image_name'] = $this->storeImage($request->image_name, 'media');
         $data['type'] = Media::TYPE_IMAGE;
         Media::create($data);
         toast(__('common.added_successfully'),'success','top-right');
@@ -56,7 +56,7 @@ class ImageController extends CommonController
         $image = Media::findOrFail($id);
         $data = $request->except(['image_name']);
         if ($request->image_name) {
-            $data['image_name'] = $this->updateImage($request->image_name, $image->image_name,'images');
+            $data['image_name'] = $this->updateImage($request->image_name, $image->image_name,'media');
         }
         $image->update($data);
         toast(__('common.updated_successfully'),'success','top-right');
@@ -66,7 +66,7 @@ class ImageController extends CommonController
     public function destroy($id)
     {
         $image = Media::findOrFail($id);
-        $this->deleteImage($image->image_name, 'images');
+        $this->deleteImage($image->image_name, 'media');
         $image->delete();
         toast(__('common.deleted_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');

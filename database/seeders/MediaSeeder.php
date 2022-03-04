@@ -57,5 +57,20 @@ class MediaSeeder extends Seeder
         ];
 
         Media::insert($data);
+
+
+        $data = [];
+        for ($i=1;$i <= 30;$i++) {
+            $data[] = [
+                'image_name' => $i . '.jpg',
+                'title_ar' => 'الاسم باللغة العربية',
+                'title_en' => 'English Name',
+                'status' => 1,
+                'type' => Media::TYPE_IMAGE,
+                'created_at' => now(),
+            ];
+        }
+
+        Media::insert($data);
     }
 }

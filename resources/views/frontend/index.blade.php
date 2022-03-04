@@ -1,4 +1,4 @@
-@extends('layouts.frontend.app')
+@extends('layouts.frontend.app', ['mainPage' => 1])
 
 
 @section('content')
@@ -119,7 +119,8 @@
                                 <div class="col-md-7">
                                     <div class="card-body">
                                         <h5 class="card-title">Monday - 20 / 2 / 2022</h5>
-                                        <p class="card-text">{{ $event->title }}</p>
+                                        <h6 class="card-text" style="color: black">{{ $event->title }}</h6>
+                                        <p class="card-text">{{ $event->description }}</p>
                                         <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                         </a>
                                     </div>
@@ -144,10 +145,10 @@
                     </div>
                 </div>
                 <div class="col-md-2 text-end">
-                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                    <a type="button" href="{{ url('/news') }}" class="btn btn-primary custom_button hvr-wobble-vertical">
                         <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
                         {{ getSection('home_events_and_news')->button }}
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="section__header">
@@ -157,95 +158,59 @@
                 <div class="col-md-12 col-lg-6 hvr-backward">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            @foreach($news->take(3) as $index => $new)
+                                @if($loop->first)
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                @else
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" aria-label="Slide 3"></button>
+                                @endif
+                            @endforeach
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1646007086644-e19efeb2b02c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" style="height: 600px" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block w-100">
-                                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                        Feb 17 2022
-                                    </button>
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/05/joseph-barrientos-49318-unsplash-e1558728034701.jpg?resize=1500%2C1000&ssl=1" style="height: 600px" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block w-100">
-                                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                        Feb 17 2022
-                                    </button>
-                                    <h5>Second slide label</h5>
-                                    <p>Some representative placeholder content for the second slide.</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/05/joseph-barrientos-49318-unsplash-e1558728034701.jpg?resize=1500%2C1000&ssl=1" style="height: 600px" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block w-100">
-                                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                        Feb 17 2022
-                                    </button>
-                                    <h5>Third slide label</h5>
-                                    <p>Some representative placeholder content for the third slide.</p>
-                                </div>
-                            </div>
+                            @foreach($news->take(3) as $new)
+                                @if($loop->first)
+                                    <div class="carousel-item active">
+                                        <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block w-100">
+                                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                                {{ $new->date }}
+                                            </button>
+                                            <h5>{{ $new->title }}</h5>
+                                            <p>{{ $new->description }}</p>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="carousel-item">
+                                        <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block w-100">
+                                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                                {{ $new->date }}
+                                            </button>
+                                            <h5>{{ $new->title }}</h5>
+                                            <p>{{ $new->description }}</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
 
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
                     <div class="row align-items-center">
-                        <div class="col-md-6 hvr-forward">
+                        @foreach($news->skip(3)->take(4) as $new)
+                            <div class="col-md-6 hvr-forward">
                             <div class="img_sec">
                                 <div class="overlay">
                                     <button type="button" class="btn btn-primary custom_button">
-                                        Feb 17 2022
+                                        {{ $new->date }}
                                     </button>
-                                    <p>Some representative placeholder content for the first slide.</p>
+                                    <p>{{ $new->description }}</p>
                                 </div>
-                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
-
+                                <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                             </div>
                         </div>
-                        <div class="col-md-6 hvr-forward">
-                            <div class="img_sec">
-                                <div class="overlay">
-                                    <button type="button" class="btn btn-primary custom_button">
-                                        Feb 17 2022
-                                    </button>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 hvr-forward">
-                            <div class="img_sec">
-                                <div class="overlay">
-                                    <button type="button" class="btn btn-primary custom_button">
-                                        Feb 17 2022
-                                    </button>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 hvr-forward">
-                            <div class="img_sec">
-                                <div class="overlay">
-                                    <button type="button" class="btn btn-primary custom_button">
-                                        Feb 17 2022
-                                    </button>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
-
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -364,10 +329,10 @@
                     </div>
                 </div>
                 <div class="col-md-2 text-end">
-                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                    <a href="{{ url('/gallery') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                         <img src="{{ asset('icons/check.png') }}" class="check" alt="">
                         {{ getSection('media')->button }}
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="row" style="height: 100vh">

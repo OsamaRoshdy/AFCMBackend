@@ -36,7 +36,7 @@ class MainPage extends Model
 
     public function news()
     {
-        return $this->blocks->where('type', Block::TYPE_NEWS);
+        return $this->blocks()->where('type', Block::TYPE_NEWS);
     }
 
     public function events()

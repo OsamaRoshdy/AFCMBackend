@@ -27,8 +27,7 @@ class Block extends Model
         'description_en', 'description_ar',
         'content_en', 'content_ar',
         'image_name', 'status', 'date',
-        'type', 'category_id',
-        'unique_name', 'sort'
+        'type', 'unique_name', 'sort'
     ];
 
     public function getImageAttribute()

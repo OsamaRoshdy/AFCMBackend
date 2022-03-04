@@ -168,6 +168,22 @@ class BlockSeeder extends Seeder
 
         $staffSections = [
             [
+                'title_ar' => 'الاخبار و الأحداث',
+                'title_en' => 'News & Events',
+                'description_ar' => '',
+                'description_en' => '',
+                'image_name' => 'item5.jpg',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'news_header',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
+
+
+            [
                 'title_ar' => 'الطاقم الاكاديمي',
                 'title_en' => 'Academic Staff',
                 'description_ar' => '',
@@ -180,6 +196,36 @@ class BlockSeeder extends Seeder
                 'date' => today(),
                 'type' => Block::TYPE_SECTIONS,
             ],
+
+            [
+                'title_ar' => 'المركز الاعلامي',
+                'title_en' => 'AFCM Media',
+                'description_ar' => '',
+                'description_en' => '',
+                'image_name' => 'item5.jpg',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'gallery_header',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
+            [
+                'title_ar' => 'الطاقم الاكاديمي',
+                'title_en' => 'Academic Staff',
+                'description_ar' => '',
+                'description_en' => '',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'staff_slider',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
+
             [
                 'title_ar' => 'الأقسام الأكاديمية',
                 'title_en' => 'Academic Departments',

@@ -44,6 +44,10 @@ return [
     ],
     'frontend' =>[
         [
+            'name' => 'staff',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
             'name' => 'slider_groups',
             'icon' => 'flaticon-graphic',
         ],

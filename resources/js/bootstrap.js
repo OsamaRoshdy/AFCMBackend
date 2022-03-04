@@ -26,3 +26,21 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+
+window.lightGallery = require('lightgallery');
+window.lgThumbnail = require('lightgallery/plugins/thumbnail');
+window.lgZoom = require('lightgallery/plugins/zoom');
+
+//
+// require('lightgallery');
+//
+// require('lightgallery/plugins/thumbnail');
+// require('lightgallery/plugins/zoom');
+//
+// import lightGallery from 'lightgallery';
+//
+// // Plugins
+// import lgThumbnail from 'lightgallery/plugins/thumbnail'
+// import lgZoom from 'lightgallery/plugins/zoom'
+

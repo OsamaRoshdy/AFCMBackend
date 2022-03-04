@@ -19,8 +19,12 @@ Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])
 Route::get('students', [\App\Http\Controllers\Frontend\HomeController::class, 'students']);
 
 Route::get('staff', [\App\Http\Controllers\Frontend\HomeController::class, 'staff']);
+Route::get('gallery', [\App\Http\Controllers\Frontend\HomeController::class, 'gallery']);
 
 Route::get('contact_us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
+
+
+Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index']);
 
 
 

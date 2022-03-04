@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Partner;
+use App\Models\Staff;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,5 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DepartmentSeeder::class);
         $this->call(MediaSeeder::class);
         $this->call(PartnerSeeder::class);
+        $this->call(NewsSeeder::class);
+        $this->call(EventsSeeder::class);
+        $this->call(StaffSeeder::class);
     }
 }

@@ -9,6 +9,7 @@ use App\Models\MainPage;
 use App\Models\Media;
 use App\Models\Partner;
 use App\Models\SliderGroup;
+use App\Models\Staff;
 use App\Models\Statistic;
 use Illuminate\Http\Request;
 
@@ -18,12 +19,14 @@ class HomeController extends Controller
     {
         $sliderGroup = SliderGroup::find(1)->load('sliders');
 
-        $events = Block::upCommingEvents()->active()->get();
+        $events = Block::upCommingEvents()->active()->take(2)->get();
         $statistics = Statistic::active()->orderBy('sort', 'asc')->get();
         $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->get();
         $partners = Partner::active()->home()->orderBy('sort', 'asc')->get();
+        $mainPage = MainPage::find(1);
+        $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS);
 
-        return view('frontend.index', compact('sliderGroup', 'events', 'statistics', 'videos', 'partners'));
+        return view('frontend.index', compact('sliderGroup', 'events', 'statistics', 'videos', 'partners', 'mainPage', 'news'));
     }
 
     public function students()
@@ -40,8 +43,10 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(3);
         if ($mainPage && $mainPage->status == true) {
+            $news = MainPage::find(3)->blocks->where('type', Block::TYPE_NEWS);
             $departments = Department::active()->orderBy('sort', 'asc')->get();
-            return view('frontend.staff.index', compact('departments'));
+            $staff = Staff::active()->orderBy('sort', 'asc')->get();
+            return view('frontend.staff.index', compact('departments', 'news', 'staff'));
         }
         abort(404);
     }
@@ -54,5 +59,13 @@ class HomeController extends Controller
             return view('frontend.global.index');
         }
         abort(404);
+    }
+
+    public function gallery()
+    {
+        $videos = Media::videos()->active()->get();
+        $images = Media::images()->active()->latest()->paginate(20);
+        return view('frontend.global.gallery', compact('videos', 'images'));
+
     }
 }
