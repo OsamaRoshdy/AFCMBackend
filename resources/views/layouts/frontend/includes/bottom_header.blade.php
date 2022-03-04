@@ -26,7 +26,7 @@
         <div class="collapse-navbar">
             <div class="container">
                 <ul class="navbar-nav">
-                    @foreach(bottom_header() as $link)
+                    @foreach(bottom_header($mainPage ?? 1) as $link)
                         @if($link->hasChildren())
                             <li class="nav-item dropdown">
                                 <a class="link link--main-clr link--nav nav-link dropdown-toggle" href="#"

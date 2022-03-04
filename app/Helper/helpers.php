@@ -68,8 +68,8 @@ if (!function_exists('getMainPage')) {
 }
 
 if (!function_exists('bottom_header')) {
-    function bottom_header() {
-       $links = \App\Models\Link::parents()->with('children')->get();
+    function bottom_header($mainPage) {
+        $links = \App\Models\Link::parents()->where('menu_link_id', $mainPage)->with('children')->get();
         return $links;
     }
 }
