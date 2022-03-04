@@ -31,4 +31,9 @@ class Department extends Model
         return app()->getLocale() === 'en' ? $this->name_en : $this->name_ar;
     }
 
+    public function scopeActive()
+    {
+        return $this->where('status', true);
+    }
+
 }

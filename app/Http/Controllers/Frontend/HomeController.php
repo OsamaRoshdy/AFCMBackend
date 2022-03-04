@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Block;
+use App\Models\Department;
 use App\Models\MainPage;
 use App\Models\SliderGroup;
 use App\Models\Statistic;
@@ -35,8 +36,8 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(3);
         if ($mainPage && $mainPage->status == true) {
-
-            return view('frontend.staff.index');
+            $departments = Department::active()->orderBy('sort', 'asc')->get();
+            return view('frontend.staff.index', compact('departments'));
         }
         abort(404);
     }

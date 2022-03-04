@@ -165,7 +165,52 @@ class BlockSeeder extends Seeder
             ],
 
         ];
+
+        $staffSections = [
+            [
+                'title_ar' => 'الطاقم الاكاديمي',
+                'title_en' => 'Academic Staff',
+                'description_ar' => '',
+                'description_en' => '',
+                'image_name' => 'item5.jpg',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'academic_staff_header',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+            [
+                'title_ar' => 'الأقسام الأكاديمية',
+                'title_en' => 'Academic Departments',
+                'description_ar' => 'تعرف على جميع أقسام الكلية',
+                'description_en' => 'learn About all the departments of AFCM',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => 'عرض الجميع',
+                'button_en' => 'show all',
+                'unique_name' => 'academic_departments',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+            [
+                'title_ar' => 'انضم الينا',
+                'title_en' => 'Join AFCM Team',
+                'description_ar' => 'تعرف على جميع أقسام الكلية',
+                'description_en' => 'Preview all academic career Opportunities',
+                'image_name' => 'item4.jpg',
+                'status' => 1,
+                'button_ar' => 'انضم ',
+                'button_en' => 'join now',
+                'unique_name' => 'staff_join',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+        ];
         foreach ($sections as $section) {
+            Block::create($section);
+        }
+        foreach ($staffSections as $section) {
             Block::create($section);
         }
 
