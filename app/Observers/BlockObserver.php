@@ -14,7 +14,7 @@ class BlockObserver
     {
         $block->slug_en = str_slug($block->title_en);
         $block->slug_ar = slug_ar($block->title_ar);
-//        $block->image_name = $this->storeImage(request()->image_name, 'blocks');
+        $block->image_name = $this->storeImage(request()->image_name, 'blocks');
     }
 
 

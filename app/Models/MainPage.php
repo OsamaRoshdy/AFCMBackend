@@ -28,4 +28,24 @@ class MainPage extends Model
             ]
         ];
     }
+
+    public function blocks()
+    {
+        return $this->belongsToMany(Block::class, 'main_page_blocks');
+    }
+
+    public function news()
+    {
+        return $this->blocks->where('type', Block::TYPE_NEWS);
+    }
+
+    public function events()
+    {
+        return $this->blocks->where('type', Block::TYPE_EVENTS);
+    }
+
+    public function pages()
+    {
+        return $this->blocks->where('type', Block::TYPE_PAGES);
+    }
 }

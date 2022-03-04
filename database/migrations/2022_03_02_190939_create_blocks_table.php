@@ -48,14 +48,6 @@ return new class extends Migration
 
             $table->string('unique_name')->nullable()->unique();
 
-            $table->unsignedBigInteger('category_id')->nullable()->index();
-
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-                ->onUpdate('CASCADE')
-                ->onDelete('CASCADE');
-
             $table->softDeletes();
             $table->timestamps();
         });

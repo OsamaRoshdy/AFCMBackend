@@ -49,6 +49,27 @@
 </div>
 
 <div class="form-group row">
+    {{ Form::label('categories', __('common.categories'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::select('categories[]',$categories,old('categories[]'), [ 'multiple' => true,'class' => 'form-control search', 'id' => 'categories']) }}
+        @if ($errors->has("categories"))
+            <span class="form-text text-danger">{{$errors->first('categories')}}</span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
+    {{ Form::label('mainPages', __('common.mainPages'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::select('mainPages[]',$mainPages,old('mainPages[]'), ['multiple' => true,'class' => 'form-control search', 'id' => 'mainPages']) }}
+        @if ($errors->has("mainPages[]"))
+            <span class="form-text text-danger">{{$errors->first('mainPages[]')}}</span>
+        @endif
+    </div>
+</div>
+
+
+<div class="form-group row">
     {{ Form::label('content_ar', __('common.content_ar'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control ckeditor form-control', 'id'=> 'content_ar']) }}

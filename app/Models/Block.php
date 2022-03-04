@@ -67,9 +67,19 @@ class Block extends Model
         return $this->hasMany(BlockImage::class);
     }
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class, 'category_blocks')->withPivot('type', 'date', 'sort');
+    }
+
+    public function blockCategories()
+    {
+        return $this->hasMany(CategoryBlock::class);
+    }
+
+    public function mainPages()
+    {
+        return $this->belongsToMany(MainPage::class, 'main_page_blocks')->withPivot('type', 'date', 'sort');
     }
 
     public function scopeActive($query)
