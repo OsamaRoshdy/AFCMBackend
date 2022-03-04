@@ -60,6 +60,16 @@ return [
             'icon' => 'flaticon-graphic',
         ],
     ],
+    'media' =>[
+        [
+            'name' => 'videos',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
+            'name' => 'images',
+            'icon' => 'flaticon-graphic',
+        ],
+    ],
 
 
 

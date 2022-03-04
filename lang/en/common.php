@@ -57,4 +57,6 @@ return array(
     'show_in_home' => 'Show in home',
     'show_in_footer' => 'Show in footer',
     'type' => 'Type',
+    'video_url' => 'Video URL',
+    'url' => 'URL',
 );

@@ -25,4 +25,6 @@ return array(
     'statistics' => 'Statistics',
     'departments' => 'Departments',
     'partners' => 'Partners',
+    'videos' => 'Videos',
+    'images' => 'Images',
 );

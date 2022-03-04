@@ -206,6 +206,19 @@ class BlockSeeder extends Seeder
                 'date' => today(),
                 'type' => Block::TYPE_SECTIONS,
             ],
+            [
+                'title_ar' => 'المركز الاعلامي ',
+                'title_en' => 'AFCM Media Gallery',
+                'description_ar' => 'تعرف على جميع أقسام الكلية',
+                'description_en' => 'get informed with our latest News and Activities Videos and Photos',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => 'عرض المزيد ',
+                'button_en' => 'show more',
+                'unique_name' => 'media',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
         ];
         foreach ($sections as $section) {
             Block::create($section);
