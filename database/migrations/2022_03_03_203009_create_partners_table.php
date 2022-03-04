@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('name_en');
             $table->mediumText('description_ar')->nullable();
             $table->mediumText('description_en')->nullable();
-            $table->boolean('status');
+            $table->boolean('status')->default(1);
             $table->integer('type');
             $table->integer('sort')->default(1);
             $table->string('image_name')->nullable();

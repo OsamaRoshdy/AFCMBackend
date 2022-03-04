@@ -219,6 +219,19 @@ class BlockSeeder extends Seeder
                 'date' => today(),
                 'type' => Block::TYPE_SECTIONS,
             ],
+            [
+                'title_ar' => 'شركاء النجاح',
+                'title_en' => 'Success Partners',
+                'description_ar' => 'إنه لشرف دائم أن تكون لدي شراكات مع أفضل الجامعات حول العالم',
+                'description_en' => 'it is always an honor to have partnerships with the best universities around the world',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => 'عرض الجميع',
+                'button_en' => 'show all',
+                'unique_name' => 'home_partners',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
         ];
         foreach ($sections as $section) {
             Block::create($section);

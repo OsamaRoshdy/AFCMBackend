@@ -89,7 +89,6 @@
         </div>
     </div>
 
-
     <!-- Upcoming Events -->
     <div class="upcoming_events">
         <div class="container">
@@ -134,6 +133,125 @@
         </div>
     </div>
 
+    <!-- Latest Events-->
+    <section class="section section--padding section--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="section__title">
+                        <h2 class="section-title">{{ getSection('home_events_and_news')->title }}</h2>
+                        <span>{{ getSection('home_events_and_news')->description }}</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-end">
+                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                        <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
+                        {{ getSection('home_events_and_news')->button }}
+                    </button>
+                </div>
+            </div>
+            <div class="section__header">
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-lg-6 hvr-backward">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://images.unsplash.com/photo-1646007086644-e19efeb2b02c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" style="height: 600px" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block w-100">
+                                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                        Feb 17 2022
+                                    </button>
+                                    <h5>First slide label</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/05/joseph-barrientos-49318-unsplash-e1558728034701.jpg?resize=1500%2C1000&ssl=1" style="height: 600px" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block w-100">
+                                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                        Feb 17 2022
+                                    </button>
+                                    <h5>Second slide label</h5>
+                                    <p>Some representative placeholder content for the second slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/05/joseph-barrientos-49318-unsplash-e1558728034701.jpg?resize=1500%2C1000&ssl=1" style="height: 600px" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block w-100">
+                                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                        Feb 17 2022
+                                    </button>
+                                    <h5>Third slide label</h5>
+                                    <p>Some representative placeholder content for the third slide.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 hvr-forward">
+                            <div class="img_sec">
+                                <div class="overlay">
+                                    <button type="button" class="btn btn-primary custom_button">
+                                        Feb 17 2022
+                                    </button>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 hvr-forward">
+                            <div class="img_sec">
+                                <div class="overlay">
+                                    <button type="button" class="btn btn-primary custom_button">
+                                        Feb 17 2022
+                                    </button>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 hvr-forward">
+                            <div class="img_sec">
+                                <div class="overlay">
+                                    <button type="button" class="btn btn-primary custom_button">
+                                        Feb 17 2022
+                                    </button>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 hvr-forward">
+                            <div class="img_sec">
+                                <div class="overlay">
+                                    <button type="button" class="btn btn-primary custom_button">
+                                        Feb 17 2022
+                                    </button>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                                <img src="AFMC-project/assets/media/image.png" class="img-fluid" alt="" srcset="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Statistics -->
     <div class="statistics">
@@ -159,9 +277,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <!-- Why -->
     <div class="container">
@@ -200,6 +315,43 @@
             </div>
         </div>
     </div>
+
+    {{-- Partnrs   --}}
+    <section class="partners section section--padding section--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="section__title">
+                        <h2 class="section-title">{{ getSection('home_partners')->title }}</h2>
+                        <span>{{ getSection('home_partners')->description }}</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-end">
+                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                        <img src="{{ asset('icons/check.png') }}" class="check" alt="">
+                        {{ getSection('home_partners')->button }}
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container osama">
+                    <section class="logo-carousel slider" data-arrows="true">
+                        @foreach($partners as $partner)
+                        <div class="slide">
+                            <img src="{{ $partner->image }}">
+                            <p class="text-center" style="font-size: 20px; color: #012a69; margin-top: 15px" >{{ $partner->name }}</p>
+                        </div>
+                        @endforeach                        @foreach($partners as $partner)
+                        <div class="slide">
+                            <img src="{{ $partner->image }}">
+                            <p class="text-center" style="font-size: 20px; color: #012a69; margin-top: 15px" >{{ $partner->name }}</p>
+                        </div>
+                        @endforeach
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
     {{--  Media  --}}
     <section class="section section--padding section--bg">
@@ -344,10 +496,108 @@
         })(jQuery);
 
     </script>
+    <script>
+        $(document).ready(function() {
+            $('.logo-carousel').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                arrows: true,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }]
+            });
+        });
+    </script>
 
 @endsection
 @section('styles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="{{ asset('youtube/assets/css/main.css') }}" />
+    <style>
+        .partners {
+            background: rgb(237 237 237 / 70%);
+            margin-top: 40px;
+        }
+        /* Slider */
+        .slick-slide {
+            margin: 0px 20px;
+        }
 
+        .logo-carousel {
+            overflow: inherit;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-track::before,
+        .slick-track::after {
+            display: table;
+            content: '';
+        }
+
+        .slick-track::after {
+            clear: both;
+        }
+
+        .slick-track {
+            padding: 1rem 0;
+        }
+
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true) center no-repeat;
+            color: #fff;
+            filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg) brightness(105%) contrast(103%);
+            border: none;
+            width: 2rem;
+            height: 1.5rem;
+            margin-top: -16px;
+            z-index: 99;
+        }
+
+        .slick-arrow.slick-next {
+            right: -40px;
+            transform: rotate(180deg);
+        }
+
+        .slick-arrow.slick-prev {
+            left: -40px;
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 768px) {
+            .slick-arrow {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+    </style>
 @endsection
