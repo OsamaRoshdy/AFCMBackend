@@ -37,6 +37,9 @@ class NewsController extends CommonController
 
     public function store(BlockRequest $request)
     {
+        $request->validate([
+           'image_name' => 'required'
+        ]);
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_NEWS;
         Block::create($data);

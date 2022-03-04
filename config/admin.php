@@ -22,6 +22,10 @@ return [
             'icon' => 'flaticon-graphic',
         ],
         [
+            'name' => 'categories',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
             'name' => 'news',
             'icon' => 'flaticon-graphic',
         ],

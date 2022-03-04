@@ -1,7 +1,7 @@
 <div class="form-group row">
     {{ Form::label('date', __('common.date'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
-    {{ Form::date('date',old('date'), ['class' => 'form-control', 'id' => 'date', 'placeholder' => __('common.date')]) }}
+    {{ Form::date('date',$update ?? old('date') ? old('date') : today(), ['class' => 'form-control', 'id' => 'date', 'placeholder' => __('common.date')]) }}
     @if ($errors->has("date"))
         <span class="form-text text-danger">{{$errors->first('date')}}</span>
     @endif

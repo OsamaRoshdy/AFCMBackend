@@ -34,6 +34,7 @@ Route::group(['middleware' => 'admin:admin'], function () {
 
     Route::resource('main_pages', \App\Http\Controllers\Backend\MainPageController::class);
     Route::resource('menu_links', \App\Http\Controllers\Backend\MenuLinksController::class);
+    Route::resource('categories', \App\Http\Controllers\Backend\CategoryController::class);
     Route::resource('news', \App\Http\Controllers\Backend\NewsController::class);
     Route::resource('events', \App\Http\Controllers\Backend\EventController::class);
     Route::resource('sections', \App\Http\Controllers\Backend\SectionController::class);
