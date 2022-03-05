@@ -622,7 +622,7 @@ progress {
   .container-md, .container-sm, .container {
     max-width: 720px;
   }
-  
+
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
@@ -5779,7 +5779,7 @@ textarea.form-control-lg {
   border: 0;
   opacity: 0.5;
   transition: opacity 0.15s ease;
- 
+
 }
 .carousel-control-next {
      margin-right:35%;
@@ -11430,7 +11430,7 @@ textarea.form-control-lg {
 }
 .double-chevron--before:before {
   margin-right: 8px;
-  content: "";
+  content: "\F280";
   font-family: "bootstrap-icons";
 }
 .double-chevron--after {
@@ -12045,6 +12045,12 @@ font-weight: 500;
     font-size: 14px;
     font-weight: bold;
 }
+@media (min-width: 991.98px) {
+  .header__top__join {
+      text-align: right;
+      display: block;
+  }
+}
 .header__top__join:hover {
   color: #FFF;
 }
@@ -12057,11 +12063,30 @@ font-weight: 500;
   border-bottom-right-radius: 30px;
   border-top-right-radius: 30px;
 }
+@media (max-width: 575.98px) {
+  .header_top .links {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header_top .links {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
+@media (max-width: 991.98px) {
+  .header_top .links {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
 .header_top .join_us {
   display: block;
   padding: 15px 70px;
   text-align: right;
-} 
+}
 .header_top .dropdown-item {
   transition: all 0.5s ease-in-out;
 }
@@ -12081,7 +12106,7 @@ font-weight: 500;
 @media only screen and (max-width: 768px) {
   .header_top .join_us {
     text-align: center;
-  } 
+  }
   .header__top {
     background: #131D3C;
   }
@@ -12096,7 +12121,7 @@ font-weight: 500;
   .header__top__sites li  ,.header__top__sites_new li{
     background-color: transparent;
   }
-    
+
   .header__top__sites .link--nav ,.header__top__sites_new  .link--nav  {
     font-size: 12px;
   }
@@ -12316,7 +12341,7 @@ font-weight: 500;
 }
 
 .section--padding {
-  padding: 60px 0;
+  padding: 24px 0;
 }
 .section__header {
   display: flex;
@@ -12333,6 +12358,8 @@ font-weight: 500;
   color: #A60A03;
   font-size: 16px;
   text-transform: capitalize;
+  margin-bottom: 20px;
+  display: block;
 }
 @media only screen and (max-width: 992px) {
   .section__header p {
@@ -13281,7 +13308,7 @@ font-weight: 500;
     margin-bottom: 20px;
 }
 .upcoming_events .card_info img:not(.check) {
-  min-height: 390px;
+  min-height: 290px;
 }
 .upcoming_events .card_info .custom_button {
   text-align: center;
@@ -13300,13 +13327,21 @@ font-weight: 500;
   box-shadow: 0px 0px 10px #e3e4e5;
   padding: 20px;
   color: #FFF;
+  max-height: 544px;
+  overflow-y: scroll;
   min-height: 544px;
 }
+@media (max-width: 991.98px) {
+  .upcoming_events .events {
+    margin-top: 20px;
+  }
+}
+
 .upcoming_events .events h2 {
   color: #012a69;
 }
 .upcoming_events .events p {
- color: #878383; 
+ color: #878383;
 }
 .upcoming_events .events .card-body h5{
   text-align: end;
@@ -13341,7 +13376,7 @@ font-weight: 500;
 }
 .latest_upgrade  .submit_fa {
   margin: 0 10px;
-} 
+}
 .latest_upgrade .get_latest h2 {
   color: #FFF;
   text-transform: capitalize;
@@ -13353,11 +13388,11 @@ font-weight: 500;
 }
 .learning_slider .thumbnail_slider img {
   width: 200px;
-  height: 100px; 
+  height: 100px;
   background-size: cover;
 }
 .learning_slider {
-  padding: 70px 0 0 0;
+  padding: 30px 0 30px 0;
 }
 .learning_slider .learning {
   position: relative;
@@ -13389,7 +13424,7 @@ font-weight: 500;
 
 .learning_slider .learning  .submit_fa {
   margin: 0 10px;
-} 
+}
 .learning_slider .learning  h2 {
   color: #FFF;
   text-transform: capitalize;
@@ -13465,7 +13500,7 @@ width: 100%;
 }
 
 .mySwiper {
-height: 20%;
+height: 142px;
 box-sizing: border-box;
 padding: 10px 0;
 }
@@ -13518,6 +13553,12 @@ object-fit: cover;
   font-weight: bold;
   letter-spacing: 1px;
   max-lines: 3;
+  text-align: left;
+  background-color: #FFF;
+  padding: 15px 20px;
+  border-left: 6px solid #012a69;
+  color: #012a69;
+  margin-left: 20px;
 }
 
 
@@ -13566,7 +13607,7 @@ object-fit: cover;
   color: #012a69;
 }
 .upcoming_events .news_events p {
- color: #878383; 
+ color: #878383;
  letter-spacing: 0.6px;
 }
 .upcoming_events .news_events .card-body h5{
@@ -13590,7 +13631,7 @@ object-fit: cover;
   color: #012a69;
 }
 .upcoming_events .latest_events_news p {
- color: #878383; 
+ color: #878383;
 }
 .upcoming_events .latest_events_news span {
   color: #000;
@@ -13604,7 +13645,7 @@ object-fit: cover;
 }
 
 .upcoming_events .latest_events_news p.title_p {
-  
+
   font-size: 14px;
   font-weight: 400;
   color: #333;
@@ -13746,7 +13787,7 @@ object-fit: cover;
   color: #012a69;
 }
 .supreme p {
- color: #878383; 
+ color: #878383;
 }
 .supreme li {
   margin: 30px 0;
@@ -13757,6 +13798,7 @@ object-fit: cover;
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -13854,7 +13896,7 @@ color: #cfd5de;
 
 .e-learning  .submit_fa {
   margin: 0 10px;
-} 
+}
 .e-learning  h2 {
   color: #FFF;
   text-transform: capitalize;
@@ -13942,7 +13984,7 @@ color: #cfd5de;
 
 .latest_events_news  .submit_fa {
   margin: 0 10px;
-} 
+}
 .latest_events_news h2 {
   color: #FFF;
   text-transform: capitalize;
@@ -13993,5 +14035,56 @@ color: #cfd5de;
   color: #FFF;
 }
 .news_cart .card .card-body p {
-  color: #d9d9d9;
+    color: #d9d9d9;
+}
+.gallery-item {
+  /* display: inline; */
+  width: 100% !important;
+  height: 100% !important;
+  margin-bottom: 20px !important;
+}
+
+ .media_gallery_img {
+  padding: 4px !important;
+  border: 1px solid #DDD !important;
+  margin-bottom: 20px;
+  height: 100% !important;
+  border-radius: 5px;
+}
+.slider_body_bg {
+  text-align: left;
+  background-color: #FFF;
+  width: 500px;
+  padding: 15px 20px;
+  border-left: 6px solid #012a69;
+}
+.slider_body_bg h5 {
+  color: #012a69;
+}
+.slider_body_bg p {
+  color: #8f8d8d !important;
+}
+
+
+
+.events .date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #012a69;
+  height: 100%;
+  width: 100%;
+}
+.events .date p {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+}
+.events .card {
+  width: 100%;
+}
+.glance p{
+  line-height: 25px;
+    letter-spacing: 0.6px;
+    color: #666666;
 }

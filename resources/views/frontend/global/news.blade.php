@@ -5,7 +5,7 @@
 
     <!-- Title Page -->
     <div class="page_title">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-12">
                 <div class="overlay">
                     <h1>{{ getSection('news_header')->title }}</h1>
