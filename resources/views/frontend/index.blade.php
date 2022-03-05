@@ -212,7 +212,10 @@
                                     <button type="button" class="btn btn-primary custom_button">
                                         {{ $new->date }}
                                     </button>
+                                    <div class="slider_body_bg_small">
                                     <p>{{ $new->description }}</p>
+                                    </div>
+                                
                                 </div>
                                 <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                             </div>
@@ -342,7 +345,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row" style="height: 100vh">
+            <div class="row">
                 <div class="col-lg-12 my-auto">
                     <!-- player wrapper -->
                     <div class="col-lg-10 mx-auto py-4">
