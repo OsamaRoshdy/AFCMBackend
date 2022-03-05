@@ -113,12 +113,14 @@
                         @foreach($events as $event)
                             <div class="card mb-3 hvr-forward">
                             <div class="row g-0">
-                                <div class="col-md-5">
-                                    <img src="{{ $event->image }}" class="img-fluid rounded-start" alt="">
+                                <div class="col-md-4">
+                                    <!-- <img src="{{ $event->image }}" class="img-fluid rounded-start" alt=""> -->
+                                   <div class="date">
+                                   <p class="text-center">22 </br> 03/2022</p>
+                                   </div>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Monday - 20 / 2 / 2022</h5>
                                         <h6 class="card-text" style="color: black">{{ $event->title }}</h6>
                                         <p class="card-text">{{ $event->description }}</p>
                                         <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -126,6 +128,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                         @endforeach
                     </div>
@@ -175,8 +178,10 @@
                                             <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                 {{ $new->date }}
                                             </button>
+                                            <div class="slider_body_bg">
                                             <h5>{{ $new->title }}</h5>
                                             <p>{{ $new->description }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
@@ -186,8 +191,10 @@
                                             <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                 {{ $new->date }}
                                             </button>
+                                            <div class="slider_body_bg">
                                             <h5>{{ $new->title }}</h5>
                                             <p>{{ $new->description }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif
@@ -494,6 +501,7 @@
         .partners {
             background: rgb(237 237 237 / 70%);
             margin-top: 40px;
+            margin-bottom: 40px;
         }
         /* Slider */
         .slick-slide {

@@ -5,7 +5,7 @@
 
     <!-- Title Page -->
     <div class="page_title">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-12">
                 <div class="overlay">
                     <h1>{{ getSection('gallery_header')->title }}</h1>
@@ -64,7 +64,17 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row gallery-container" id="animated-thumbnails-gallery">
+            @foreach($images as $image)
+           <div class="col-lg-3" style="    margin-bottom: 20px;" data-src="{{ $image->image }}" data-sub-html="{{ $image->title }}">
+           <a data-lg-size="45-45" class="gallery-item" data-src="{{ $image->image }}" data-sub-html="{{ $image->title }}">
+           <img alt="{{ $image->title }}" class="img-fluid media_gallery_img" src="{{ $image->image }}" />
+                        </a>
+           </div>
+            @endforeach
+            </div>
+
+            <!-- <div class="row">
                 <div class="gallery-container" id="animated-thumbnails-gallery">
                     @foreach($images as $image)
                         <a data-lg-size="45-45" class="gallery-item" data-src="{{ $image->image }}" data-sub-html="{{ $image->title }}">
@@ -72,7 +82,7 @@
                         </a>
                     @endforeach
                 </div>
-            </div>
+            </div> -->
             <div class="col-12 text-center">
                 <div class="pagination">
                     {{ $images->links('vendor.pagination.custom') }}

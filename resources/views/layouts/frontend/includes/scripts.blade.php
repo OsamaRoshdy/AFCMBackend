@@ -174,11 +174,19 @@
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 10,
         slidesPerView: 4,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
         freeMode: true,
         watchSlidesProgress: true,
     });
     var swiper2 = new Swiper(".mySwiper2", {
         spaceBetween: 10,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
