@@ -13187,7 +13187,7 @@ font-weight: 500;
   padding: 40px 40px;
   box-shadow: 0px 0px 10px #eee;
   border-radius: 7px;
-  min-height: 700px;
+  min-height: 500px;
 }
 .glance .learn_more {
   display: block;
@@ -13221,7 +13221,7 @@ font-weight: 500;
   background-color: #012a69;
   box-shadow: 0px 0px 10px #eee;
   border-radius: 7px;
-  min-height: 700px;
+  min-height: 500px;
 }
 .why_join .learn_more {
   display: block;
