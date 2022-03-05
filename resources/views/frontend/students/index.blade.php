@@ -4,7 +4,7 @@
 @section('content')
     <!-- Title Page -->
     <div class="page_title">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-12">
                 <div class="overlay">
                     <h1>{{ getSection('student_header')->title }}</h1>
@@ -125,8 +125,11 @@
                                             <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                 {{ $new->date }}
                                             </button>
+                                            <div class="slider_body_bg">
                                             <h5>{{ $new->title }}</h5>
                                             <p>{{ $new->description }}</p>
+                                            </div>
+                                    
                                         </div>
                                     </div>
                                 @else
@@ -136,8 +139,11 @@
                                             <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                 {{ $new->date }}
                                             </button>
+                                            <div class="slider_body_bg">
                                             <h5>{{ $new->title }}</h5>
                                             <p>{{ $new->description }}</p>
+                                            </div>
+                                        
                                         </div>
                                     </div>
                                 @endif

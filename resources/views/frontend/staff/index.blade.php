@@ -165,7 +165,10 @@
                                         <button type="button" class="btn btn-primary custom_button">
                                             {{ $new->date }}
                                         </button>
+                                        <div class="slider_body_bg_small">
                                         <p>{{ $new->description }}</p>
+                                        </div>
+                                
                                     </div>
                                     <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                                 </div>

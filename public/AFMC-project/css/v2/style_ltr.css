@@ -13798,12 +13798,8 @@ object-fit: cover;
 
 
 
-<<<<<<< HEAD
-
-
-
 .student_services {
-  padding: 70px 0;
+  padding: 50px 0;
 }
 .student_services h2{
   color: #012a69;
@@ -13821,6 +13817,7 @@ object-fit: cover;
 }
 .student_services .service_block  {
   margin-bottom: 10px;
+  display: block;
 }
 .student_services .service_block .card-body{
   padding: 30px 20px;
@@ -14058,6 +14055,15 @@ color: #cfd5de;
   padding: 15px 20px;
   border-left: 6px solid #012a69;
 }
+.slider_body_bg_small {
+  text-align: left;
+  background-color: #FFF;
+  padding: 15px 20px;
+  border-left: 6px solid #012a69;
+}
+.slider_body_bg_small p{
+  color: #8f8d8d !important;
+}
 .slider_body_bg h5 {
   color: #012a69;
 }
@@ -14087,4 +14093,8 @@ color: #cfd5de;
   line-height: 25px;
     letter-spacing: 0.6px;
     color: #666666;
+}
+.footer__contact li {
+  margin: 0;
+  padding: 0;
 }
