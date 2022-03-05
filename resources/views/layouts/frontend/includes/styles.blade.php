@@ -11,11 +11,8 @@
       integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="{{ asset('/') }}AFMC-project/node_modules/slider/swiper-bundle.min.css">
-<link rel="stylesheet" href="{{ asset('/') }}AFMC-project/node_modules/slider/custom.css">
-<link rel="stylesheet" href="{{ asset('/') }}AFMC-project/node_modules/channel-slider/css/ycp.css">
 <link rel="stylesheet" href="{{ asset('/') }}AFMC-project/js/Video-gallery/darkscroll/css/darkscroll.css">
 <link rel="stylesheet" href="{{ asset('/') }}AFMC-project/css/responsive.css">
 <link rel="icon" href="{{ asset('/') }}AFMC-project/assets/images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="{{ asset('/') }}AFMC-project/css/ajax-loader.gif">
 <link rel="stylesheet" href="{{ asset('/') }}AFMC-project/css/slick.css">
-<link rel="stylesheet" href="{{ asset('/') }}AFMC-project/css/slick-theme.css">

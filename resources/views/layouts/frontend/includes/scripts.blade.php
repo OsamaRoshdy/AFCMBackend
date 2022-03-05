@@ -6,7 +6,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
-<script src="{{ asset('/') }}AFMC-project/node_modules/jquery/dist/jquery.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="{{ asset('/') }}AFMC-project/css/slick.min.js"></script>
@@ -21,7 +20,6 @@
 <!-- Latest compiled JavaScript -->
 <script src="{{ asset('/') }}AFMC-project/js/Video-gallery/jquery.spidochetube.js"></script>
 
-<script src="{{ asset('/') }}AFMC-project/node_modules/channel-slider/js/ycp.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- <script src="AFMC-project/node_modules/slider/thumbnail-slider.js"></script>
