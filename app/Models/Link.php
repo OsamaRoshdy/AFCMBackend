@@ -47,4 +47,9 @@ class Link extends Model
         return $this->where('link_id', null);
     }
 
+    public function scopeActive()
+    {
+        return $this->where('status', 1);
+    }
+
 }

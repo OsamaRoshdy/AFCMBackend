@@ -820,5 +820,81 @@ class LinkSeeder extends Seeder
 
         Link::insert($data);
 
+        $data = [
+            [
+                'menu_link_id' => 4,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'من نحن',
+                'name_en' => 'About Us',
+                'route' => '#',
+                'sort' => 1,
+                'type' => 1,
+                'created_at' => now()
+            ],
+            [
+                'menu_link_id' => 4,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'القبول',
+                'name_en' => 'ADMISSION',
+                'route' => '#',
+                'sort' => 2,
+                'type' => 1,
+                'created_at' => now()
+
+            ],
+            [
+                'menu_link_id' => 4,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'البرامج الأكاديمية',
+                'name_en' => 'Academic Programs',
+                'route' => '#',
+                'sort' => 3,
+                'type' => 1,
+                'created_at' => now()
+
+            ],
+            [
+                'menu_link_id' => 4,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'الأبحاث',
+                'name_en' => 'Researches',
+                'route' => '#',
+                'sort' => 4,
+                'type' => 1,
+                'created_at' => now()
+
+            ],
+            [
+                'menu_link_id' => 4,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'الشراكات',
+                'name_en' => 'PartnerShip',
+                'route' => '#',
+                'sort' => 5,
+                'type' => 1,
+                'created_at' => now()
+
+            ],
+            [
+                'menu_link_id' => 4,
+                'block_id' => null,
+                'link_id' => null,
+                'name_ar' => 'أخبار من الدرجة الأولى',
+                'name_en' => 'Top Notch',
+                'route' => '#',
+                'sort' => 6,
+                'type' => 1,
+                'created_at' => now()
+
+            ],
+
+        ];
+        Link::insert($data);
+
     }
 }

@@ -1,7 +1,7 @@
 @php
     $show = [];
     $disableEdit = [];
-    $disableDelete = ['main_pages', 'menu_links', 'links', 'slider_groups'];
+    $disableDelete = ['main_pages', 'menu_links', 'links', 'slider_groups', 'categories'];
 @endphp
 <td nowrap="nowrap">
     <div class="dropdown dropdown-inline">

@@ -24,6 +24,7 @@ class StaffSeeder extends Seeder
                 'full_name_en' => 'Full Name',
                 'image_name' => $i . '.jpg',
                 'sort' => $i ,
+                'created_at' => now() ,
             ];
         }
 

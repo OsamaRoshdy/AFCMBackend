@@ -17,6 +17,7 @@ class VideoController extends CommonController
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],
+            'url' => ['title' => __('common.url'), 'searchable' => true, 'orderable' => true],
             'status' => ['title' => __('common.status'), 'searchable' => true, 'orderable' => true],
         ];
         $html = $this->tableHtmlBuilder($this->htmlBuilder,$columns,true, true);

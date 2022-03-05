@@ -21,12 +21,14 @@ class MediaSeeder extends Seeder
                 'show_in_home' => 1,
                 'status' => 1,
                 'type' => Media::TYPE_VIDEO,
+                'created_at' => now()
             ],
             [
                 'url' => 'cM-Un5d10MQ',
                 'show_in_home' => 1,
                 'status' => 1,
                 'type' => Media::TYPE_VIDEO,
+                'created_at' => now()
 
             ],
             [
@@ -34,25 +36,33 @@ class MediaSeeder extends Seeder
                 'show_in_home' => 1,
                 'status' => 1,
                 'type' => Media::TYPE_VIDEO,
-                ],
+                'created_at' => now()
+
+            ],
             [
                 'url' => 'nLx7lLeA0EE',
                 'show_in_home' => 1,
                 'status' => 1,
                 'type' => Media::TYPE_VIDEO,
-                ],
+                'created_at' => now()
+
+            ],
             [
                 'url' => 'uJmM2xCHKAs',
                 'show_in_home' => 1,
                 'status' => 1,
                 'type' => Media::TYPE_VIDEO,
-                ],
+                'created_at' => now()
+
+            ],
             [
                 'url' => 'LTh3unQax_0',
                 'show_in_home' => 1,
                 'status' => 1,
                 'type' => Media::TYPE_VIDEO,
-                ],
+                'created_at' => now()
+
+            ],
 
         ];
 

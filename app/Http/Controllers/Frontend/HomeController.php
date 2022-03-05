@@ -59,7 +59,7 @@ class HomeController extends Controller
         $mainPage = MainPage::find(4);
         if ($mainPage && $mainPage->status == true) {
 
-            return view('frontend.global.index');
+            return view('frontend.global.contact-us');
         }
         abort(404);
     }

@@ -24,6 +24,7 @@ class PartnerSeeder extends Seeder
                 'image_name' => 3 . '.png',
                 'name_ar' =>  'الاسم بالعربي',
                 'name_en' =>  'English Name',
+                'created_at' => now(),
             ],
             [
                 'show_in_home' => 1,
@@ -33,7 +34,7 @@ class PartnerSeeder extends Seeder
                 'image_name' => 1 . '.png',
                 'name_ar' =>  'الاسم بالعربي',
                 'name_en' =>  'English Name',
-            ],
+                'created_at' => now(),            ],
             [
                 'show_in_home' => 1,
                 'show_in_footer' => 1,
@@ -42,7 +43,7 @@ class PartnerSeeder extends Seeder
                 'image_name' => 2 . '.png',
                 'name_ar' =>  'الاسم بالعربي',
                 'name_en' =>  'English Name',
-            ],
+                'created_at' => now(),            ],
             [
                 'show_in_home' => 1,
                 'show_in_footer' => 1,
@@ -51,7 +52,7 @@ class PartnerSeeder extends Seeder
                 'image_name' => 2 . '.png',
                 'name_ar' =>  'الاسم بالعربي',
                 'name_en' =>  'English Name',
-            ],
+                'created_at' => now(),            ],
             [
                 'show_in_home' => 1,
                 'show_in_footer' => 1,
@@ -60,7 +61,7 @@ class PartnerSeeder extends Seeder
                 'image_name' => 1 . '.png',
                 'name_ar' =>  'الاسم بالعربي',
                 'name_en' =>  'English Name',
-            ],
+                'created_at' => now(),            ],
             [
                 'show_in_home' => 1,
                 'show_in_footer' => 1,
@@ -69,7 +70,7 @@ class PartnerSeeder extends Seeder
                 'image_name' => 3 . '.png',
                 'name_ar' =>  'الاسم بالعربي',
                 'name_en' =>  'English Name',
-            ],
+                'created_at' => now(),            ],
         ];
 
 

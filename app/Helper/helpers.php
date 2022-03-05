@@ -89,4 +89,11 @@ if (!function_exists('getPartnerFooter')) {
     }
 }
 
+if (!function_exists('getLinksFooter')) {
+    function getLinksFooter() {
+       $links = \App\Models\Link::where('menu_link_id', 4)->orderBy('sort', 'asc')->get();
+        return $links;
+    }
+}
+
 

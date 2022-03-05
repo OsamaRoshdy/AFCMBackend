@@ -19,6 +19,7 @@ class ImageController extends CommonController
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],
+            'title_' . app()->getLocale() => ['title' => __('common.title'), 'searchable' => true, 'orderable' => true],
             'status' => ['title' => __('common.status'), 'searchable' => true, 'orderable' => true],
         ];
         $html = $this->tableHtmlBuilder($this->htmlBuilder,$columns,true, true);

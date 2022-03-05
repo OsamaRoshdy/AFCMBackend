@@ -13,7 +13,11 @@ class RolesAndPermissionsSeeder extends Seeder
     {
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        $models = ['admins', 'roles', 'permissions'];
+        $models = [
+            'admins', 'roles', 'main_pages','menu_links','categories','news','events','pages','sections','faqs','staff','slider_groups',
+            'sliders','statistics','departments','partners','videos','images'
+
+            ];
         $actions = ['list','create', 'update', 'delete'];
 
         $permissions = [];

@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->string('name_ar');
             $table->string('name_en');
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
 
             $table->timestamps();
         });

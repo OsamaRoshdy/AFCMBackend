@@ -32,6 +32,11 @@ class MenuLinksSeeder extends Seeder
                 'name_en' => 'Staff',
                 'main_page_id' => 3,
             ],
+            [
+                'name_ar' => 'footer',
+                'name_en' => 'Footer',
+                'main_page_id' => 1,
+            ],
 
         ];
         foreach ($data as $item) {

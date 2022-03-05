@@ -28,76 +28,12 @@
                         <h4 class="footer__title d-block text-center">Site Map</h4>
                         <ul class="footer__links" style="column-count: 2">
 
+                            @foreach(getLinksFooter() as $link)
                             <li>
                                 <a class="link link__footer"
                                    href="http://localhost/AFCM/en/Why_AFCM_">Contact The Colledge</a>
                             </li>
-
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/Vision_Mission">Our Mission &amp; Vesion</a>
-                            </li>
-
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/Admission_Requirements">Historical Faces</a>
-                            </li>
-
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/College_History">Scientific Sections</a>
-                            </li>
-
-
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Academic Staff</a>
-                            </li>
-
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Supreme Council</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Educational Board</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Academic Department</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Education</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Programe</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Structure &amp; Requirement</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Assessment Syatem</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Postgraduate Studies</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Miscellaneous</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">News &amp; Events</a>
-                            </li>
-                            <li>
-                                <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/facts_figures">Cooperation Agreements</a>
-                            </li>
+                            @endforeach
 
                         </ul>
                     </div>

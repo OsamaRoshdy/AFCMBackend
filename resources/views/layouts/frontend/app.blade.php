@@ -6,6 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @include('layouts.frontend.includes.styles')
         @yield('styles')
+        <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+        <style>
+            body, h1, h2, h3, h4, h5, h6, span, li,button,ul,p,a {
+                font-family: 'Cairo', sans-serif !important;
+            }
+        </style>
+
         <title>{{ $title ?? 'AFCM' }}</title>
     </head>
 
