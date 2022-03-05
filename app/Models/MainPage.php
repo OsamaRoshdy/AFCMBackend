@@ -48,4 +48,9 @@ class MainPage extends Model
     {
         return $this->blocks->where('type', Block::TYPE_PAGES);
     }
+
+    public function faqs()
+    {
+        return $this->belongsToMany(FAQ::class, 'f_a_q_main_pages', 'main_page_id','faq_id');
+    }
 }

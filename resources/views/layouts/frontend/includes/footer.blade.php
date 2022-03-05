@@ -106,46 +106,18 @@
                     <div class="footer__block">
                         <h4 class="footer__title d-block text-center">Success Partneer</h4>
                         <ul class="footer__contact" style="column-count: 2">
+                            @foreach(getPartnerFooter() as $partner)
                             <li>
                                 <div class="container">
                                     <div class="img">
                                         <img
-                                            src="https://upload.wikimedia.org/wikipedia/en/0/04/ZamalekSC.png"
+                                            src="{{ $partner->image }}"
                                             class="img-fluid"
                                             alt="">
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="container">
-                                    <div class="img">
-                                        <img
-                                            src="https://e7.pngegg.com/pngimages/35/707/png-clipart-al-ahly-1907-logo-al-ahly-sc-caf-champions-league-zamalek-sc-egyptian-premier-league-egypt-national-football-team-egypt-logo-emblem-label.png"
-                                            class="img-fluid"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="container">
-                                    <div class="img">
-                                        <img
-                                            src="https://upload.wikimedia.org/wikipedia/ar/archive/3/3f/20210301183603%21Pyramids_F.C_%282018%29.png"
-                                            class="img-fluid"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="container">
-                                    <div class="img">
-                                        <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/3/38/Ghazl_el_mahalla_sc_%D8%BA%D8%B2%D9%84_%D8%A7%D9%84%D9%85%D8%AD%D9%84%D8%A9.png"
-                                            class="img-fluid"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -143,6 +143,65 @@ class NewsSeeder extends Seeder
                 'created_at' => now(),
                 'type' => Block::TYPE_NEWS,
             ],
+
+
+
+
+            [
+                'title_ar' => 'متطلبات القبول',
+                'title_en' => 'Admission Requirements',
+                'description_ar' => 'يجب على الطلاب الراغبين في الانضمام إلى الاتحاد الآسيوي لكرة القدم تلبية المتطلبات التالية. يجب أن يكونوا حاصلين على الجنسية المصرية ، وبالتالي يجب على والديهم وأجدادهم',
+                'description_en' => 'Students who want to join the AFCM must meet the following requirements Must have Egyption Nationality and so their parents and grandparents',
+                'content_ar' => '',
+                'content_en' => '',
+                'image_name' => 'news.jpg',
+                'status' => true,
+                'date' => today(),
+                'created_at' => now(),
+                'type' => Block::TYPE_NEWS,
+            ],
+            [
+                'title_ar' => 'فوائد AFCM',
+                'title_en' => 'AFCM Benifits',
+                'description_ar' => 'كونك طالبًا في AFCM ينتج عنه العديد من المزايا التي يدرسها الطلاب لمدة ست سنوات للحصول على درجة البكالوريوس',
+                'description_en' => 'Being a studenr at the AFCM results in many advantages Cadets study for six years to get their bachelor degree',
+                'content_ar' => '',
+                'content_en' => '',
+                'image_name' => 'news.jpg',
+                'status' => true,
+                'date' => today(),
+                'created_at' => now(),
+                'type' => Block::TYPE_NEWS,
+            ],
+            [
+                'title_ar' => 'التعليم AFCM',
+                'title_en' => 'AFCM Education',
+                'description_ar' => 'تلتزم الكلية بقواعد التقييم المُعلنة والمعتمدة',
+                'description_en' => 'the college is committed to the declared and accredited code of assessment',
+                'content_ar' => '',
+                'content_en' => '',
+                'image_name' => 'news.jpg',
+                'status' => true,
+                'date' => today(),
+                'created_at' => now(),
+                'type' => Block::TYPE_NEWS,
+            ],
+            [
+                'title_ar' => 'الدراسات العليا',
+                'title_en' => 'Postgraduate Studies',
+                'description_ar' => 'وتجري الكلية دراسات عليا لضباط القوات المسلحة وأطباء آخرين يقبلهم المجلس الأعلى للكلية',
+                'description_en' => ' The College holds postgraduate studies for medical officers in the Armed forces and other doctors accepted by College Superme Council',
+                'content_ar' => '',
+                'content_en' => '',
+                'image_name' => 'news.jpg',
+                'status' => true,
+                'date' => today(),
+                'created_at' => now(),
+                'type' => Block::TYPE_NEWS,
+            ],
+
+
+
         ];
         Block::insert($data);
 
@@ -407,6 +466,46 @@ class NewsSeeder extends Seeder
                 'type' => Block::TYPE_NEWS,
                 'date' => today(),
             ],
+
+
+
+
+
+
+
+
+
+
+            [
+                'category_id' => 5,
+                'block_id' => 29,
+                'sort' => 1,
+                'type' => Block::TYPE_NEWS,
+                'date' => today(),
+            ],
+            [
+                'category_id' => 5,
+                'block_id' => 30,
+                'sort' => 1,
+                'type' => Block::TYPE_NEWS,
+                'date' => today(),
+            ],
+            [
+                'category_id' => 5,
+                'block_id' => 31,
+                'sort' => 1,
+                'type' => Block::TYPE_NEWS,
+                'date' => today(),
+            ],
+            [
+                'category_id' => 5,
+                'block_id' => 32,
+                'sort' => 1,
+                'type' => Block::TYPE_NEWS,
+                'date' => today(),
+            ],
+
+
         ];
 
 

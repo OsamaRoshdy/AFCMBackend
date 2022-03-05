@@ -85,6 +85,10 @@ class Block extends Model
     {
         $query->where('status', 1);
     }
+    public function scopeNews($query)
+    {
+        $query->where('type', self::TYPE_NEWS);
+    }
 
     public function scopeUpCommingEvents($query)
     {

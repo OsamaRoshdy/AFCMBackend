@@ -14,7 +14,7 @@
             @include('layouts.frontend.includes.header')
         </div>
 
-        <main>
+        <main style="background-color: #FAFAFA;">
             @yield('content')
         </main>
 

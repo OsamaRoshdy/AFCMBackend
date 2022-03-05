@@ -11,4 +11,9 @@ class Category extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['name_ar', 'name_en', 'status'];
+
+    public function news()
+    {
+        return $this->belongsToMany(Block::class, 'category_blocks');
+    }
 }

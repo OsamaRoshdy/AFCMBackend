@@ -164,6 +164,22 @@ class BlockSeeder extends Seeder
                 'type' => Block::TYPE_SECTIONS,
             ],
 
+
+            [
+                'title_ar' => 'خدمات الطلاب',
+                'title_en' => 'Student Services',
+                'description_ar' => 'تعرف على جميع الخدمات والمتطلبات من اليوم الأول في AFCM إلى الدراسات العليا',
+                'description_en' => 'learn About all services and requirements from the first day in AFCM to the post graduate',
+                'image_name' => '',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'student_services',
+                'date' => today(),
+                'sort' => 7,
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
         ];
 
         $staffSections = [
@@ -193,6 +209,20 @@ class BlockSeeder extends Seeder
                 'button_ar' => '',
                 'button_en' => '',
                 'unique_name' => 'academic_staff_header',
+                'date' => today(),
+                'type' => Block::TYPE_SECTIONS,
+            ],
+
+            [
+                'title_ar' => 'الطلاب',
+                'title_en' => 'Student',
+                'description_ar' => '',
+                'description_en' => '',
+                'image_name' => 'item5.jpg',
+                'status' => 1,
+                'button_ar' => '',
+                'button_en' => '',
+                'unique_name' => 'student_header',
                 'date' => today(),
                 'type' => Block::TYPE_SECTIONS,
             ],

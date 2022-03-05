@@ -82,3 +82,11 @@ if (!function_exists('getSection')) {
 }
 
 
+if (!function_exists('getPartnerFooter')) {
+    function getPartnerFooter() {
+       $partners = \App\Models\Partner::footer()->orderBy('sort', 'asc')->take(4)->get();
+       return $partners;
+    }
+}
+
+

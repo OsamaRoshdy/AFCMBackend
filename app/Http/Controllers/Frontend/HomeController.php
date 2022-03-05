@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Block;
+use App\Models\Category;
 use App\Models\Department;
 use App\Models\MainPage;
 use App\Models\Media;
@@ -33,8 +34,10 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(2);
         if ($mainPage && $mainPage->status == true) {
-
-            return view('frontend.students.index');
+            $services = Category::find(5)->news;
+            $faqs = $mainPage->faqs;
+            $news = $mainPage->blocks->where('type', Block::TYPE_NEWS);
+            return view('frontend.students.index', compact('services', 'faqs', 'news'));
         }
         abort(404);
     }

@@ -36,6 +36,11 @@ class CategorySeeder extends Seeder
                 'name_ar' => 'الاخبار الطبية',
                 'created_at' => now()
             ],
+            [
+                'name_en' => 'Students Services',
+                'name_ar' => 'خدمات الطلاب',
+                'created_at' => now()
+            ],
 
         ];
 
