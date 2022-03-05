@@ -1,4 +1,4 @@
-@extends('layouts.frontend.app')
+@extends('layouts.frontend.app', ['mainPage' => 4])
 
 @section('content')
     <div class="page_title">
@@ -19,7 +19,9 @@
                     <div class="col-sm-1"></div>
                     <div class="col-sm-10">
                         <div class="card">
-                            <div class="card-header text-white" style="background: #d70000"><i class="fa fa-envelope"></i> Contact us
+                            <div class="card-header text-white" style="background: #d70000">
+                                <h3><i class="fa fa-envelope"></i> Contact us</h3>
+
                             </div>
                             <div class="card-body">
                                 <div class="row">

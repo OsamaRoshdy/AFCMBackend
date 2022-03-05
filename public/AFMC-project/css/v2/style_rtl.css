@@ -12786,7 +12786,7 @@ font-size: 16px;
 }
 .carousel .carousel-caption p {
   font-size: 14px;
-  color: #b1b0b0;
+  color: black;
 }
 .carousel .carousel-caption h5, .carousel .carousel-caption .h5 {
   font-size: 22px;
@@ -14027,18 +14027,16 @@ color: #cfd5de;
   border-radius: 5px;
 }
 .slider_body_bg {
-  text-align: right;
-  background-color: #FFF;
-  width: 500px;
-  padding: 15px 20px;
+    text-align: right;
+    background-color: #ffffffa8;
+    width: 500px;
+    padding: 15px 20px;
   border-right: 6px solid #012a69;
 }
 .slider_body_bg h5 {
   color: #012a69;
 }
-.slider_body_bg p {
-  color: #8f8d8d !important;
-}
+
 .slider_body_bg_small {
   text-align: left;
   background-color: #FFF;
@@ -14072,4 +14070,16 @@ color: #cfd5de;
 .footer__contact li {
   margin: 0;
   padding: 0;
+}
+.customSwiper2 .customSwipperSlider h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 0;
+}
+.customSwiper2 .customSwipperSlider span {
+    font-size: 16px;
+    color: grey;
+}
+.swiper-pagination {
+    display: none !important;
 }

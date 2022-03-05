@@ -11,6 +11,14 @@
             body, h1, h2, h3, h4, h5, h6, span, li,button,ul,p,a {
                 font-family: 'Cairo', sans-serif !important;
             }
+            .header .navbar-nav .nav-link {
+                font-size: 17px;
+            }
+            .header_top .dropdown-item {
+                transition: all 0.5s ease-in-out;
+                font-size: 14px;
+                font-weight: bold;
+            }
         </style>
 
         <title>{{ $title ?? 'AFCM' }}</title>

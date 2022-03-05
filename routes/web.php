@@ -21,7 +21,7 @@ Route::get('students', [\App\Http\Controllers\Frontend\HomeController::class, 's
 Route::get('staff', [\App\Http\Controllers\Frontend\HomeController::class, 'staff']);
 Route::get('gallery', [\App\Http\Controllers\Frontend\HomeController::class, 'gallery']);
 
-Route::get('contact_us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
+Route::get('contact-us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
 
 
 Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index']);

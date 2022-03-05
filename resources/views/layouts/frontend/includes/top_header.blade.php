@@ -5,7 +5,7 @@
                 <div class="container">
                     <ul class="header__top__sites">
                         <li>
-                            <a class="dropdown-item {{ in_array(request()->segment(1), ['staff', 'students', 'contact_us']) ? '' : 'bg-main-active' }}" href="{{ url('/') }}">{{ getMainPage(1)->name }}</a>
+                            <a class="dropdown-item {{ in_array(request()->segment(1), ['staff', 'students', 'contact-us']) ? '' : 'bg-main-active' }}" href="{{ url('/') }}">{{ getMainPage(1)->name }}</a>
                         </li>
                         @foreach(getMainPages() as $page)
                             <li>

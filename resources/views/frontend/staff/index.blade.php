@@ -69,173 +69,39 @@
                         <span>{{ getSection('staff_slider')->description }}</span>
                     </div>
                 </div>
+{{--                <div class="col-md-2 text-end">--}}
+{{--                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">--}}
+{{--                        <img src="{{ asset('icons/check.png') }}" class="check" alt="">--}}
+{{--                        {{ getSection('staff_slider')->button }}--}}
+{{--                    </button>--}}
+{{--                </div>--}}
             </div>
             <div class="row">
-                <div class="container">
+                <div class="container osama">
                     <!-- Swiper2 -->
                     <div class="swiper customSwiper2">
                         <div class="swiper-wrapper">
+                            @foreach($staff as $staf)
                             <div class="swiper-slide customSwipperSlider">
                                 <div class="container text-center">
                                     <div class="row">
                                         <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
+                                            <img src="{{ $staf->image }}" class="img-fluid customSliderImage" alt="">
                                         </div>
                                         <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
+                                            <h3>{{ $staf->full_name }}</h3>
+                                            <span>{{ $staf->title }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="images/image2.png" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>mohamed</h3>
-                                            <span>title</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -316,10 +182,7 @@
                                         <button type="button" class="btn btn-primary custom_button">
                                             {{ $new->date }}
                                         </button>
-                                        <div class="slider_body_bg_small">
                                         <p>{{ $new->description }}</p>
-                                        </div>
-                                
                                     </div>
                                     <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                                 </div>
@@ -408,11 +271,34 @@
             });
         });
     </script>
-
-@endsection
-@section('styles')
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/assets/owl.carousel.min.css" />
+    <script>
+        var swiper = new Swiper(".customSwiper", {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            slidesPerGroup: 1,
+            breakpoints: {
+                500: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 5,
+                },
+            },
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
     <script>
         var swiper = new Swiper(".customSwiper2", {
             slidesPerView: 5,
@@ -441,4 +327,83 @@
             },
         });
     </script>
+@endsection
+@section('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="{{ asset('youtube/assets/css/main.css') }}" />
+    <style>
+        .partners {
+            background: rgb(237 237 237 / 70%);
+            margin-top: 40px;
+        }
+        /* Slider */
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .logo-carousel {
+            overflow: inherit;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-track::before,
+        .slick-track::after {
+            display: table;
+            content: '';
+        }
+
+        .slick-track::after {
+            clear: both;
+        }
+
+        .slick-track {
+            padding: 1rem 0;
+        }
+
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true) center no-repeat;
+            color: #fff;
+            filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg) brightness(105%) contrast(103%);
+            border: none;
+            width: 2rem;
+            height: 1.5rem;
+            margin-top: -16px;
+            z-index: 99;
+        }
+
+        .slick-arrow.slick-next {
+            right: -40px;
+            transform: rotate(180deg);
+        }
+
+        .slick-arrow.slick-prev {
+            left: -40px;
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 768px) {
+            .slick-arrow {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+    </style>
 @endsection
