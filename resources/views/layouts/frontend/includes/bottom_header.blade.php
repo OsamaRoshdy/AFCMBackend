@@ -4,7 +4,7 @@
             <div class="header__bottom__up">
                 <div class="logo">
                     <a class="logo__img" href="{{ url('/') }}">
-                        <img src="{{ asset('/AFMC-project/assets/images/logo.png') }}" alt="Logo">
+                        <img src=" {{ asset('frontend/images/logo.png') }}" alt="Logo">
                     </a>
                     <a class="logo__dis" href="http://localhost/AFCM/en">
                         Armed Forces <span> College Of Medicine </span>

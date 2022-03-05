@@ -45,6 +45,11 @@ class Block extends Model
         return app()->getLocale() === 'en' ? $this->button_en : $this->button_ar;
     }
 
+    public function getDateAttribute()
+    {
+        return $this->attributes['date'] = $this->attributes['date'];
+    }
+
     public function getDescriptionAttribute()
     {
         return app()->getLocale() === 'en' ? $this->description_en : $this->description_ar;

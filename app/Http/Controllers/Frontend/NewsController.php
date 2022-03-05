@@ -19,12 +19,9 @@ class NewsController extends Controller
     {
         $new = Block::news()->where([
             'id' => $slug,
-            'slug_ar' => $slug,
-            'slug_en' => $slug,
         ])->first();
 
         if ($new) {
-
             $relatedNews = Block::news()->whereHas('categories', function ($query) use ($new){
                 $query->whereIn('category_id', $new->categories->pluck('id')->toArray());
             })->take(3)->get();

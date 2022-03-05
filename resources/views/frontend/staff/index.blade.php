@@ -47,7 +47,7 @@
                             <p class="text-center">{{ getSection('staff_join')->description }}</p>
                             <div class="text-end">
                                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                    <img src="{{ asset('icons/check.png') }}" class="check" alt="">
+                                    <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                     {{ getSection('staff_join')->button }}
                                 </button>
                             </div>
@@ -58,54 +58,6 @@
             </div>
         </div>
     </div>
-
-    {{-- Staff   --}}
-    <section class="partners section section--padding section--bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="section__title">
-                        <h2 class="section-title">{{ getSection('staff_slider')->title }}</h2>
-                        <span>{{ getSection('staff_slider')->description }}</span>
-                    </div>
-                </div>
-{{--                <div class="col-md-2 text-end">--}}
-{{--                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">--}}
-{{--                        <img src="{{ asset('icons/check.png') }}" class="check" alt="">--}}
-{{--                        {{ getSection('staff_slider')->button }}--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-            </div>
-            <div class="row">
-                <div class="container osama">
-                    <!-- Swiper2 -->
-                    <div class="swiper customSwiper2">
-                        <div class="swiper-wrapper">
-                            @foreach($staff as $staf)
-                            <div class="swiper-slide customSwipperSlider">
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="{{ $staf->image }}" class="img-fluid customSliderImage" alt="">
-                                        </div>
-                                        <div class="col-12">
-                                            <h3>{{ $staf->full_name }}</h3>
-                                            <span>{{ $staf->title }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Latest Events-->
     <section class="section section--padding section--bg">
@@ -119,7 +71,7 @@
                 </div>
                 <div class="col-md-2 text-end">
                     <a type="button" href="{{ url('/news') }}" class="btn btn-primary custom_button hvr-wobble-vertical">
-                        <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
+                        <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                         {{ getSection('home_events_and_news')->button }}
                     </a>
                 </div>
@@ -205,205 +157,11 @@
             <form class="newsletter_form " method="POST" action="">
                 <input class="input" type="email" name="email" placeholder="Your Email ..." aria-label="email" autocomplete="off">
                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                    <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
+                    <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                     {{ getSection('subscribe')->button }}
                 </button>
 
             </form>
         </div>
     </div>
-@endsection
-@section('scripts')
-
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/owl.carousel.min.js"></script>
-    <script>
-
-
-        (function ($) {
-            $(document).ready(function () {
-                $('.owl-carousel').owlCarousel({
-                    loop: false,
-                    margin: 10,
-                    nav: true,
-                    navText: [
-                        "<i class='fas fa-chevron-left'></i>",
-                        "<i class='fas fa-chevron-right'></i>",
-                    ],
-                    autoplay: false,
-                    autoplayHoverPause: true,
-                    responsive: {
-                        0: {
-                            items: 3,
-                        },
-                        600: {
-                            items: 4,
-                        },
-                        1000: {
-                            items: 5,
-                        },
-                    },
-                });
-            });
-        })(jQuery);
-
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.logo-carousel').slick({
-                slidesToShow: 6,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 1000,
-                arrows: true,
-                dots: false,
-                pauseOnHover: false,
-                responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 4
-                    }
-                }, {
-                    breakpoint: 520,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                }]
-            });
-        });
-    </script>
-    <script>
-        var swiper = new Swiper(".customSwiper", {
-            slidesPerView: 5,
-            spaceBetween: 20,
-            slidesPerGroup: 1,
-            breakpoints: {
-                500: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 3,
-                },
-                1024: {
-                    slidesPerView: 5,
-                },
-            },
-            loop: true,
-            loopFillGroupWithBlank: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-    <script>
-        var swiper = new Swiper(".customSwiper2", {
-            slidesPerView: 5,
-            spaceBetween: 20,
-            slidesPerGroup: 1,
-            loop: true,
-            breakpoints: {
-                500: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 3,
-                },
-                1024: {
-                    slidesPerView: 5,
-                },
-            },
-            loopFillGroupWithBlank: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-@endsection
-@section('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="{{ asset('youtube/assets/css/main.css') }}" />
-    <style>
-        .partners {
-            background: rgb(237 237 237 / 70%);
-            margin-top: 40px;
-        }
-        /* Slider */
-        .slick-slide {
-            margin: 0px 20px;
-        }
-
-        .logo-carousel {
-            overflow: inherit;
-        }
-
-        .slick-slide img {
-            width: 100%;
-        }
-
-        .slick-track::before,
-        .slick-track::after {
-            display: table;
-            content: '';
-        }
-
-        .slick-track::after {
-            clear: both;
-        }
-
-        .slick-track {
-            padding: 1rem 0;
-        }
-
-        .slick-loading .slick-track {
-            visibility: hidden;
-        }
-
-        .slick-slide.dragging img {
-            pointer-events: none;
-        }
-        .slick-loading .slick-slide {
-            visibility: hidden;
-        }
-
-        .slick-arrow {
-            position: absolute;
-            top: 50%;
-            background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true) center no-repeat;
-            color: #fff;
-            filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg) brightness(105%) contrast(103%);
-            border: none;
-            width: 2rem;
-            height: 1.5rem;
-            margin-top: -16px;
-            z-index: 99;
-        }
-
-        .slick-arrow.slick-next {
-            right: -40px;
-            transform: rotate(180deg);
-        }
-
-        .slick-arrow.slick-prev {
-            left: -40px;
-        }
-
-        /* Media Queries */
-
-        @media (max-width: 768px) {
-            .slick-arrow {
-                width: 1rem;
-                height: 1rem;
-            }
-        }
-
-    </style>
 @endsection

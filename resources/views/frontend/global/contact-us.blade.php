@@ -70,7 +70,7 @@
             <form class="newsletter_form " method="POST" action="">
                 <input class="input" type="email" name="email" placeholder="Your Email ..." aria-label="email" autocomplete="off">
                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                    <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
+                    <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                     {{ getSection('subscribe')->button }}
                 </button>
 

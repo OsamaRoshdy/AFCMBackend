@@ -31,7 +31,7 @@
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i></h5>
                                 <p class="card-text">{{ $service->description }} </p>
                                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                    <img src="icons/check.png" class="check" alt="">
+                                    <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                     Learn More
                                 </button>
                             </div>
@@ -52,7 +52,7 @@
                     <h1>{{ getSection('e-learning')->title }}</h1>
                     <p>{{ getSection('e-learning')->description }}</p>
                     <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                        <img src="{{ asset('icons/check.png') }}" class="check" alt="">
+                        <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                         {{ getSection('e-learning')->button }}
                     </button>
                 </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-md-2 text-end">
                     <a type="button" href="{{ url('/news') }}" class="btn btn-primary custom_button hvr-wobble-vertical">
-                        <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
+                        <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                         {{ getSection('home_events_and_news')->button }}
                     </a>
                 </div>
@@ -129,7 +129,7 @@
                                             <h5>{{ $new->title }}</h5>
                                             <p>{{ $new->description }}</p>
                                             </div>
-                                    
+
                                         </div>
                                     </div>
                                 @else
@@ -143,7 +143,7 @@
                                             <h5>{{ $new->title }}</h5>
                                             <p>{{ $new->description }}</p>
                                             </div>
-                                        
+
                                         </div>
                                     </div>
                                 @endif
@@ -184,7 +184,7 @@
             <form class="newsletter_form " method="POST" action="">
                 <input class="input" type="email" name="email" placeholder="Your Email ..." aria-label="email" autocomplete="off">
                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                    <img src="{{ asset('/icons/check.png') }}" class="check" alt="">
+                    <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                     {{ getSection('subscribe')->button }}
                 </button>
 

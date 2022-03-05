@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $sliderGroup = SliderGroup::find(1)->load('sliders');
 
-        $events = Block::upCommingEvents()->active()->take(2)->get();
+        $events = Block::upCommingEvents()->active()->take(3)->get();
         $statistics = Statistic::active()->orderBy('sort', 'asc')->get();
         $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->get();
         $partners = Partner::active()->home()->orderBy('sort', 'asc')->get();

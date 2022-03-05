@@ -25,6 +25,7 @@ Route::get('contact-us', [\App\Http\Controllers\Frontend\HomeController::class, 
 
 
 Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index']);
+Route::get('news/{new}', [\App\Http\Controllers\Frontend\NewsController::class, 'show']);
 
 
 

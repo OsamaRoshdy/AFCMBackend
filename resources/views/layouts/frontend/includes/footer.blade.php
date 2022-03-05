@@ -8,7 +8,7 @@
                         <h4 class="footer__title d-block text-center">About AFCM</h4>
                         <div class="logo">
                             <a class="logo__img" href="http://localhost/AFCM/en">
-                                <img src="AFMC-project/assets/images/logo.png" alt="Logo">
+                                <img src="{{ asset('frontend/images/logo.png') }}" alt="Logo">
                             </a>
                             <a class="logo__dis" href="http://localhost/AFCM/en">
                                 ARMED FORCES <span> COLLEGE OF MEDICINE </span>
