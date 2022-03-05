@@ -20,7 +20,8 @@
             <div class="join_us">
                 <div class="container">
                     <a href="{{ route('switchLang', app()->getLocale() == 'ar' ? 'en' : 'ar') }}" class="header__top__join">
-                        <span>Join our team</span>
+                        <span>{{ app()->getLocale() == 'ar' ? 'English' : 'عربي' }} </span>
+                        <i class="fa fa-language 5"></i>
                     </a>
                 </div>
             </div>
