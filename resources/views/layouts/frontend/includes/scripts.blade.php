@@ -1,6 +1,7 @@
 <!--Scripts-->
 <script src="{{ asset('frontend/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
+<script src="{{ asset('frontend/js/index.js') }}"></script>
 <script src="{{ asset('frontend/plugins/swiper/index.js') }}"></script>
 
 <script>

@@ -74,170 +74,43 @@
                 <i class="bi bi-x-lg"></i>
             </button>
             <div class="nav-accordion" id="navAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading0">
-                        <a class="link double-chevron--before" href="http://localhost/AFCM/en/HomePage">
-                            osama
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading1">
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                            ABOUT US
-                        </button>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/A_Word_from_the_Dean">
-                            A Word from the Dean
-                        </a>
-                        <a class="link double-chevron--before" href="http://localhost/AFCM/en/Why_AFCM_">
-                            why AFCM?
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Vision_Mission">
-                            vision &amp; mission
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/College_History">
-                            History
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/facts_figures">
-                            facts &amp; figures
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Future_Projects">
-                            Future Projects
-                        </a>
-                        <a class="link double-chevron--before" href="http://localhost/AFCM/en/FAQs">
-                            FAQs
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading2">
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            ADMISSION
-                        </button>
+                @foreach(bottom_header($mainPage ?? 1) as $key => $link)
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{$key}}">
+                            @if($link->hasChildren())
+                                <button class="link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="false" aria-controls="collapse{{$key}}">
+                                    {{$link->name}}
+                                </button>
 
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            Undergraduates
+                                @foreach($link->children as $key2=>$child)
+                                    @if($child->hasChildren())
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="false" aria-controls="collapse{{$key}}">
+                                                {{$child->name}}
+                                            </button>
+                                        </h2>
+                                        <div id="collapse{{$key}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#navAccordionOne">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    @foreach($child->children as $key2=>$data)
+                                                        <li>
+                                                            <a class="dropdown-item double-chevron--before " href="{{$data->route}}" > {{$data->name}}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        @else
+                                        <a class="link double-chevron--before " href="{{$child->route}}">{{$child->name}}</a>
+                                    @endif
+                                @endforeach
 
-                        </button>
-
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Admission_Requirements">
-                            Admission Requirements
-                        </a>
-                        <a class="link double-chevron--before" href="http://localhost/AFCM/en/How_To_Apply">
-                            how To Apply
-                        </a>
-
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            Postgraduates
-                        </button>
-
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Postgraduates_Admission_Requirements">
-                            Admission Requirements
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Postgraduates_How_to_apply">
-                            How To apply
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading3">
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                            ACADEMIC PROGRAMS
-                        </button>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Undergraduate_Programs">
-                            Undergraduate Programs
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Internship_Programs">
-                            Internship Programs
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Postgraduate_Programs">
-                            Post Graduate Programs
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Capacity_Building_Programs">
-                            Capacity Building Programs
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading4">
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                            RESEARCHES
-                        </button>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Students_Researches">
-                            Students
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/Staff_Researches">
-                            Staff
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading5">
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                            Partnership
-                        </button>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/International_Cooperation_Protocols">
-                            International Cooperation Protocols
-                        </a>
-                        <a class="link double-chevron--before"
-                           href="http://localhost/AFCM/en/National_Cooperation_Protocols">
-                            National Cooperation Protocols
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading6">
-                        <a class="link double-chevron--before" href="http://localhost/AFCM/en/Top_Notch">
-                            Top-Notch
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading7">
-                        <button class="link collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                            MEDIA CENTER
-                        </button>
-                        <a class="link double-chevron--before" href="/AFCM/en/news-and-events"
-                           target="_self">
-                            News &amp; Events</a>
-
-                        <a class="link double-chevron--before" href="/AFCM/en/college_magazine"
-                           target="_self">
-                            college Magazine</a>
-
-                        <a class="link double-chevron--before" href="/AFCM/en/press-releases"
-                           target="_self">
-                            Press Releases</a>
-
-                        <a class="link double-chevron--before" href="/AFCM/en/photos-and-videos"
-                           target="_self">
-                            Photo &amp; Video Gallery</a>
-
-                    </h2>
-                </div>
+                            @else
+                                <a class="link double-chevron--before " href="{{$link->route}}" target="_self">{{$link->name}}</a>
+                            @endif
+                        </h2>
+                    </div>
+                @endforeach
             </div>
         </div>
     </nav>
