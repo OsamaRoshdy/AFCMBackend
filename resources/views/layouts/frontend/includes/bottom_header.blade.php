@@ -7,7 +7,7 @@
                         <img src=" {{ asset('frontend/images/logo.png') }}" alt="Logo">
                     </a>
                     <a class="logo__dis" href="http://localhost/AFCM/en">
-                        Armed Forces <span> College Of Medicine </span>
+                        <bold style="color: #d70000; font-size: 20px; font-weight: 900">A</bold>rmed <bold style="color: #d70000; font-size: 20px; font-weight: 900">F</bold>orces <span> <bold style="color: #d70000; font-size: 20px; font-weight: 900">C</bold>ollege Of <bold style="color: #d70000; font-size: 20px; font-weight: 900">M</bold>edicine </span>
                     </a>
                 </div>
                 <form class="input-btn d-flex" method="GET" action="http://localhost/AFCM/en/search">
@@ -51,7 +51,7 @@
                                             </li>
                                         @else
                                            <li>
-                                                <a class="dropdown-item" href="{{ $subLink->route }}">{{ $subLink->name }}</a>
+                                                <a class="dropdown-item" href="{{ url('pages/' . $subLink->route)  }}">{{ $subLink->name }}</a>
                                             </li>
                                         @endif
                                     @endforeach
@@ -59,7 +59,7 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a class="link link--main-clr link--nav nav-link" href="{{ $link->route }}">{{ $link->name }}</a>
+                                <a class="link link--main-clr link--nav nav-link" href="{{ url('pages/') . $link->route }}">{{ $link->name }}</a>
                             </li>
                         @endif
                     @endforeach

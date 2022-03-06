@@ -31,11 +31,11 @@ class PageController extends CommonController
 
     public function create()
     {
-        return view('backend.' . $this->module . '.create')
+        return view('backend.news.create')
             ->with(['module' => $this->module, 'action' => 'create']);
     }
 
-    public function store(BlockRequest $request)
+    public function store(Request $request)
     {
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_PAGES;

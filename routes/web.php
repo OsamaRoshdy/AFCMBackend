@@ -28,6 +28,9 @@ Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index
 Route::get('news/{new}', [\App\Http\Controllers\Frontend\NewsController::class, 'show']);
 
 
+Route::get('pages/{page}', [\App\Http\Controllers\Frontend\HomeController::class, 'page']);
+
+
 
 
 Route::get('switch/{lang}', function ($lang) {

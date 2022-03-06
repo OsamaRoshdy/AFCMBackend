@@ -71,4 +71,10 @@ class HomeController extends Controller
         return view('frontend.global.gallery', compact('videos', 'images'));
 
     }
+
+    public function page($id)
+    {
+        $page = Block::where('slug_ar', $id)->orWhere('slug_en', $id)->orWhere('id', $id)->first();
+        return view('frontend.pages.global', compact('page'));
+    }
 }

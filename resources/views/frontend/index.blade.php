@@ -99,10 +99,10 @@
                         <div class="card-body">
                             <h1 class="card-title">{{ getSection('medical_scientific_sections')->title }}</h1>
                             <p class="card-text">{{ getSection('medical_scientific_sections')->description }}</p>
-                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="{{ url('/staff') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('medical_scientific_sections')->button }}
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -244,12 +244,12 @@
                 <div class="row">
                     @foreach($statistics as $statistic)
                         <div class="col-md-6 col-lg-3">
-                        <div class="box">
+                            <div class="box">
                             <i class="{{ $statistic->icon }}" aria-hidden="true"></i>
                             <h1>{{ $statistic->count }}</h1>
                             <span>{{ $statistic->name }}</span>
                         </div>
-                    </div>
+                        </div>
                     @endforeach
                 </div>
             </div>
