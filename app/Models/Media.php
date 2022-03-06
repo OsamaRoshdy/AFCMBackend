@@ -14,7 +14,7 @@ class Media extends Model
 
     use HasFactory;
 
-    protected $fillable = ['show_in_home', 'image_name', 'url', 'status', 'sort', 'title_ar', 'title_en', 'type'];
+    protected $fillable = ['show_in_home', 'image_name', 'url', 'status', 'sort', 'title_ar', 'title_en', 'type', 'media_group_id'];
 
     protected $appends = ['image', 'title'];
 
