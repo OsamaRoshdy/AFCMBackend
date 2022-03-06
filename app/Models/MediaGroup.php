@@ -15,4 +15,9 @@ class MediaGroup extends Model
     {
         return $query->where('status', 1);
     }
+
+    public function images()
+    {
+        return $this->hasMany(Media::class);
+    }
 }

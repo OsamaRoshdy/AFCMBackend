@@ -51,6 +51,7 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::resource('partners', \App\Http\Controllers\Backend\PartnerController::class);
     Route::resource('videos', \App\Http\Controllers\Backend\VideoController::class);
     Route::resource('images', \App\Http\Controllers\Backend\ImageController::class);
+    Route::delete('images/media/{image}', [\App\Http\Controllers\Backend\ImageController::class, 'deleteImg'])->name('media.deleteImg');
 //    Route::resource('media', \App\Http\Controllers\Backend\MediaController::class);
 
 

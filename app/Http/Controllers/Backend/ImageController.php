@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Foundation\Traits\ImageTrait;
 use App\Models\Media;
+use App\Models\MediaGroup;
 use Illuminate\Http\Request;
 
 class ImageController extends CommonController
@@ -15,11 +16,11 @@ class ImageController extends CommonController
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return $this->makeDatatable(Media::images()->latest(),$this->module, true);
+            return $this->makeDatatable(MediaGroup::latest(),$this->module, true);
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],
-            'title_' . app()->getLocale() => ['title' => __('common.title'), 'searchable' => true, 'orderable' => true],
+            'name_' . app()->getLocale() => ['title' => __('common.name'), 'searchable' => true, 'orderable' => true],
             'status' => ['title' => __('common.status'), 'searchable' => true, 'orderable' => true],
         ];
         $html = $this->tableHtmlBuilder($this->htmlBuilder,$columns,true, true);
@@ -35,41 +36,67 @@ class ImageController extends CommonController
     public function store(Request $request)
     {
         $request->validate([
-            'image_name' => 'required',
+            'images' => 'required',
+            'name_ar' => 'required',
+            'name_en' => 'required',
         ]);
-        $data = $request->except(['image_name']);
-        $data['image_name'] = $this->storeImage($request->image_name, 'media');
-        $data['type'] = Media::TYPE_IMAGE;
-        Media::create($data);
+        $data = $request->except(['images']);
+        $media = MediaGroup::create($data);
+            foreach ($request->images as $image) {
+                Media::create([
+                    'media_group_id' =>  $media->id,
+                    'image_name' => $this->storeImage($image, 'media'),
+                    'type' => Media::TYPE_IMAGE
+                ]);
+            }
+
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
 
     public function edit($id)
     {
-        $image = Media::findOrFail($id);
-        return view('backend.' . $this->module . '.edit', compact('image'))
+        $media = MediaGroup::findOrFail($id)->load('images');
+        return view('backend.' . $this->module . '.edit', compact('media'))
             ->with(['module' => $this->module, 'action' => 'edit']);
     }
 
     public function update(Request $request,$id)
     {
-        $image = Media::findOrFail($id);
-        $data = $request->except(['image_name']);
-        if ($request->image_name) {
-            $data['image_name'] = $this->updateImage($request->image_name, $image->image_name,'media');
+        $media = MediaGroup::findOrFail($id);
+        $data = $request->except(['images']);
+        if ($request->images) {
+            foreach ($request->images as $image) {
+                Media::create([
+                    'media_group_id' =>  $media->id,
+                    'image_name' => $this->storeImage($image, 'media'),
+                    'type' => Media::TYPE_IMAGE
+                ]);
+            }
         }
-        $image->update($data);
+        $media->update($data);
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
 
     public function destroy($id)
     {
-        $image = Media::findOrFail($id);
-        $this->deleteImage($image->image_name, 'media');
-        $image->delete();
+        $media = MediaGroup::findOrFail($id);
+        foreach ($media->images as $image) {
+            $this->deleteImage($image->image_name, 'media');
+            $image->delete();
+        }
+        $media->delete();
         toast(__('common.deleted_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
+    }
+
+    public function deleteImg($id)
+    {
+        $blockImage = Media::find($id);
+        $this->deleteImage($blockImage->image_name, 'media');
+        $blockImage->delete();
+        toast(__('common.deleted_successfully'),'success','top-right');
+        return redirect()->back();
     }
 }
