@@ -41,6 +41,8 @@ class ImageController extends CommonController
             'name_en' => 'required',
         ]);
         $data = $request->except(['images']);
+        $data['slug_en'] = str_slug($request->name_en);
+        $data['slug_ar'] = slug_ar($request->name_ar);
         $media = MediaGroup::create($data);
             foreach ($request->images as $image) {
                 Media::create([
@@ -74,6 +76,8 @@ class ImageController extends CommonController
                 ]);
             }
         }
+        $data['slug_en'] = str_slug($request->name_en);
+        $data['slug_ar'] = slug_ar($request->name_ar);
         $media->update($data);
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');

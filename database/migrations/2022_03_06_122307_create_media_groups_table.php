@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('name_ar');
             $table->string('name_en');
 
+            $table->string('slug_ar');
+            $table->string('slug_en');
+
             $table->boolean('status');
 
             $table->timestamps();

@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Department;
 use App\Models\MainPage;
 use App\Models\Media;
+use App\Models\MediaGroup;
 use App\Models\Partner;
 use App\Models\SliderGroup;
 use App\Models\Staff;
@@ -67,8 +68,22 @@ class HomeController extends Controller
     public function gallery()
     {
         $videos = Media::videos()->active()->get();
-        $images = Media::images()->active()->latest()->paginate(20);
-        return view('frontend.global.gallery', compact('videos', 'images'));
+        $mediaGroups = MediaGroup::whereHas('images')->active()->latest()->get();
+        return view('frontend.global.gallery', compact('videos', 'mediaGroups'));
+
+    }
+
+    public function media($id)
+    {
+        $media = MediaGroup::where('slug_ar',$id)
+            ->orWhere('slug_en', $id)
+            ->orWhere('id', $id)
+            ->first();
+        if ($media) {
+            $media->load('images');
+            return view('frontend.global.media', compact('media'));
+        }
+        abort(404);
 
     }
 
