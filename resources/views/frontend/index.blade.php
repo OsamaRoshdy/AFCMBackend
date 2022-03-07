@@ -65,7 +65,7 @@
                         <h2>{{ getSection('resources_students')->title }}</h2>
                         <p>{{ getSection('resources_students')->description }}</p>
                         <div class="text-end">
-                            <a href="{{ url('pages/students') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="{{ url('pages/63') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('resources_students')->button }}
                             </a>
@@ -81,7 +81,7 @@
                        <h2>{{ getSection('resources_staff')->title }}</h2>
                         <p>{{ getSection('resources_staff')->description }}</p>
                         <div class="text-end">
-                            <a href="pages/staff" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="{{ url('pages/62') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('resources_staff')->button }}
                             </a>

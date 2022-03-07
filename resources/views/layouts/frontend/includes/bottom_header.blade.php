@@ -6,7 +6,7 @@
                     <a class="logo__img" href="{{ url('/') }}">
                         <img src=" {{ asset('frontend/images/logo.png') }}" alt="Logo">
                     </a>
-                    <a class="logo__dis" href="http://localhost/AFCM/en">
+                    <a class="logo__dis" href="{{ url('/') }}">
                         <bold style="color: #d70000; font-size: 20px; font-weight: 900">A</bold>rmed <bold style="color: #d70000; font-size: 20px; font-weight: 900">F</bold>orces <span> <bold style="color: #d70000; font-size: 20px; font-weight: 900">C</bold>ollege Of <bold style="color: #d70000; font-size: 20px; font-weight: 900">M</bold>edicine </span>
                     </a>
                 </div>
@@ -44,14 +44,14 @@
                                                     @foreach($subLink->children as $child)
                                                     <li>
                                                         <a class="dropdown-item "
-                                                           href="{{ $child->route }}">{{ $child->name }}</a>
+                                                           href="{{ url('/' . $child->route) }}">{{ $child->name }}</a>
                                                     </li>
                                                     @endforeach
                                                 </ul>
                                             </li>
                                         @else
                                            <li>
-                                                <a class="dropdown-item" href="{{ url($subLink->route)  }}">{{ $subLink->name }}</a>
+                                                <a class="dropdown-item" href="{{ url('/'.$subLink->route)  }}">{{ $subLink->name }}</a>
                                             </li>
                                         @endif
                                     @endforeach

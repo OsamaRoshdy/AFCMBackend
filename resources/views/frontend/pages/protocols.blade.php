@@ -157,28 +157,45 @@
                 </div>
                 <div class="col-lg-8"  style="  border-radius: 25px; padding: 15px; ">
 
-                    {!! $page->content_ar !!}
+                    <div class="row">
+                        @foreach($partners as $partner)
+                            <div class="col-sm-3">
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="">
+                                                <img src="{{$partner->image}}" class="img-fluid customSliderImage" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <h3>{{ $partner->name }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
 
                     @if($page->images->count())
-                    <div class="row" style="border-radius: 25px;">
-                        <div class="col-12 hvr-backward">
-                            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    @foreach($page->images as $index => $image)
-                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="{{ $loop->first ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
-                                    @endforeach
-                                </div>
-                                <div class="carousel-inner">
-                                    @foreach($page->image as $image)
-                                    <div class="carousel-item active" style="border-radius: 25px;">
-                                        <img src="{{$image->image}}" style="height: 600px;border-radius: 25px;" class="d-block w-100" alt="...">
+                        <div class="row" style="border-radius: 25px;">
+                            <div class="col-12 hvr-backward">
+                                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        @foreach($page->images as $index => $image)
+                                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="{{ $loop->first ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
+                                        @endforeach
                                     </div>
-                                    @endforeach
-                                </div>
+                                    <div class="carousel-inner">
+                                        @foreach($page->image as $image)
+                                            <div class="carousel-item active" style="border-radius: 25px;">
+                                                <img src="{{$image->image}}" style="height: 600px;border-radius: 25px;" class="d-block w-100" alt="...">
+                                            </div>
+                                        @endforeach
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endif
                 </div>
             </div>

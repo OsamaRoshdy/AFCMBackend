@@ -38,7 +38,8 @@ Route::get('events/{event}', [\App\Http\Controllers\Frontend\EventsController::c
 Route::get('pages/{page}', [\App\Http\Controllers\Frontend\HomeController::class, 'page']);
 
 
-
+Route::get('jobs/{id}', [\App\Http\Controllers\Frontend\JobController::class, 'index']);
+Route::post('jobs/{id}/apply', [\App\Http\Controllers\Frontend\JobController::class, 'store'])->name('jobApply');
 
 Route::get('switch/{lang}', function ($lang) {
     Session::put('app_locale', $lang);
