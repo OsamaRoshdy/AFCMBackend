@@ -3642,8 +3642,8 @@ textarea.form-control-lg {
     border: 0;
 }
 .dropdown-item:hover, .dropdown-item:focus {
-    color: #1e2125;
-    background-color: #e9ecef;
+    color: #1e2125 !important;
+    background-color: #e9ecef !important;
 }
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
@@ -11407,7 +11407,7 @@ textarea.form-control-lg {
 }
 .double-chevron--before:before {
     margin-left: 8px;
-    content: "\F280";
+    content: "\F27F";
     font-family: "bootstrap-icons";
 }
 .double-chevron--after {
@@ -13150,22 +13150,22 @@ article p:not(:last-child) {
     font-weight: 500;
     margin-bottom: 20px;
 }
-img {
-    transition: all 0.5s ease-in-out !important;
-}
-img:hover{
-    transition: all 0.5s ease-in-out !important;
-    transform: scale(1.2,1.2) !important;
-}
-.img_sec img {
-    height: 290px;
-    transition: all 0.5s ease-in-out;
-    background-size: cover;
-}
-.img_sec:hover img{
-    transition: all 0.5s ease-in-out;
-    transform: scale(1.2,1.2);
-}
+/*img {*/
+/*    transition: all 0.5s ease-in-out !important;*/
+/*}*/
+/*img:hover{*/
+/*    transition: all 0.5s ease-in-out !important;*/
+/*    transform: scale(1.2,1.2) !important;*/
+/*}*/
+/*.img_sec img {*/
+/*    height: 290px;*/
+/*    transition: all 0.5s ease-in-out;*/
+/*    background-size: cover;*/
+/*}*/
+/*.img_sec:hover img{*/
+/*    transition: all 0.1s ease-in-out;*/
+/*    transform: scale(1.2,1.2);*/
+/*}*/
 .img_sec p {
     font-size: 16px;
     color: #FFF;
@@ -13575,6 +13575,8 @@ body {
     color: #012a69;
     margin-right: 20px;
 }
+
+
 
 
 
@@ -14064,7 +14066,7 @@ body {
 .slider_body_bg {
     text-align: right;
     background-color: #ffffffa8;
-    width: 500px;
+    /* width: 500px; */
     padding: 15px 20px;
     border-right: 6px solid #012a69;
 }
@@ -14114,7 +14116,6 @@ body {
 
 .customSwiper2 .customSwipperSlider {
     background-color: transparent;
-    border-radius: 500px;
 }
 .customSwiper2 .customSwipperSlider img {
     border-radius: 500px !important;
@@ -14140,7 +14141,9 @@ body {
 
 
 
-
+.my_button {
+    text-align: end !important;
+}
 
 .horVerSlider i {
     border: none !important;
@@ -14163,10 +14166,106 @@ body {
     background-color: rgba(1, 42, 105, 0.7);
     border-radius: 200px;
 }
+
 .swiper-button-prev , .swiper-button-next {
     color: #012a69 !important;
 }
 .swiper-button-prev:after, .swiper-ltr .swiper-button-prev:after ,
 .swiper-button-next:after, .swiper-ltr .swiper-button-next:after {
     font-size: 25px  !important;
+}
+@media (max-width: 575.98px) {
+  
+
+}
+@media (max-width: 1199.98px) { 
+    .customSwiper2 .customSwipperSlider img {
+        height: 200px !important;
+    }
+    .latet_sec .sec_images {
+        width: 100%;
+        object-fit: cover;
+    }
+    .carousel_item {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+    .carousel_item img {
+        object-fit: cover;
+    }
+ }
+
+ @media (max-width: 991.98px) {
+     .footer__contact {
+         text-align: center;
+     }
+     .footer__contact li {
+         display: block;
+     }
+     .footer__block {
+         text-align: center;
+     }
+     .center_btn {
+         text-align: center;
+         display: inline-block;
+     }
+    .student_faq h2 , .student_faq p.header_p {
+        text-align: center;
+    }
+     .student_services{
+         text-align: center;
+     }
+
+    .why_join {
+        text-align: center;
+    }
+    .glance .logo__dis {
+        text-align: center;
+        display: block;
+    }
+    .upcoming_events .events {
+        max-height: fit-content;
+    }
+    .section__title {
+        text-align: center;
+    }
+    .my_button {
+        text-align: center !important;
+        margin: auto;
+    }
+ }
+ .dropdown-item:focus {
+     background-color: transparent !important;
+     color: #212529 !important;
+ }
+
+ @media (min-width: 1368px){
+     .customImage {
+         height: 453px !important;
+     }
+ }
+ @media (min-width: 1599px){
+    .customImage {
+        height: 533px !important;
+    }
+}
+@media (max-width: 1368px){
+    .customImage {
+        height: 430px !important;
+    }
+}
+
+
+.news_events h2 {
+    color: #012a69;
+}
+.news_events p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+.card_latest .card {
+    min-height: 400px !important;
 }

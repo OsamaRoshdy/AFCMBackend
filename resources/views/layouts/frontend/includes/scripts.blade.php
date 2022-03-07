@@ -3,7 +3,9 @@
 <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
 <script src="{{ asset('frontend/js/index.js') }}"></script>
 <script src="{{ asset('frontend/plugins/swiper/index.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 
+<script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
 <script>
     $(function () {
         if ($('#carousel-left').length) {
@@ -129,9 +131,12 @@
             slidesPerView: 1,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
           1024: {
+            slidesPerView: 3,
+          },
+          1600: {
             slidesPerView: 5,
           },
         },
@@ -146,4 +151,17 @@
       },
     });
   </script>
+
+<script>
+    $(document).ready(function(){
+
+        $('.counter').counterUp({
+    delay: 1,
+    time: 400,
+    offset: 70,
+    beginAt: 100,
+});
+});
+
+    </script>
 

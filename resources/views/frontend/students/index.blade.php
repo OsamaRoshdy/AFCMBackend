@@ -33,10 +33,12 @@
                                         <h5 class="card-title">{{ $service->title }}
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i></h5>
                                     <p class="card-text">{{ $service->description }} </p>
+                                    <div class="center_btn">
                                     <a href="{{ url('news/' . $service->id) }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                         <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                         Learn More
                                     </a>
+                                    </div>
 
                                     </div>
 
@@ -68,28 +70,33 @@
     </div>
 
 
+
+
     <!-- Latest Events-->
-    <section class="section section--padding section--bg">
+    <section class="section section--padding section--bg latet_sec">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12 col-lg-9">
                     <div class="section__title">
                         <h2 class="section-title">{{ getSection('home_events_and_news')->title }}</h2>
                         <span>{{ getSection('home_events_and_news')->description }}</span>
                     </div>
                 </div>
-                <div class="col-md-2 text-end">
+                <div class="col-md-12 col-lg-3">
+                    <div class="my_button">
                     <a type="button" href="{{ url('/news') }}" class="btn btn-primary custom_button hvr-wobble-vertical">
                         <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                         {{ getSection('home_events_and_news')->button }}
                     </a>
+                    </div>
+                   
                 </div>
             </div>
             <div class="section__header">
             </div>
 
             <div class="row">
-                <div class="col-md-12 col-lg-6 hvr-backward">
+                <div class="col-md-12 col-lg-12 col-xl-5 xxl-6">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             @foreach($news->take(2) as $index => $new)
@@ -104,9 +111,9 @@
                             @foreach($news->take(2) as $new)
                                 @if($loop->first)
                                     <div class="carousel-item active">
-                                        <a href="{{ url('news/' . $new->id) }}">
-                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block w-100">
+                                        <a href="{{ url('news/' . $new->id) }}" class="carousel_item">
+                                            <img src="{{ $new->image }}" class="d-block w-100 customImage" alt="...">
+                                            <div class="carousel-caption">
                                                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                     {{ $new->date }}
                                                 </button>
@@ -120,9 +127,9 @@
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <a href="{{ url('news/' . $new->id) }}">
-                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block w-100">
+                                        <a href="{{ url('news/' . $new->id) }}" class="carousel_item">
+                                            <img src="{{ $new->image }}"  class="d-block w-100 customImage" alt="...">
+                                            <div class="carousel-caption">
                                                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                     {{ $new->date }}
                                                 </button>
@@ -139,27 +146,27 @@
 
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-6">
+            <div class="col-md-12 col-lg-12 col-xl-7 xxl-6">
 
                     <div class="row align-items-center">
                         @foreach($news->skip(1)->take(4) as $new)
-                            <div class="col-md-6">
+                            <div class="col-md-12 col-lg-6">
 
                                 <div class="img_sec">
-                                    <div class="overlay">
-                                        <a href="{{ url('/news/' . $new->id) }}">
-                                            <button type="button" class="btn btn-primary custom_button">
-                                                {{ $new->date }}
-                                            </button>
-                                            <div class="slider_body_bg_small">
-                                                <p>{{ $new->description }}</p>
-                                            </div>
-                                        </a>
+                                <div class="overlay">
+                                    <a href="{{ url('/news/' . $new->id) }}">
+                                        <button type="button" class="btn btn-primary custom_button">
+                                            {{ $new->date }}
+                                        </button>
+                                        <div class="slider_body_bg_small">
+                                            <p>{{ $new->description }}</p>
+                                        </div>
+                                    </a>
 
 
-                                    </div>
-                                    <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                                 </div>
+                                <img src="{{ $new->image }}" class="img-fluid sec_images" alt="">
+                            </div>
                             </div>
                         @endforeach
                     </div>
