@@ -55,6 +55,15 @@
     </div>
 </div>
 
+<div class="form-group row">
+    {{ Form::label('page', __('common.page'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::select('block_id',$pages,old('block_id'), ['class' => 'form-control search', 'id' => 'type', 'placeholder' => __('common.page')]) }}
+        @if ($errors->has("block_id"))
+            <span class="form-text text-danger">{{$errors->first('block_id')}}</span>
+        @endif
+    </div>
+</div>
 
 
 
@@ -75,22 +84,6 @@
                 $('#blockDev').remove()
             }
         })
-
-        function appendInternal() {
-            $('#form-body').append(`
-            <div class="form-group row" id="blockDev">
-                {{ Form::label('block_id', __('common.block'), ['class' => 'col-sm-3']) }}
-            <div class="col-sm-9">
-{{ Form::select('block_id',$blocks,old('block_id'), ['class' => 'form-control search','id'=>'block_id', 'placeholder' => __('common.select')]) }}
-            @if ($errors->has("route"))
-            <span class="form-text text-danger">{{$errors->first('block_id')}}</span>
-                    @endif
-            </div>
-        </div>
-`)
-
-            $("#block_id").select2();
-        }
 
 
     </script>
