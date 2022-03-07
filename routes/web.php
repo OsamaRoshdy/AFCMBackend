@@ -29,6 +29,11 @@ Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index
 Route::get('news/{new}', [\App\Http\Controllers\Frontend\NewsController::class, 'show']);
 
 
+
+Route::get('events', [\App\Http\Controllers\Frontend\EventsController::class, 'index']);
+Route::get('events/{event}', [\App\Http\Controllers\Frontend\EventsController::class, 'show']);
+
+
 Route::get('pages/{page}', [\App\Http\Controllers\Frontend\HomeController::class, 'page']);
 
 

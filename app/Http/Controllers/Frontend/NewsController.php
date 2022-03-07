@@ -12,7 +12,8 @@ class NewsController extends Controller
     {
         $latestNews = Block::where('type', Block::TYPE_NEWS)->active()->latest()->take(7)->get();
         $news = Block::where('type', Block::TYPE_NEWS)->active()->whereNotIn('id', $latestNews->pluck('id')->toArray())->latest()->skip(7)->paginate(20);
-        return view('frontend.global.news', compact('latestNews','news'));
+        $events = Block::upCommingEvents()->active()->take(2)->get();
+        return view('frontend.global.news', compact('latestNews','news', 'events'));
     }
 
     public function show($slug)

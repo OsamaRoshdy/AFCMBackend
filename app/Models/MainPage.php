@@ -31,7 +31,7 @@ class MainPage extends Model
 
     public function blocks()
     {
-        return $this->belongsToMany(Block::class, 'main_page_blocks');
+        return $this->belongsToMany(Block::class, 'main_page_blocks')->latest();
     }
 
     public function news()

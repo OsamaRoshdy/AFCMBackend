@@ -62,28 +62,6 @@
     </div>
 
 
-    <!-- Student FAQ -->
-    <div class="student_faq">
-        <div class="container">
-            <h2>Students FAQ</h2>
-            <p class="header_p">Preview all your colleagues questions and get full answers</p>
-            <div class="row">
-                <div class="col-lg-12">
-                    @foreach($faqs as $faq)
-                        <div class="faq_section hvr-forward">
-                            <h3> <i class="fa fa-minus" aria-hidden="true"></i> {{$faq->question}}</h3>
-                            <p>
-                                {{$faq->answer}}
-                            </p>
-                        </div>
-                        <br>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Latest Events-->
     <section class="section section--padding section--bg">
         <div class="container">
@@ -108,7 +86,7 @@
                 <div class="col-md-12 col-lg-6 hvr-backward">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            @foreach($news->take(3) as $index => $new)
+                            @foreach($news->take(2) as $index => $new)
                                 @if($loop->first)
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="active" aria-current="true" aria-label="Slide 1"></button>
                                 @else
@@ -117,34 +95,37 @@
                             @endforeach
                         </div>
                         <div class="carousel-inner">
-                            @foreach($news->take(3) as $new)
+                            @foreach($news->take(2) as $new)
                                 @if($loop->first)
                                     <div class="carousel-item active">
-                                        <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block w-100">
-                                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                                {{ $new->date }}
-                                            </button>
-                                            <div class="slider_body_bg">
-                                            <h5>{{ $new->title }}</h5>
-                                            <p>{{ $new->description }}</p>
+                                        <a href="{{ url('news/' . $new->id) }}">
+                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block w-100">
+                                                <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                                    {{ $new->date }}
+                                                </button>
+                                                <div class="slider_body_bg">
+                                                    <h5>{{ $new->title }}</h5>
+                                                    <p style="font-size: 19px!important;">{{ $new->description }}</p>
+                                                </div>
                                             </div>
+                                        </a>
 
-                                        </div>
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block w-100">
-                                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                                {{ $new->date }}
-                                            </button>
-                                            <div class="slider_body_bg">
-                                            <h5>{{ $new->title }}</h5>
-                                            <p>{{ $new->description }}</p>
+                                        <a href="{{ url('news/' . $new->id) }}">
+                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block w-100">
+                                                <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                                    {{ $new->date }}
+                                                </button>
+                                                <div class="slider_body_bg">
+                                                    <h5>{{ $new->title }}</h5>
+                                                    <p style="font-size: 19px!important;">{{ $new->description }}</p>
+                                                </div>
                                             </div>
-
-                                        </div>
+                                        </a>
                                     </div>
                                 @endif
                             @endforeach
@@ -153,15 +134,23 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
+
                     <div class="row align-items-center">
-                        @foreach($news->skip(3)->take(4) as $new)
-                            <div class="col-md-6 hvr-forward">
+                        @foreach($news->skip(1)->take(4) as $new)
+                            <div class="col-md-6">
+
                                 <div class="img_sec">
                                     <div class="overlay">
-                                        <button type="button" class="btn btn-primary custom_button">
-                                            {{ $new->date }}
-                                        </button>
-                                        <p>{{ $new->description }}</p>
+                                        <a href="{{ url('/news/' . $new->id) }}">
+                                            <button type="button" class="btn btn-primary custom_button">
+                                                {{ $new->date }}
+                                            </button>
+                                            <div class="slider_body_bg_small">
+                                                <p>{{ $new->description }}</p>
+                                            </div>
+                                        </a>
+
+
                                     </div>
                                     <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                                 </div>
@@ -173,6 +162,28 @@
 
         </div>
     </section>
+
+
+    <!-- Student FAQ -->
+    <div class="student_faq">
+        <div class="container">
+            <h2>Students FAQ</h2>
+            <p class="header_p">Preview all your colleagues questions and get full answers</p>
+            <div class="row">
+                <div class="col-lg-12">
+                    @foreach($faqs as $faq)
+                        <div class="faq_section hvr-forward">
+                            <h3> <i class="fa fa-minus" aria-hidden="true"></i> {{$faq->question}}</h3>
+                            <p>
+                                {{$faq->answer}}
+                            </p>
+                        </div>
+                        <br>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @endsection
