@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Block;
 use App\Models\Category;
 use App\Models\Department;
+use App\Models\Link;
 use App\Models\MainPage;
 use App\Models\Media;
 use App\Models\MediaGroup;
@@ -92,6 +93,8 @@ class HomeController extends Controller
     public function page($id)
     {
         $page = Block::where('slug_ar', $id)->orWhere('slug_en', $id)->orWhere('id', $id)->first();
-        return view('frontend.pages.global', compact('page'));
+        $link = Link::where('block_id', $page->id)->first();
+        $relatedPages = Link::where('menu_link_id', $link->menu_link_id)->doesnthave('children')->get();
+        return view('frontend.pages.global', compact('page', 'relatedPages'));
     }
 }
