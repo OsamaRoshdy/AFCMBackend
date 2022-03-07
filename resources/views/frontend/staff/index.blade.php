@@ -26,9 +26,11 @@
                         <p class="p_heading">{{ getSection('academic_departments')->description }}</p>
                         @foreach($departments as $department)
                             <div class="col-md-4 col-lg-4 col-xl-3">
-                            <div class="card_latest mb-3 hvr-forward">
+                            <div class="card_latest mb-3">
                                 <div class="card">
+                                    <div class="card_img" style="overflow:hidden">
                                     <img src="{{ $department->image }}" class="card-img-top" alt="{{ $department->name }}">
+                                    </div>
                                     <div class="card-body">
                                         <h3 class="card-title">{{ $department->name }}</h3>
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -80,7 +82,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12 col-lg-6 hvr-backward">
+                <div class="col-md-12 col-lg-6">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             @foreach($news->take(3) as $index => $new)
@@ -128,7 +130,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="row align-items-center">
                         @foreach($news->skip(3)->take(4) as $new)
-                            <div class="col-md-6 hvr-forward">
+                            <div class="col-md-6">
                                 <div class="img_sec">
                                     <div class="overlay">
                                         <button type="button" class="btn btn-primary custom_button">

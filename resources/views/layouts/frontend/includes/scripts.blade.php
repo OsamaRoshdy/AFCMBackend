@@ -93,3 +93,72 @@
         },
     });
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+<script src="{{ asset('frontend/plugins/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('frontend/js/horizontalvertical.js') }}"></script>
+
+
+<script>
+    $(document).ready(function(){
+
+// jQuery methods go here...
+$('.counter').counterUp({
+                delay: 10,
+                time: 2000
+            });
+
+});
+
+    </script>
+
+
+<script>
+      var swiper = new Swiper(".mySwiperKG", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+
+
+<script>
+    var swiper = new Swiper(".customSwiper2", {
+      slidesPerView: 5,
+      spaceBetween: 20,
+      slidesPerGroup: 1,
+      loop: true,
+      breakpoints: {
+          500: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        },
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+

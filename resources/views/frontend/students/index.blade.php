@@ -23,7 +23,7 @@
             <div class="row">
                 @foreach($services as $service)
                     <div class="col-lg-6">
-                    <div class="service_block hvr-forward">
+                    <div class="service_block">
                         <div class="card">
                             <img src="{{ $service->image }}" class="card-img-top" alt="">
                             <div class="card-body">

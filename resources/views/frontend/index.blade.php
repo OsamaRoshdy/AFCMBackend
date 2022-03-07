@@ -62,6 +62,7 @@
             <div class="row">
                 <div class="col-md-6 hvr-forward">
                     <div class="get_latest">
+                        <div class="overlay">
                         <h2>{{ getSection('resources_students')->title }}</h2>
                         <p>{{ getSection('resources_students')->description }}</p>
                         <div class="text-end">
@@ -70,12 +71,15 @@
                                 {{ getSection('resources_students')->button }}
                             </button>
                         </div>
+                        </div>
+                        <img src="{{ asset('frontend/images/image.png') }}" class="img-fluid latest_img" alt="">
                     </div>
                 </div>
 
                 <div class="col-md-6 hvr-backward">
                     <div class="get_latest">
-                        <h2>{{ getSection('resources_staff')->title }}</h2>
+                       <div class="overlay">
+                       <h2>{{ getSection('resources_staff')->title }}</h2>
                         <p>{{ getSection('resources_staff')->description }}</p>
                         <div class="text-end">
                             <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
@@ -83,6 +87,8 @@
                                 {{ getSection('resources_staff')->button }}
                             </button>
                         </div>
+                       </div>
+                       <img src="{{ asset('frontend/images/image.png') }}" class="img-fluid latest_img" alt="">
                     </div>
                 </div>
             </div>
@@ -93,7 +99,7 @@
     <div class="upcoming_events">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-4 hvr-backward">
+                <div class="col-md-12 col-lg-4">
                     <div class="card card_info">
                         <img src="{{ getSection('medical_scientific_sections')->image }}" class="card-img-top" alt="">
                         <div class="card-body">
@@ -206,7 +212,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="row align-items-center">
                         @foreach($news->skip(3)->take(4) as $new)
-                            <div class="col-md-6 hvr-forward">
+                            <div class="col-md-6">
                             <div class="img_sec">
                                 <div class="overlay">
                                     <a href="{{ url('/news/' . $new->id) }}">
@@ -246,7 +252,7 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="box">
                             <i class="{{ $statistic->icon }}" aria-hidden="true"></i>
-                            <h1>{{ $statistic->count }}</h1>
+                            <h1 data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100" class="counter">{{ $statistic->count }}</h1>
                             <span>{{ $statistic->name }}</span>
                         </div>
                         </div>
@@ -255,6 +261,90 @@
             </div>
         </div>
     </div>
+    
+
+
+
+    <div class="swiper customSwiper2">
+        <div class="swiper-wrapper">    
+            <div class="swiper-slide customSwipperSlider">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="slider_img">
+                  <div class="overlay">
+                  </div>
+              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
+              </div>
+                        </div>
+                        <div class="col-12">
+                        <h3>mohamed</h3>
+                        <span>title</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide customSwipperSlider">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="slider_img">
+                  <div class="overlay">
+                  </div>
+              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
+              </div>
+                        </div>
+                        <div class="col-12">
+                        <h3>mohamed</h3>
+                        <span>title</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide customSwipperSlider">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="slider_img">
+                  <div class="overlay">
+                  </div>
+              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
+              </div>
+                        </div>
+                        <div class="col-12">
+                        <h3>mohamed</h3>
+                        <span>title</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide customSwipperSlider">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="slider_img">
+                  <div class="overlay">
+                  </div>
+              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
+              </div>
+                        </div>
+                        <div class="col-12">
+                        <h3>mohamed</h3>
+                        <span>title</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+
+    
+
+    
 
     <!-- Why -->
     <div class="container">
