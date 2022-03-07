@@ -1,6 +1,5 @@
 @extends('layouts.frontend.app', ['mainPage' => 1])
 
-
 @section('content')
 
     <!-- E-learning and slider -->
@@ -66,7 +65,7 @@
                         <h2>{{ getSection('resources_students')->title }}</h2>
                         <p>{{ getSection('resources_students')->description }}</p>
                         <div class="text-end">
-                            <a href="{{ url('pages/students') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="{{ url('pages/63') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('resources_students')->button }}
                             </a>
@@ -82,7 +81,7 @@
                        <h2>{{ getSection('resources_staff')->title }}</h2>
                         <p>{{ getSection('resources_staff')->description }}</p>
                         <div class="text-end">
-                            <a href="pages/staff" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="{{ url('pages/62') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('resources_staff')->button }}
                             </a>
@@ -355,5 +354,71 @@
     </section>
 
     {{--  Media  --}}
+    <section class="section section--padding section--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="section__title">
+                        <h2 class="section-title">{{ getSection('media')->title }}</h2>
+                        <span>{{ getSection('media')->description }}</span>
+                    </div>
+                </div>
+                <div class="col-md-2 text-end">
+                    <a type="button" href="{{ url('/gallery') }}" class="btn btn-primary custom_button hvr-wobble-vertical">
+                        <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
+                        {{ getSection('media')->button }}
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12 col-lg-8 hvr-backward">
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/{{ $videos->first()->url }}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <br>
 
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    @foreach($videos->skip(1) as $video)
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/{{$video->url}}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <br>
+                    @endforeach
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+@endsection
+@section('styles')
+
+    <style>
+        .video {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 @endsection

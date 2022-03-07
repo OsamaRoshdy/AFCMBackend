@@ -55,10 +55,10 @@
                             <h2>{{ getSection('staff_join')->title }}</h2>
                             <p class="text-center">{{ getSection('staff_join')->description }}</p>
                             <div class="text-end">
-                                <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                <a href="{{ url('/pages/how-to-join') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                     <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                     {{ getSection('staff_join')->button }}
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <img src="{{ getSection('staff_join')->image }}" style="height: 600px" class="d-block w-100" alt="">

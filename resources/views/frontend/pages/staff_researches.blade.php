@@ -1,5 +1,7 @@
-@extends('layouts.frontend.app')
-@section('scripts')
+
+
+
+@section('script')
     <script>
         document.getElementById("search-title").addEventListener("click", searchByTitle);
         document.getElementById("eee").addEventListener("click", sortByAuthor);
@@ -121,70 +123,5 @@
 
         }
     </script>
-
-@endsection
-
-
-@section('content')
-    <!-- Title Page -->
-    <div class="page_title">
-        <div class="row g-0">
-            <div class="col-12">
-                <div class="overlay">
-                    <h1>{{ $page->title }}</h1>
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                </div>
-                <img src="{{ getSection('news_header')->image }}" class="img-fluid" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Post Detils -->
-    <div class="post_details">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card" style="border-radius: 25px;">
-                        <div class="card-body new_keywords">
-                            <h3>{{ __('related_pages') }}</h3>
-                            <br>
-                            @foreach($relatedPages as $linkPage)
-                                <h5>
-                                    <a href="{{ url($linkPage->route) }}" class="dropdown-item double-chevron--before" style="color: black">{{$linkPage->name}}</a>
-                                </h5>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8"  style="  border-radius: 25px; padding: 15px; ">
-
-                    {!! $page->content_ar !!}
-
-                    @if($page->images->count())
-                    <div class="row" style="border-radius: 25px;">
-                        <div class="col-12 hvr-backward">
-                            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    @foreach($page->images as $index => $image)
-                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="{{ $loop->first ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
-                                    @endforeach
-                                </div>
-                                <div class="carousel-inner">
-                                    @foreach($page->image as $image)
-                                    <div class="carousel-item active" style="border-radius: 25px;">
-                                        <img src="{{$image->image}}" style="height: 600px;border-radius: 25px;" class="d-block w-100" alt="...">
-                                    </div>
-                                    @endforeach
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 @endsection

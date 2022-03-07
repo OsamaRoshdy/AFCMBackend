@@ -44,6 +44,10 @@ class LinksController extends CommonController
         ]);
         $data = $request->except(['image']);
         $data['menu_link_id'] = $menuLink;
+        if ($request->block_id) {
+            $block = Block::findOrFail($request->block_id);
+            $data['route'] = 'pages/' . $block->slug;
+        }
         Link::create($data);
         toast(__('common.added_successfully'), 'success', 'top-right');
         return redirect()->route('dashboard.' . $this->module . '.index', $menuLink);
@@ -67,10 +71,11 @@ class LinksController extends CommonController
         $data = $request->except(['image']);
         if ($request->block_id) {
             $block = Block::findOrFail($request->block_id);
-            $data['route'] = $block->slug;
+            $data['route'] = 'pages/' . $block->slug;
         }
         $link->update($data);
         toast(__('common.updated_successfully'), 'success', 'top-right');
+        return back();
         return redirect()->route('dashboard.' . $this->module . '.index', $link->menu_link_id);
     }
 

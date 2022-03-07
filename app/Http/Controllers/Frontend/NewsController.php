@@ -30,4 +30,13 @@ class NewsController extends Controller
         }
         abort(404);
     }
+
+    public function byCategory($id)
+    {
+        $news = Block::news()->whereHas('categories', function ($query) use ($id){
+            $query->where('category_id', $id);
+        })->paginate(20);
+
+        return view('frontend.global.byCategory', compact('news'));
+    }
 }

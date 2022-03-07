@@ -16,6 +16,7 @@ class Block extends Model
     const TYPE_NEWS = 2; // section
     const TYPE_EVENTS = 3; // section
     const TYPE_PAGES = 4; // section
+    const TYPE_JOBS = 5; // section
 
     protected $appends = ['title', 'slug', 'description', 'content', 'image', 'button'];
 

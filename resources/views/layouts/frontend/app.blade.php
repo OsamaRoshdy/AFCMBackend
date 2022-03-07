@@ -25,7 +25,9 @@
     </head>
 
     <body>
-        <div id="root">
+    @include('sweetalert::alert')
+
+    <div id="root">
             @include('layouts.frontend.includes.header')
         </div>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Block;
 use App\Models\Category;
 use App\Models\Department;
+use App\Models\FAQ;
 use App\Models\Link;
 use App\Models\MainPage;
 use App\Models\Media;
@@ -24,7 +25,7 @@ class HomeController extends Controller
 
         $events = Block::upCommingEvents()->active()->take(2)->get();
         $statistics = Statistic::active()->orderBy('sort', 'asc')->get();
-        $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->get();
+        $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->take(3)->get();
         $partners = Partner::active()->home()->orderBy('sort', 'asc')->get();
         $mainPage = MainPage::find(1);
         $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS);
@@ -92,9 +93,33 @@ class HomeController extends Controller
 
     public function page($id)
     {
+
         $page = Block::where('slug_ar', $id)->orWhere('slug_en', $id)->orWhere('id', $id)->first();
         $link = Link::where('block_id', $page->id)->first();
         $relatedPages = Link::where('menu_link_id', $link->menu_link_id)->doesnthave('children')->get();
+
+        if($link->id == 31 || $link->id == 32) {
+            $type = $link->id == 31 ? Partner::INTERNATIONAL : Partner::NATIONAL;
+            $partners = Partner::where('type', $type)->active()->latest()->get();
+            return view('frontend.pages.protocols', compact('page', 'relatedPages', 'partners'));
+        }
+
+        if ($link->id == 36) { //Jobs
+
+            $jobs = Block::where('type', Block::TYPE_JOBS)->active()->latest()->get();
+            return view('frontend.pages.jobs', compact('page', 'relatedPages', 'jobs'));
+        }
+
+        if ($link->id == 17) { //FAQs
+
+            $faqs = FAQ::active()->orderBy('sort', 'asc')->get();
+            return view('frontend.pages.faqs', compact('page', 'relatedPages', 'faqs'));
+        }
+
+        if (in_array($page->id, [54, 55,62, 63, 57], true)) { //FAQs
+            return view('frontend.pages.with_out_related', compact('page'));
+        }
+
         return view('frontend.pages.global', compact('page', 'relatedPages'));
     }
 }

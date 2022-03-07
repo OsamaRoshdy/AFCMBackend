@@ -41,6 +41,7 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::resource('pages', \App\Http\Controllers\Backend\PageController::class);
     Route::resource('staff', \App\Http\Controllers\Backend\StaffController::class);
     Route::resource('faqs', \App\Http\Controllers\Backend\FAQController::class);
+    Route::resource('jobs', \App\Http\Controllers\Backend\JobController::class);
     Route::delete('block_images/{block_images}', [\App\Http\Controllers\Backend\NewsController::class, 'deleteBlockImage'])->name('block_images.destroy');
 
 
