@@ -20,6 +20,7 @@ Route::get('students', [\App\Http\Controllers\Frontend\HomeController::class, 's
 
 Route::get('staff', [\App\Http\Controllers\Frontend\HomeController::class, 'staff']);
 Route::get('gallery', [\App\Http\Controllers\Frontend\HomeController::class, 'gallery']);
+Route::get('media/{media}', [\App\Http\Controllers\Frontend\HomeController::class, 'media']);
 
 Route::get('contact-us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
 
