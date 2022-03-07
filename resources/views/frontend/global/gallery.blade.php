@@ -1,6 +1,26 @@
 @extends('layouts.frontend.app')
 
+@section('styles')
 
+    <style>
+        .video {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+@endsection
 @section('content')
 
     <!-- Title Page -->
@@ -15,6 +35,39 @@
             </div>
         </div>
     </div>
+
+
+    {{--  Media  --}}
+    <section class="section section--padding section--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8 hvr-backward">
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/{{ $videos->first()->url }}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                            allowfullscreen></iframe>
+                    </div>
+                    <br>
+
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    @foreach($videos->skip(1)->take(2) as $video)
+                        <div class="video-container">
+                            <iframe
+                                src="https://www.youtube.com/embed/{{$video->url}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                                allowfullscreen></iframe>
+                        </div>
+                        <br>
+                    @endforeach
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
     <section class="section section--padding section--bg">

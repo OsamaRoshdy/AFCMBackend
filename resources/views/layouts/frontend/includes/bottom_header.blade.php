@@ -51,7 +51,7 @@
                                             </li>
                                         @else
                                            <li>
-                                                <a class="dropdown-item" href="{{ url('pages/' . $subLink->route)  }}">{{ $subLink->name }}</a>
+                                                <a class="dropdown-item" href="{{ url($subLink->route)  }}">{{ $subLink->name }}</a>
                                             </li>
                                         @endif
                                     @endforeach
@@ -59,7 +59,7 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a class="link link--main-clr link--nav nav-link" href="{{ url('pages/') . $link->route }}">{{ $link->name }}</a>
+                                <a class="link link--main-clr link--nav nav-link" href="{{ url('/'. $link->route)  }}">{{ $link->name }}</a>
                             </li>
                         @endif
                     @endforeach
@@ -94,19 +94,19 @@
                                                 <ul>
                                                     @foreach($child->children as $key2=>$data)
                                                         <li>
-                                                            <a class="dropdown-item double-chevron--before " href="{{$data->route}}" > {{$data->name}}</a>
+                                                            <a class="dropdown-item double-chevron--before " href="{{ url('/' . $data->route)}}" > {{$data->name}}</a>
                                                         </li>
                                                     @endforeach
                                                 </ul>
                                             </div>
                                         </div>
                                         @else
-                                        <a class="link double-chevron--before " href="{{$child->route}}">{{$child->name}}</a>
+                                        <a class="link double-chevron--before " href="{{ url('/'.$child->route )}}">{{$child->name}}</a>
                                     @endif
                                 @endforeach
 
                             @else
-                                <a class="link double-chevron--before " href="{{$link->route}}" target="_self">{{$link->name}}</a>
+                                <a class="link double-chevron--before " href="{{ url('/'.$link->route )}}" target="_self">{{$link->name}}</a>
                             @endif
                         </h2>
                     </div>

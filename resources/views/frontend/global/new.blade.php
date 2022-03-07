@@ -7,7 +7,7 @@
         <div class="row g-0">
             <div class="col-12">
                 <div class="overlay">
-                    <h1>{{ getSection('news_header')->title }}</h1>
+                    <h1>{{ $new->title }}</h1>
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </div>
                 <img src="{{ getSection('news_header')->image }}" class="img-fluid" alt="">
@@ -50,41 +50,41 @@
                     <p>
                         {!! $new->content !!}
                     </p>
-                        @if($new->images)
-                    <div class="row">
+                    @if($new->images)
+                        <div class="row">
 
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div
-                                        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                                        class="swiper mySwiper2">
-                                        <div class="swiper-wrapper">
-                                            @foreach($new->images as $image)
-                                            <div class="swiper-slide">
-                                                <img src="{{ $image->image }}"  class="image"/>
-                                            </div>
-                                            @endforeach
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div
+                                    style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                    class="swiper mySwiper2">
+                                    <div class="swiper-wrapper">
+                                        @foreach($new->images as $image)
+                                        <div class="swiper-slide">
+                                            <img src="{{ $image->image }}"  class="image"/>
                                         </div>
-                                        <div class="swiper-button-next"></div>
-                                        <div class="swiper-button-prev"></div>
+                                        @endforeach
                                     </div>
-                                    <div thumbsSlider="" class="swiper mySwiper">
-                                        <div class="swiper-wrapper">
-                                            @foreach($new->images as $image)
-                                                <div class="swiper-slide">
-                                                    <img src="{{ $image->image }}" />
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
                                 </div>
+                                <div thumbsSlider="" class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        @foreach($new->images as $image)
+                                            <div class="swiper-slide">
+                                                <img src="{{ $image->image }}" />
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
                     </div>
-                        @endif
+
+                </div>
+                    @endif
                 </div>
             </div>
         </div>

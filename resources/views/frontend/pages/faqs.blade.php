@@ -153,31 +153,26 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-lg-8"  style="  border-radius: 25px; padding: 15px; ">
+                <div class="col-lg-8">
 
-                    {!! $page->content_ar !!}
-
-                    @if($page->images->count())
-                    <div class="row" style="border-radius: 25px;">
-                        <div class="col-12 hvr-backward">
-                            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    @foreach($page->images as $index => $image)
-                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="{{ $loop->first ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
+                    <div class="student_faq">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @foreach($faqs as $faq)
+                                        <div class="faq_section hvr-forward">
+                                            <h3> <i class="fa fa-minus" aria-hidden="true"></i> {{$faq->question}}</h3>
+                                            <p>
+                                                {{$faq->answer}}
+                                            </p>
+                                        </div>
+                                        <br>
                                     @endforeach
                                 </div>
-                                <div class="carousel-inner">
-                                    @foreach($page->image as $image)
-                                    <div class="carousel-item active" style="border-radius: 25px;">
-                                        <img src="{{$image->image}}" style="height: 600px;border-radius: 25px;" class="d-block w-100" alt="...">
-                                    </div>
-                                    @endforeach
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                    @endif
+
+
                 </div>
             </div>
         </div>
