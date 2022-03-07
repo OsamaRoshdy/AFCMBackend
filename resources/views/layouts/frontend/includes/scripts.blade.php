@@ -94,25 +94,6 @@
     });
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
-<script src="{{ asset('frontend/plugins/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset('frontend/js/horizontalvertical.js') }}"></script>
-
-
-<script>
-    $(document).ready(function(){
-
-// jQuery methods go here...
-$('.counter').counterUp({
-                delay: 10,
-                time: 2000
-            });
-
-});
-
-    </script>
-
-
 <script>
       var swiper = new Swiper(".mySwiperKG", {
         effect: "coverflow",
@@ -139,6 +120,10 @@ $('.counter').counterUp({
       spaceBetween: 20,
       slidesPerGroup: 1,
       loop: true,
+    autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+    },
       breakpoints: {
           500: {
             slidesPerView: 1,

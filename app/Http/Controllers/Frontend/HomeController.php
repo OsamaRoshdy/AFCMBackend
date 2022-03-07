@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
         $sliderGroup = SliderGroup::find(1)->load('sliders');
 
-        $events = Block::upCommingEvents()->active()->take(3)->get();
+        $events = Block::upCommingEvents()->active()->take(2)->get();
         $statistics = Statistic::active()->orderBy('sort', 'asc')->get();
         $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->get();
         $partners = Partner::active()->home()->orderBy('sort', 'asc')->get();
@@ -47,10 +47,12 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(3);
         if ($mainPage && $mainPage->status == true) {
+            $sliderGroup = SliderGroup::find(1)->load('sliders');
+
             $news = MainPage::find(3)->blocks->where('type', Block::TYPE_NEWS);
             $departments = Department::active()->orderBy('sort', 'asc')->get();
             $staff = Staff::active()->orderBy('sort', 'asc')->get();
-            return view('frontend.staff.index', compact('departments', 'news', 'staff'));
+            return view('frontend.staff.index', compact('departments', 'news', 'staff', 'sliderGroup'));
         }
         abort(404);
     }

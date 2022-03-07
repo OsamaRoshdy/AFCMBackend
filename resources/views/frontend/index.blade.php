@@ -199,7 +199,7 @@
                                             </button>
                                             <div class="slider_body_bg">
                                             <h5>{{ $new->title }}</h5>
-                                            <p>{{ $new->description }}</p>
+                                            <h1>{{ $new->description }}</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -210,10 +210,11 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
+
                     <div class="row align-items-center">
                         @foreach($news->skip(3)->take(4) as $new)
                             <div class="col-md-6">
-                            <div class="img_sec">
+                                <div class="img_sec">
                                 <div class="overlay">
                                     <a href="{{ url('/news/' . $new->id) }}">
                                         <button type="button" class="btn btn-primary custom_button">
@@ -228,7 +229,7 @@
                                 </div>
                                 <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                             </div>
-                        </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -261,90 +262,15 @@
             </div>
         </div>
     </div>
-    
 
 
 
-    <div class="swiper customSwiper2">
-        <div class="swiper-wrapper">    
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
 
 
-    
 
-    
+
+
+
 
     <!-- Why -->
     <div class="container">
@@ -384,7 +310,52 @@
         </div>
     </div>
 
-    {{-- Partnrs   --}}
+    <!-- Latest Events-->
+    <section class="section section--padding section--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="section__title">
+                        <h2 class="section-title">{{ getSection('home_partners')->title }}</h2>
+                        <span>{{ getSection('home_partners')->description }}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="section__header">
+            </div>
+
+            <div class="row">
+                <div class="swiper customSwiper2">
+                    <div class="swiper-wrapper">
+                        @foreach($partners as $partner)
+                            <div class="swiper-slide customSwipperSlider">
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="">
+                                            <div class="overlay">
+                                            </div>
+                                            <img src="{{$partner->image}}" class="img-fluid customSliderImage" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <h3>{{ $partner->name }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     {{--  Media  --}}
 

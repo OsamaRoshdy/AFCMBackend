@@ -13173,22 +13173,22 @@ article p:not(:last-child) {
     font-weight: 500;
     margin-bottom: 20px;
 }
-img {
-    transition: all 0.5s ease-in-out !important;
-}
-img:hover{
-    transition: all 0.5s ease-in-out !important;
-    transform: scale(1.2,1.2) !important;
-}
-.img_sec img {
-    height: 290px;
-    transition: all 0.5s ease-in-out;
-    background-size: cover;
-}
-.img_sec:hover img{
-    transition: all 0.5s ease-in-out;
-    transform: scale(1.2,1.2);
-}
+/*img {*/
+/*    transition: all 0.5s ease-in-out !important;*/
+/*}*/
+/*img:hover{*/
+/*    transition: all 0.5s ease-in-out !important;*/
+/*    transform: scale(1.2,1.2) !important;*/
+/*}*/
+/*.img_sec img {*/
+/*    height: 290px;*/
+/*    transition: all 0.5s ease-in-out;*/
+/*    background-size: cover;*/
+/*}*/
+/*.img_sec:hover img{*/
+/*    transition: all 0.1s ease-in-out;*/
+/*    transform: scale(1.2,1.2);*/
+/*}*/
 .img_sec p {
     font-size: 16px;
     color: #FFF;
@@ -13592,7 +13592,7 @@ body {
     letter-spacing: 1px;
     max-lines: 3;
     text-align: left;
-    background-color: #FFF;
+    background-color: #ffffff52;
     padding: 15px 20px;
     border-left: 6px solid #012a69;
     color: #012a69;
@@ -14139,7 +14139,6 @@ body {
 
 .customSwiper2 .customSwipperSlider {
     background-color: transparent;
-    border-radius: 500px;
 }
 .customSwiper2 .customSwipperSlider img {
     border-radius: 500px !important;

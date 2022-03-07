@@ -17,30 +17,37 @@
     </div>
 
     <!-- E-learning and slider -->
-    <div class="departments_academic">
+    <div class="learning_slider">
         <div class="container">
             <div class="row">
-                <div class="col-mg-12 col-lg-8 text-center">
-                    <div class="row">
-                        <h2>{{ getSection('academic_departments')->title }}</h2>
-                        <p class="p_heading">{{ getSection('academic_departments')->description }}</p>
-                        @foreach($departments as $department)
-                            <div class="col-md-4 col-lg-4 col-xl-3">
-                            <div class="card_latest mb-3">
-                                <div class="card">
-                                    <div class="card_img" style="overflow:hidden">
-                                    <img src="{{ $department->image }}" class="card-img-top" alt="{{ $department->name }}">
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">{{ $department->name }}</h3>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
+                <!-- Start slider -->
+                <div class="col-mg-12 col-lg-8">
+                    <div
+                        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                        class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            @foreach($sliderGroup->sliders as $slider)
+                                <div class="swiper-slide">
+                                    <img src="{{ $slider->image }}"  class="image"/>
+                                    <p>{{ $slider->description }}</p>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            @foreach($sliderGroup->sliders as $slider)
+                                <div class="swiper-slide">
+                                    <img src="{{ $slider->image }}" />
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
                 </div>
+                <!-- End slider -->
 
                 <div class="col-md-12 col-lg-4">
                     <div class="learning">
@@ -62,6 +69,49 @@
     </div>
 
     <!-- Latest Events-->
+    <section class="section section--padding section--bg">
+        <div class="container">
+            <div class="col-md-10">
+                <div class="section__title">
+                    <h2 class="section-title">{{ getSection('academic_departments')->title }}</h2>
+                    <span>{{ getSection('academic_departments')->description }}</span>
+                </div>
+            </div>
+
+            <div class="swiper customSwiper2">
+                <div class="swiper-wrapper">
+                    @foreach($departments as $department)
+                    <div class="swiper-slide customSwipperSlider">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="slider_img">
+                                        <div class="overlay">
+                                        </div>
+                                        <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <h3>{{ $department->name }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
     <section class="section section--padding section--bg">
         <div class="container">
             <div class="row">
