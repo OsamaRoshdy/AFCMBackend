@@ -28204,3 +28204,34 @@ body {
 .swiper-pagination {
     display: none !important;
 }
+
+
+
+.horVerSlider i {
+    border: none !important;
+}
+.slider_img {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+.slider_img .overlay {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(1, 42, 105, 0.7);
+    border-radius: 200px;
+}
+.swiper-button-next , .swiper-button-prev {
+    color: #012a69 !important;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-next:after ,
+.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after {
+    font-size: 25px  !important;
+}
