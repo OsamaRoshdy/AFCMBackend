@@ -58,7 +58,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow: auto;
-    direction: ltr;
+    direction: rtl;
 }
 
 hr {
@@ -411,7 +411,7 @@ legend + * {
 [type="url"],
 [type="email"],
 [type="number"] {
-  direction: ltr;
+  direction: rtl;
 }
 ::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -11880,7 +11880,7 @@ article p:not(:last-child) {
 .header .navbar .collapse-navbar--mobile {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
