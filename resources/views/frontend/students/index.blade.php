@@ -24,18 +24,24 @@
                 @foreach($services as $service)
                     <div class="col-lg-6">
                     <div class="service_block">
-                        <div class="card">
-                            <img src="{{ $service->image }}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $service->title }}
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i></h5>
-                                <p class="card-text">{{ $service->description }} </p>
-                                <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                    <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
-                                    Learn More
-                                </button>
+                            <div class="card">
+
+                                <img src="{{ $service->image }}" class="card-img-top" alt="">
+
+                                    <div class="card-body">
+
+                                        <h5 class="card-title">{{ $service->title }}
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i></h5>
+                                    <p class="card-text">{{ $service->description }} </p>
+                                    <a href="{{ url('news/' . $service->id) }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                        <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
+                                        Learn More
+                                    </a>
+
+                                    </div>
+
                             </div>
-                        </div>
+
                     </div>
                 </div>
                 @endforeach
@@ -51,10 +57,10 @@
                 <div class="overlay">
                     <h1>{{ getSection('e-learning')->title }}</h1>
                     <p>{{ getSection('e-learning')->description }}</p>
-                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                    <a href="https://afcm.brightspace/d2l/login" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                         <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                         {{ getSection('e-learning')->button }}
-                    </button>
+                    </a>
                 </div>
                 <img src="{{ getSection('e-learning')->image }}" class="img-fluid bg" alt="">
             </div>

@@ -25,7 +25,7 @@ class NewsController extends Controller
         if ($new) {
             $relatedNews = Block::news()->whereHas('categories', function ($query) use ($new){
                 $query->whereIn('category_id', $new->categories->pluck('id')->toArray());
-            })->take(3)->get();
+            })->where('id', '!=', $new->id)->take(3)->get();
             return view('frontend.global.new', compact('relatedNews','new'));
         }
         abort(404);
