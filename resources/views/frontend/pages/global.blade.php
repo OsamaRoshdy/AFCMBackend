@@ -22,20 +22,11 @@
                     <div style="background: #e1e1e1;  border-radius: 25px; padding: 15px; " class="new_keywords">
                         <h3>Related Pages</h3>
                         <br>
+                        @foreach($relatedPages as $linkPage)
                         <h5>
-                            <a href="#" class="dropdown-item double-chevron--before" style="color: black"> A Word From The Dean</a>
+                            <a href="{{ url('pages/'.$linkPage->route) }}" class="dropdown-item double-chevron--before" style="color: black">{{$linkPage->name}}</a>
                         </h5>
-                        <h5>
-                            <a href="#" class="dropdown-item double-chevron--before" style="color: black"> Vision & Mission</a>
-                        </h5>                        <h5>
-                            <a href="#" class="dropdown-item double-chevron--before" style="color: black"> History</a>
-                        </h5>                        <h5>
-                            <a href="#" class="dropdown-item double-chevron--before" style="color: black"> Facts & Figures</a>
-                        </h5>                        <h5>
-                            <a href="#" class="dropdown-item double-chevron--before" style="color: black"> Future Projects</a>
-                        </h5>                        <h5>
-                            <a href="#" class="dropdown-item double-chevron--before" style="color: black"> FAQs</a>
-                        </h5>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-8"  style="background: #e1e1e1;  border-radius: 25px; padding: 15px; ">

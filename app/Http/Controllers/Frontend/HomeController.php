@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Block;
 use App\Models\Category;
 use App\Models\Department;
+use App\Models\Link;
 use App\Models\MainPage;
 use App\Models\Media;
 use App\Models\MediaGroup;
@@ -21,7 +22,7 @@ class HomeController extends Controller
     {
         $sliderGroup = SliderGroup::find(1)->load('sliders');
 
-        $events = Block::upCommingEvents()->active()->take(3)->get();
+        $events = Block::upCommingEvents()->active()->take(2)->get();
         $statistics = Statistic::active()->orderBy('sort', 'asc')->get();
         $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->get();
         $partners = Partner::active()->home()->orderBy('sort', 'asc')->get();
@@ -47,10 +48,12 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(3);
         if ($mainPage && $mainPage->status == true) {
+            $sliderGroup = SliderGroup::find(1)->load('sliders');
+
             $news = MainPage::find(3)->blocks->where('type', Block::TYPE_NEWS);
             $departments = Department::active()->orderBy('sort', 'asc')->get();
             $staff = Staff::active()->orderBy('sort', 'asc')->get();
-            return view('frontend.staff.index', compact('departments', 'news', 'staff'));
+            return view('frontend.staff.index', compact('departments', 'news', 'staff', 'sliderGroup'));
         }
         abort(404);
     }
@@ -90,6 +93,8 @@ class HomeController extends Controller
     public function page($id)
     {
         $page = Block::where('slug_ar', $id)->orWhere('slug_en', $id)->orWhere('id', $id)->first();
-        return view('frontend.pages.global', compact('page'));
+        $link = Link::where('block_id', $page->id)->first();
+        $relatedPages = Link::where('menu_link_id', $link->menu_link_id)->doesnthave('children')->get();
+        return view('frontend.pages.global', compact('page', 'relatedPages'));
     }
 }

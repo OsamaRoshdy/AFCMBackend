@@ -94,6 +94,10 @@ class Block extends Model
     {
         $query->where('type', self::TYPE_NEWS);
     }
+    public function scopeEvents($query)
+    {
+        $query->where('type', self::TYPE_EVENTS);
+    }
 
     public function scopeUpCommingEvents($query)
     {

@@ -66,10 +66,10 @@
                         <h2>{{ getSection('resources_students')->title }}</h2>
                         <p>{{ getSection('resources_students')->description }}</p>
                         <div class="text-end">
-                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="{{ url('pages/students') }}" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('resources_students')->button }}
-                            </button>
+                            </a>
                         </div>
                         </div>
                         <img src="{{ asset('frontend/images/image.png') }}" class="img-fluid latest_img" alt="">
@@ -82,10 +82,10 @@
                        <h2>{{ getSection('resources_staff')->title }}</h2>
                         <p>{{ getSection('resources_staff')->description }}</p>
                         <div class="text-end">
-                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                            <a href="pages/staff" type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                 <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                                 {{ getSection('resources_staff')->button }}
-                            </button>
+                            </a>
                         </div>
                        </div>
                        <img src="{{ asset('frontend/images/image.png') }}" class="img-fluid latest_img" alt="">
@@ -122,14 +122,16 @@
                                 <div class="col-md-2">
                                     <!-- <img src="{{ $event->image }}" class="img-fluid rounded-start" alt=""> -->
                                    <div class="date">
-                                   <p class="text-center">22 </br> 03/2022</p>
+                                   <p class="text-center">{{$event->date}}</p>
                                    </div>
                                 </div>
                                 <div class="col-md-10">
                                     <div class="card-body">
-                                        <h6 class="card-text" style="color: black">{{ $event->title }}</h6>
-                                        <p class="card-text">{{ $event->description }}</p>
-                                        <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        <a href="{{ url('events/' . $event->id) }}">
+                                            <h3 class="card-text" style="color: black">{{ $event->title }}</h3>
+                                        </a>
+                                        <p class="card-text">{{ $event->description }}{{ $event->description }}{{ $event->description }}{{ $event->description }}</p>
+                                        <a href="{{ url('events/' . $event->id) }}" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -167,7 +169,7 @@
                 <div class="col-md-12 col-lg-6 hvr-backward">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            @foreach($news->take(3) as $index => $new)
+                            @foreach($news->take(2) as $index => $new)
                                 @if($loop->first)
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="active" aria-current="true" aria-label="Slide 1"></button>
                                 @else
@@ -176,22 +178,26 @@
                             @endforeach
                         </div>
                         <div class="carousel-inner">
-                            @foreach($news->take(3) as $new)
+                            @foreach($news->take(2) as $new)
                                 @if($loop->first)
                                     <div class="carousel-item active">
-                                        <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block w-100">
-                                            <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
-                                                {{ $new->date }}
-                                            </button>
-                                            <div class="slider_body_bg">
-                                            <h5>{{ $new->title }}</h5>
-                                            <p>{{ $new->description }}</p>
+                                        <a href="{{ url('news/' . $new->id) }}">
+                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block w-100">
+                                                <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                                                    {{ $new->date }}
+                                                </button>
+                                                <div class="slider_body_bg">
+                                                    <h5>{{ $new->title }}</h5>
+                                                    <p style="font-size: 19px!important;">{{ $new->description }}</p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
+
                                     </div>
                                 @else
                                     <div class="carousel-item">
+                                        <a href="{{ url('news/' . $new->id) }}">
                                         <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
                                         <div class="carousel-caption d-none d-md-block w-100">
                                             <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
@@ -199,9 +205,10 @@
                                             </button>
                                             <div class="slider_body_bg">
                                             <h5>{{ $new->title }}</h5>
-                                            <p>{{ $new->description }}</p>
+                                            <p style="font-size: 19px!important;">{{ $new->description }}</p>
                                             </div>
                                         </div>
+                                        </a>
                                     </div>
                                 @endif
                             @endforeach
@@ -210,10 +217,12 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
+
                     <div class="row align-items-center">
-                        @foreach($news->skip(3)->take(4) as $new)
+                        @foreach($news->skip(1)->take(4) as $new)
                             <div class="col-md-6">
-                            <div class="img_sec">
+
+                                <div class="img_sec">
                                 <div class="overlay">
                                     <a href="{{ url('/news/' . $new->id) }}">
                                         <button type="button" class="btn btn-primary custom_button">
@@ -228,7 +237,7 @@
                                 </div>
                                 <img src="{{ $new->image }}" class="img-fluid" alt="" srcset="">
                             </div>
-                        </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -261,90 +270,6 @@
             </div>
         </div>
     </div>
-    
-
-
-
-    <div class="swiper customSwiper2">
-        <div class="swiper-wrapper">    
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide customSwipperSlider">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12">
-                        <div class="slider_img">
-                  <div class="overlay">
-                  </div>
-              <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
-              </div>
-                        </div>
-                        <div class="col-12">
-                        <h3>mohamed</h3>
-                        <span>title</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-
-    
-
-    
 
     <!-- Why -->
     <div class="container">
@@ -362,8 +287,6 @@
                     <p>
                         {!! getSection('glance')->content !!}
                     </p>
-                    <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                    </a>
                 </div>
             </div>
 
@@ -371,12 +294,12 @@
             <div class="col-md-12 col-lg-6 hvr-forward">
                 <div class="why_join">
                     <div class="logo">
-                        <a class="logo__dis" href="#">
+                        <a class="logo__dis" href="{{ url('pages/44') }}">
                             {{ getSection('why_afcm')->title  }}
                         </a>
                     </div>
                     {!! getSection('why_afcm')->content !!}
-                    <a href="" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    <a href="" class="learn_more">{{__('frontend.learn_more')}} <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </a>
 
                 </div>
@@ -384,7 +307,52 @@
         </div>
     </div>
 
-    {{-- Partnrs   --}}
+    <!-- Latest Events-->
+    <section class="section section--padding section--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="section__title">
+                        <h2 class="section-title">{{ getSection('home_partners')->title }}</h2>
+                        <span>{{ getSection('home_partners')->description }}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="section__header">
+            </div>
+
+            <div class="row">
+                <div class="swiper customSwiper2">
+                    <div class="swiper-wrapper">
+                        @foreach($partners as $partner)
+                            <div class="swiper-slide customSwipperSlider">
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="">
+                                            <div class="overlay">
+                                            </div>
+                                            <img src="{{$partner->image}}" class="img-fluid customSliderImage" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <h3>{{ $partner->name }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     {{--  Media  --}}
 
