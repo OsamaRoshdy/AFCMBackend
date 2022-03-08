@@ -81,15 +81,29 @@
                 </div>
             </div>
 
-            <div class="row gallery-container" id="animated-thumbnails-gallery">
-                @foreach($mediaGroups as $mediaGroup)
-                    <div class="col-lg-3" style="    margin-bottom: 20px;" data-src="{{ $mediaGroup->mainImage()->image }}" data-sub-html="{{ $mediaGroup->name }}">
-                        <a href="{{ url('/media/'.$mediaGroup->slug) }}" data-lg-size="45-45" class="gallery-item" data-src="{{ $mediaGroup->mainImage()->image }}" data-sub-html="{{ $mediaGroup->name }}">
-                            <img alt="{{ $mediaGroup->name }}" class="img-fluid media_gallery_img" src="{{ $mediaGroup->mainImage()->image }}" />
-                        </a>
+            <div class="latest_upgrade">
+            <div class="row">
+                <div class="col-md-6 hvr-forward">
+                    <div class="get_latest">
+                        <div class="overlay">
+                        <h2>Stuff Researches</h2>
+                        <p>LEARN EVERY NEW DEVELOPMENT IN MEDICAL FIELD</p>
+                        </div>
+                        <img src="http://127.0.0.1:8000/frontend/images/image.png" class="img-fluid latest_img" alt="">
                     </div>
-                @endforeach
+                </div>
+
+                <div class="col-md-6 hvr-backward">
+                    <div class="get_latest">
+                       <div class="overlay">
+                       <h2>Student Researches</h2>
+                        <p>LEARN EVERY NEW DEVELOPMENT IN MEDICAL FIELD</p>
+                       </div>
+                       <img src="http://127.0.0.1:8000/frontend/images/image.png" class="img-fluid latest_img" alt="">
+                    </div>
+                </div>
             </div>
+    </div>
 
         </div>
     </section>
