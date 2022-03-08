@@ -42,6 +42,7 @@
                     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
                     @foreach($items as $item)
+                        @if(auth('admin')->user()->can('list_' . $item['name']))
                         <li class="menu-item menu-item-submenu {{ \Request::is('dashboard/' . $item['name'] . '*') ? 'menu-item-open menu-item-here' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon {{ $item['icon'] }}"></i>
@@ -75,6 +76,7 @@
                         </ul>
                     </div>
                 </li>
+                        @endif
                     @endforeach
                 @endforeach
 
