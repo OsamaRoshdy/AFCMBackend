@@ -157,7 +157,7 @@
                 </div>
                 <div class="col-lg-8"  style="  border-radius: 25px; padding: 15px; ">
 
-                    {!! $page->content_ar !!}
+                    {!! $page->content !!}
 
                     @if($page->images->count())
                     <div class="row" style="border-radius: 25px;">
