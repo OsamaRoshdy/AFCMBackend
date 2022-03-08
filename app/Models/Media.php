@@ -6,7 +6,7 @@ use App\Http\Foundation\Classes\Helper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Media extends Model
+class Media extends CommonModel
 {
     const TYPE_IMAGE = 1;
     const TYPE_VIDEO = 2;

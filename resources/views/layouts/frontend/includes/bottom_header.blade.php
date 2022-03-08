@@ -10,7 +10,7 @@
                         <bold style="color: #d70000; font-size: 20px; font-weight: 900">A</bold>rmed <bold style="color: #d70000; font-size: 20px; font-weight: 900">F</bold>orces <span> <bold style="color: #d70000; font-size: 20px; font-weight: 900">C</bold>ollege Of <bold style="color: #d70000; font-size: 20px; font-weight: 900">M</bold>edicine </span>
                     </a>
                 </div>
-                <form class="input-btn d-flex" method="GET" action="http://localhost/AFCM/en/search">
+                <form class="input-btn d-flex" method="GET" action="">
                     <input class="input form-control" type="search" name="search"
                            placeholder="What you search for" aria-label="Search">
                     <button class="btn btn-link" type="submit">

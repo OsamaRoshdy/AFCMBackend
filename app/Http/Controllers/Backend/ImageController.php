@@ -36,9 +36,11 @@ class ImageController extends CommonController
     public function store(Request $request)
     {
         $request->validate([
-            'images' => 'required',
             'name_ar' => 'required',
             'name_en' => 'required',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'required|array',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
         $data = $request->except(['images']);
         $data['slug_en'] = str_slug($request->name_en);
@@ -65,6 +67,13 @@ class ImageController extends CommonController
 
     public function update(Request $request,$id)
     {
+        $request->validate([
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'required|array',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+        ]);
         $media = MediaGroup::findOrFail($id);
         $data = $request->except(['images']);
         if ($request->images) {

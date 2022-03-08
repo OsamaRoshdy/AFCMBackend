@@ -41,6 +41,9 @@ class SliderController extends CommonController
             'description_en' => 'required',
             'slider_group_id' => 'required',
             'status' => 'required',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'required|array',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
         $data = $request->except(['image_name']);
         $data['image_name'] = $this->storeImage($request->image_name, 'sliders');
@@ -58,6 +61,15 @@ class SliderController extends CommonController
 
     public function update(Request $request,Slider $slider)
     {
+        $request->validate([
+            'description_ar' => 'required',
+            'description_en' => 'required',
+            'slider_group_id' => 'required',
+            'status' => 'required',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'required|array',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+        ]);
         $data = $request->except(['image_name']);
         if ($request->image_name) {
             $data['image_name'] = $this->updateImage($request->image_name, $slider->image_name,'sliders');

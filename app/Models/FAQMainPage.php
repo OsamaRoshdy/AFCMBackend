@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FAQMainPage extends Model
+class FAQMainPage extends CommonModel
 {
     use HasFactory;
 

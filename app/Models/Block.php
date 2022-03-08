@@ -6,8 +6,10 @@ use App\Http\Foundation\Classes\Helper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
-class Block extends Model
+class Block extends CommonModel
 {
     use HasFactory, SoftDeletes;
 

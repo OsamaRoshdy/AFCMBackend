@@ -6,7 +6,7 @@ use App\Http\Foundation\Classes\Helper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlockImage extends Model
+class BlockImage extends CommonModel
 {
     use HasFactory;
 

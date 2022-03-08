@@ -78,8 +78,9 @@ class NewsController extends CommonController
             ->with(['module' => $this->module, 'action' => 'edit']);
     }
 
-    public function update(Request $request,$id)
+    public function update(BlockRequest $request,$id)
     {
+
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);
         $block->update($data);
