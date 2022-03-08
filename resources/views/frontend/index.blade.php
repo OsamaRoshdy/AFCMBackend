@@ -377,6 +377,7 @@
             </div>
             <br>
             <div class="row">
+                @if($videos->count())
                 <div class="col-md-12 col-lg-12 col-xl-8 hvr-backward">
                     <div class="video-container">
                         <iframe
@@ -400,6 +401,7 @@
                     <br>
                     @endforeach
                 </div>
+                @endif
             </div>
 
         </div>
