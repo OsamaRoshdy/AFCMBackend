@@ -42,8 +42,8 @@ class SliderController extends CommonController
             'slider_group_id' => 'required',
             'status' => 'required',
             'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-            'images' => 'required|array',
-            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
         $data = $request->except(['image_name']);
         $data['image_name'] = $this->storeImage($request->image_name, 'sliders');
