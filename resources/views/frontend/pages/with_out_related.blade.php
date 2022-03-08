@@ -141,7 +141,13 @@
     <!-- Post Detils -->
     <div class="post_details">
         <div class="container">
-            {!! $page->content_ar !!}
+            <div class="card">
+                <div class="card-body">
+
+                    {!! $page->content_ar !!}
+                </div>
+
+            </div>
         </div>
     </div>
 
