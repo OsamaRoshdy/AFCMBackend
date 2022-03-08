@@ -45,10 +45,10 @@ return [
             'name' => 'faqs',
             'icon' => 'flaticon-graphic',
         ],
-        [
-            'name' => 'jobs',
-            'icon' => 'flaticon-graphic',
-        ],
+//        [
+//            'name' => 'jobs',
+//            'icon' => 'flaticon-graphic',
+//        ],
     ],
     'frontend' =>[
         [
