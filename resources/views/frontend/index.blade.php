@@ -130,7 +130,7 @@
                                             <h3 class="card-text" style="color: black">{{ $event->title }}</h3>
                                         </a>
                                         <p class="card-text">{{ $event->description }}{{ $event->description }}{{ $event->description }}{{ $event->description }}</p>
-                                        <a href="{{ url('events/' . $event->id) }}" class="learn_more">Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        <a href="{{ url('events/' . $event->id) }}" class="learn_more">{{ __('frontend.learn_more') }}<i class="fa fa-chevron-down" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -372,7 +372,7 @@
                         {{ getSection('media')->button }}
                     </a>
                     </div>
-                
+
                 </div>
             </div>
             <br>

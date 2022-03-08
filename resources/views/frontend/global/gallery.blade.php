@@ -82,28 +82,19 @@
             </div>
 
             <div class="latest_upgrade">
-            <div class="row">
-                <div class="col-md-6 hvr-forward">
-                    <div class="get_latest">
-                        <div class="overlay">
-                        <h2>Stuff Researches</h2>
-                        <p>LEARN EVERY NEW DEVELOPMENT IN MEDICAL FIELD</p>
+                <div class="row">
+                    @foreach($mediaGroups as $media)
+                        <a href="{{ url('media/' . $media->id) }}" class="col-md-4 hvr-backward">
+                        <div class="get_latest">
+                            <div class="overlay">
+                                <h2>{{ $media->name }}</h2>
+                            </div>
+                            <img src="{{ $media->images->first()->image }}" class="img-fluid latest_img" alt="">
                         </div>
-                        <img src="http://127.0.0.1:8000/frontend/images/image.png" class="img-fluid latest_img" alt="">
-                    </div>
-                </div>
-
-                <div class="col-md-6 hvr-backward">
-                    <div class="get_latest">
-                       <div class="overlay">
-                       <h2>Student Researches</h2>
-                        <p>LEARN EVERY NEW DEVELOPMENT IN MEDICAL FIELD</p>
-                       </div>
-                       <img src="http://127.0.0.1:8000/frontend/images/image.png" class="img-fluid latest_img" alt="">
-                    </div>
+                    </a>
+                    @endforeach
                 </div>
             </div>
-    </div>
 
         </div>
     </section>
