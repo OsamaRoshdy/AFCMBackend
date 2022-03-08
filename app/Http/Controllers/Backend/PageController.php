@@ -60,8 +60,8 @@ class PageController extends CommonController
     {
         $request->validate([
             'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-            'images' => 'required|array',
-            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);

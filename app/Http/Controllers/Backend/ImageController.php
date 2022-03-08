@@ -39,8 +39,8 @@ class ImageController extends CommonController
             'name_ar' => 'required',
             'name_en' => 'required',
             'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-            'images' => 'required|array',
-            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
         $data = $request->except(['images']);
         $data['slug_en'] = str_slug($request->name_en);
