@@ -23,6 +23,9 @@ Route::get('gallery', [\App\Http\Controllers\Frontend\HomeController::class, 'ga
 Route::get('media/{media}', [\App\Http\Controllers\Frontend\HomeController::class, 'media']);
 
 Route::get('contact-us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
+Route::post('subscribe', [\App\Http\Controllers\Frontend\ContactController::class, 'subscribe'])->name('subscribe');
+Route::post('contact-us/store', [\App\Http\Controllers\Frontend\ContactController::class, 'contact_us'])->name('contact_us.store');
+Route::get('search', [\App\Http\Controllers\Frontend\HomeController::class, 'search'])->name('search');
 
 
 Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index']);

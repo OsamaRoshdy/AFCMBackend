@@ -40,7 +40,8 @@ class HomeController extends Controller
             $services = Category::find(5)->news;
             $faqs = $mainPage->faqs;
             $news = $mainPage->blocks->where('type', Block::TYPE_NEWS);
-            return view('frontend.students.index', compact('services', 'faqs', 'news'));
+            $sliderGroup = SliderGroup::find(1)->load('sliders');
+            return view('frontend.students.index', compact('services', 'faqs', 'news', 'sliderGroup'));
         }
         abort(404);
     }
@@ -121,5 +122,20 @@ class HomeController extends Controller
         }
 
         return view('frontend.pages.global', compact('page', 'relatedPages'));
+    }
+
+    public function search(Request $request)
+    {
+        $news = Block::where('type', Block::TYPE_NEWS)
+            ->where('title_en', 'like', '%' . $request->search . '%')
+            ->orWhere('title_ar', 'like', '%' . $request->search . '%')
+            ->get();
+
+        $events = Block::where('type', Block::TYPE_EVENTS)
+            ->where('title_en', 'like', '%' . $request->search . '%')
+            ->orWhere('title_ar', 'like', '%' . $request->search . '%')
+            ->get();
+
+        return view('frontend.global.search', compact('news', 'events'));
     }
 }

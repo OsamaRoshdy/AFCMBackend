@@ -1,6 +1,5 @@
 @extends('layouts.frontend.app', ['mainPage' => 2])
 
-
 @section('content')
     <!-- Title Page -->
     <div class="page_title">
@@ -89,7 +88,7 @@
                         {{ getSection('home_events_and_news')->button }}
                     </a>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="section__header">

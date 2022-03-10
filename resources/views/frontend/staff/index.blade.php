@@ -86,8 +86,6 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="slider_img">
-                                        <div class="overlay">
-                                        </div>
                                         <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
                                     </div>
                                 </div>
