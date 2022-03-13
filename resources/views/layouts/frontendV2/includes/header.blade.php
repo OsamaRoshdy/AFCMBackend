@@ -6,26 +6,16 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-6">
                     <ul class="header-left-content">
-                        <li class="active" style="color: red">
-                            <a  href="{{ url('v2/') }}" style="color: red">
-                                Home
+                        <li class="active" style="margin: 5px">
+                            <a style="font-weight: 700 ;{{ in_array(request()->segment(1), ['staff', 'students', 'contact-us']) ? '' : 'color:#172f41' }}" href="{{ url('/') }}">
+                                {{ getMainPage(1)->name }}
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ url('v2/students') }}">
-                                Students
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('v2/staff') }}">
-                                Staff
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('v2/contact_us') }}">
-                                Contact us
-                            </a>
-                        </li>
+                        @foreach(getMainPages() as $page)
+                            <li style="margin: 5px">
+                                <a style="font-weight: 700 ;{{ request()->segment(1) == $page->slug ? 'color:#172f41' : '' }}" href="{{ url('/' . $page->slug) }}">{{ $page->name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -33,13 +23,11 @@
                     <div class="header-right-content">
                         <div class="languages-switcher">
                             <i class="ri-global-line"></i>
-                            <select>
-                                <option value="1">English</option>
-                                <option value="2">العربيّة</option>
-                            </select>
+
+                            <a style="color: white" href="{{ route('switchLang', app()->getLocale() == 'ar' ? 'en' : 'ar') }}">
+                                {{ app()->getLocale() == 'ar' ? 'English' : 'العربية' }}
+                            </a>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -86,7 +74,7 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
 
-                            @foreach(bottom_header($mainPage ?? 1) as $link)
+                            @foreach(bottom_header($mainPage->id ?? 1) as $link)
                                 @if($link->hasChildren())
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">

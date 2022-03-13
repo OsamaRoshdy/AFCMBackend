@@ -2,7 +2,7 @@
 Header Area Style
 ======================================================*/
 .top-header {
-  background-color: var(--optional-color);
+  background-color: var(--main-color);
   padding-top: 15px;
   padding-bottom: 15px;
 }

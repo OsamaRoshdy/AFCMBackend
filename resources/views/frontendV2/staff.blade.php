@@ -1,26 +1,4 @@
 @extends('layouts.frontendV2.app', ['mainPage' => 3])
-@section('styles')
-    <style>
-        .input {
-            height: 50px;
-            width: 100%;
-            border: none;
-            background-color: #FFF;
-            color: #131D3C;
-            border-radius: 40px !important;
-            padding: 5px 15px;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-            -ms-border-radius: 0;
-            border-radius: 0;
-            -webkit-transition: all 0.5s;
-            -moz-transition: all 0.5s;
-            -ms-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s;
-        }
-    </style>
-@endsection
 @section('content')
     <!-- Start Banner Area -->
     <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.5}'>
@@ -81,7 +59,7 @@
     <section class="counter-area pt-100">
         <div class="container">
             <div class="section-title">
-                <h2>Academic Department</h2>
+                <h2>{{ getSection('academic_departments')->title }}</h2>
             </div>
             <div class="counter-bg">
                 <div class="row justify-content-md-center">
@@ -95,10 +73,9 @@
                                         <img src="{{ asset('frontendV2/assets/images/logo.png') }}" alt="">
                                     </div>
                                     <div class="col-sm-4"></div>
-
                                 </div>
                                 <h3 class="text-center">
-                                    <p href="study-online.html">{{ $department->name }}</p>
+                                    <p>{{ $department->name }}</p>
                                 </h3>
 
                             </div>
@@ -107,10 +84,10 @@
 
                 </div>
                 <div class="shape counter-shape-1">
-                    <img src="http://localhost/AFCMBackend/public/frontendV2/assets/images/counter-shape-1.png" alt="Image">
+                    <img src="{{ asset('frontendV2/assets/images/counter-shape-1.png') }}" alt="Image">
                 </div>
                 <div class="shape counter-shape-2">
-                    <img src="http://localhost/AFCMBackend/public/frontendV2/assets/images/counter-shape-2.png" alt="Image">
+                    <img src="{{ asset('frontendV2/assets/images/counter-shape-2.png') }}" alt="Image">
                 </div>
             </div>
         </div>
@@ -119,38 +96,14 @@
     <section class="blog-area pt-100 pb-70">
         <div class="container">
             <div class="section-title">
-                <h2>Latest Events & News</h2>
+                <h2>{{getSection('home_events_and_news')->title}}</h2>
             </div>
 
             <div class="row justify-content-md-center">
                 @foreach($news as $new)
                     <div class="col-lg-4 col-md-6"  >
                         <div class="single-blog">
-                            <a href="blog-details.html" class="blog-img">
-                                <img src="{{ $new->image }}" alt="Image">
-                            </a>
-                            <div class="blog-content">
-                                <ul>
-                                    <li>
-                                        <i class="ri-calendar-line"></i>
-                                        <span>{{ $new->date }}</span>
-                                    </li>
-                                </ul>
-
-                                <h3>
-                                    <a href="{{ url('news/' . $new->id) }}">
-                                        {{ $new->title }}
-                                    </a>
-                                </h3>
-
-                                <p>
-                                    {{ $new->description }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>                    <div class="col-lg-4 col-md-6"  >
-                        <div class="single-blog">
-                            <a href="blog-details.html" class="blog-img">
+                            <a href="{{ url('news/' . $new->id) }}" class="blog-img">
                                 <img src="{{ $new->image }}" alt="Image">
                             </a>
                             <div class="blog-content">
@@ -174,20 +127,13 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-lg-4 col-md-6"></div>
-                <div class="col-lg-4 col-md-6 row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6">
-                        <a href="application.html" class="default-btn text-center">
-                            Show more
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                    <div class="col-sm-3"></div>
-                </div>
-                <div class="col-lg-4 col-md-6"></div>
             </div>
-
+            <div class="section-title">
+                <a href="{{ url('/news') }}" class="default-btn text-center">
+                    {{ getSection('home_events_and_news')->button }}
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
 
         </div>
     </section>

@@ -18,20 +18,22 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index']);
-
-Route::get('students', [\App\Http\Controllers\Frontend\HomeController::class, 'students']);
-
-Route::get('staff', [\App\Http\Controllers\Frontend\HomeController::class, 'staff']);
-Route::get('gallery', [\App\Http\Controllers\Frontend\HomeController::class, 'gallery']);
-Route::get('media/{media}', [\App\Http\Controllers\Frontend\HomeController::class, 'media']);
-
-Route::get('contact-us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
+Route::get('/', [\App\Http\Controllers\FrontendV2\HomeController::class, 'index']);
+Route::get('students', [\App\Http\Controllers\FrontendV2\HomeController::class, 'students']);
+Route::get('staff', [\App\Http\Controllers\FrontendV2\HomeController::class, 'staff']);
+Route::get('contact-us', [\App\Http\Controllers\FrontendV2\HomeController::class, 'contact_us']);
 
 
-Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index']);
-Route::get('news/{new}', [\App\Http\Controllers\Frontend\NewsController::class, 'show']);
-Route::get('categories/{category}', [\App\Http\Controllers\Frontend\NewsController::class, 'byCategory']);
+
+
+Route::get('gallery', [\App\Http\Controllers\FrontendV2\MediaController::class, 'all']);
+Route::get('media/{media}', [\App\Http\Controllers\FrontendV2\MediaController::class, 'show']);
+
+
+
+Route::get('news', [\App\Http\Controllers\FrontendV2\NewController::class, 'all']);
+Route::get('news/{new}', [\App\Http\Controllers\FrontendV2\NewController::class, 'show']);
+Route::get('categories/{category}', [\App\Http\Controllers\FrontendV2\NewController::class, 'byCategory']);
 
 
 
@@ -39,8 +41,7 @@ Route::get('events', [\App\Http\Controllers\Frontend\EventsController::class, 'i
 Route::get('events/{event}', [\App\Http\Controllers\Frontend\EventsController::class, 'show']);
 
 
-Route::get('pages/{page}', [\App\Http\Controllers\Frontend\HomeController::class, 'page']);
-
+Route::get('pages/{page}', [\App\Http\Controllers\FrontendV2\PageController::class, 'show']);
 
 
 

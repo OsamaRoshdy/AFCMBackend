@@ -1,12 +1,11 @@
-/* 
+/*
 Page Title Area Style
 =====================================================*/
 .page-title-area {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   position: relative;
-  z-index: 1;
-  background-image: url(../../images/page-title-bg/page-title-bg-1.jpg);
+  background-color: var(--optional-color);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

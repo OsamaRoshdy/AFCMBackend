@@ -8,27 +8,6 @@ if (!function_exists('eventDate')) {
     }
 }
 
-if (!function_exists('pages')) {
-    function pages() {
-        $pages = \App\Models\Page::active()->get();
-        return $pages;
-    }
-}
-
-if (!function_exists('page')) {
-    function page($page) {
-        $page = \App\Models\Page::active()->where('name', $page)->first();
-        return $page;
-    }
-}
-
-if (!function_exists('allowRoutePages')) {
-    function allowRoutePages() {
-        $array = pages()->pluck('name')->toArray();
-        return implode('|', $array);
-    }
-}
-
 if (!function_exists('getParentCategories')) {
     function getParentCategories() {
         $categories = \App\Models\Category::parent()->active()->get();
