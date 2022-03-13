@@ -1,4 +1,14 @@
 <div class="form-group row">
+    {{ Form::label('sliders', __('common.sliders'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::select('sliders[]',$sliderGroups,old('sliders[]'), [ 'multiple' => true,'class' => 'form-control search', 'id' => 'sliders']) }}
+        @if ($errors->has("sliders"))
+            <span class="form-text text-danger">{{$errors->first('sliders')}}</span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     {{ Form::label('date', __('common.date'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
     {{ Form::date('date',$update ?? old('date') ? old('date') : today(), ['class' => 'form-control', 'id' => 'date', 'placeholder' => __('common.date')]) }}

@@ -29,7 +29,7 @@
                             @foreach($sliderGroup->sliders as $slider)
                                 <div class="swiper-slide">
                                     <img src="{{ $slider->image }}"  class="image"/>
-                                    <p>{{ $slider->description }}</p>
+                                    <a href="{{ url('/' . $slider->url) }}">{{ $slider->description }}</a>
                                 </div>
                             @endforeach
                         </div>

@@ -20,10 +20,11 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div style=" padding: 15px" class="new_keywords">
-                        <h3>{{ __('frontend.related_news') }}</h3>
                         <div class="card">
                             <div class="card-body">
-                                @foreach($relatedNews as $relatedNew)
+                                <h3>{{ __('frontend.related_news') }}</h3>
+
+                            @foreach($relatedNews as $relatedNew)
                                     <div class="card_latest mb-3 hvr-forward">
                                         <a href="{{ url('news/' .  $relatedNew->id) }}">
                                             <div class="card">

@@ -12,6 +12,8 @@ use App\Models\Category;
 use App\Models\CategoryBlock;
 use App\Models\MainPage;
 use App\Models\MainPageBlock;
+use App\Models\Slider;
+use App\Models\SliderGroup;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Html\Builder;
 
@@ -44,9 +46,10 @@ class NewsController extends CommonController
 
     public function create()
     {
+        $sliderGroups = SliderGroup::pluck('name', 'id');
         $categories = Category::pluck('name_' . app()->getLocale(), 'id');
         $mainPages = MainPage::where('id', '!=', 4)->pluck('name_' . app()->getLocale(), 'id');
-        return view('backend.' . $this->module . '.create', compact('categories', 'mainPages'))
+        return view('backend.' . $this->module . '.create', compact('categories', 'mainPages', 'sliderGroups'))
             ->with(['module' => $this->module, 'action' => 'create']);
     }
 
@@ -64,6 +67,7 @@ class NewsController extends CommonController
         $block = Block::create($data);
         $this->syncCategories($request->categories, $block);
         $this->syncMainPages($request->mainPages, $block);
+        $this->syncSliders($request, $block);
         $this->blocks->afterCreate($block);
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
@@ -71,10 +75,11 @@ class NewsController extends CommonController
 
     public function edit($id)
     {
+        $sliderGroups = SliderGroup::pluck('name', 'id');
         $block = Block::find($id)->load(['images', 'categories']);
         $categories = Category::pluck('name_' . app()->getLocale(), 'id');
         $mainPages = MainPage::where('id', '!=', 4)->pluck('name_' . app()->getLocale(), 'id');
-        return view('backend.' . $this->module . '.edit', compact('categories', 'mainPages', 'block'))
+        return view('backend.' . $this->module . '.edit', compact('categories', 'mainPages', 'block', 'sliderGroups'))
             ->with(['module' => $this->module, 'action' => 'edit']);
     }
 
@@ -86,6 +91,7 @@ class NewsController extends CommonController
         $block->update($data);
         $this->syncCategories($request->categories, $block);
         $this->syncMainPages($request->mainPages, $block);
+        $this->syncSliders($request, $block);
         $this->blocks->afterUpdate($block);
 
         toast(__('common.updated_successfully'),'success','top-right');
@@ -139,5 +145,19 @@ class NewsController extends CommonController
             ]);
         }
 
+    }
+    private function syncSliders(Request $request, Block $block)
+    {
+        if ($request->sliders) {
+            foreach ($request->sliders as $slider) {
+                $data['description_ar'] = $block->title_ar;
+                $data['description_en'] = $block->title_en;
+                $data['image_name'] = $this->storeImage($request->image_name, 'sliders');
+                $data['url'] = 'news/' . $block->id;
+                $data['slider_group_id'] = $slider;
+                $data['status'] = 1;
+                Slider::create($data);
+            }
+        }
     }
 }
