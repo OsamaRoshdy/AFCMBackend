@@ -53,6 +53,11 @@ class HomeController extends Controller
         abort(404);
     }
 
+    public function contact_us()
+    {
+        return view('frontendV2.contact_us');
+    }
+
 
 
 }
