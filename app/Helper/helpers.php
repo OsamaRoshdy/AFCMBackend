@@ -1,5 +1,13 @@
 <?php
 
+if (!function_exists('eventDate')) {
+    function eventDate($date) {
+        $date = \Carbon\Carbon::create($date);
+//        $pages = \App\Models\Page::active()->get();
+        return $date;
+    }
+}
+
 if (!function_exists('pages')) {
     function pages() {
         $pages = \App\Models\Page::active()->get();

@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Block;
+use App\Models\Department;
+use App\Models\MainPage;
+use App\Models\SliderGroup;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -44,3 +48,39 @@ Route::get('switch/{lang}', function ($lang) {
     Session::put('app_locale', $lang);
     return back();
 })->name('switchLang');
+
+Route::get('/v2', function () {
+    $sliderGroup = SliderGroup::find(1)->load('sliders');
+    $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->take(3);
+    $events = Block::upCommingEvents()->active()->take(3)->get();
+
+    return view('frontendV2.index', compact('sliderGroup', 'news', 'events'));
+});
+
+
+Route::get('/v2/staff', function () {
+    $sliderGroup = SliderGroup::find(1)->load('sliders');
+    $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->take(3);
+    $events = Block::upCommingEvents()->active()->take(3)->get();
+
+    $departments = Department::active()->orderBy('sort', 'asc')->get();
+
+    return view('frontendV2.staff', compact('sliderGroup', 'news', 'events', 'departments'));
+});
+
+
+Route::get('/v2/students', function () {
+    $sliderGroup = SliderGroup::find(1)->load('sliders');
+    $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->take(3);
+    $events = Block::upCommingEvents()->active()->take(3)->get();
+
+    $departments = Department::active()->orderBy('sort', 'asc')->get();
+
+    return view('frontendV2.students', compact('sliderGroup', 'news', 'events', 'departments'));
+});
+
+
+Route::get('/v2/contact_us', function () {
+    return view('frontendV2.contact_us');
+});
+

@@ -19,7 +19,7 @@ class Block extends Model
 
     protected $appends = ['title', 'slug', 'description', 'content', 'image', 'button'];
 
-    protected $casts = ['date' => 'date'];
+//    protected $casts = ['date' => 'date'];
     protected $fillable = [
         'slug_en', 'slug_ar',
         'title_en', 'title_ar',
