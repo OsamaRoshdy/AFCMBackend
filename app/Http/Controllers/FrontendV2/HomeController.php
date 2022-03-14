@@ -58,6 +58,4 @@ class HomeController extends Controller
         return view('frontendV2.contact_us');
     }
 
-
-
 }

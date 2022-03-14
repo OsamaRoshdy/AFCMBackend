@@ -23,9 +23,6 @@ Route::get('students', [\App\Http\Controllers\FrontendV2\HomeController::class, 
 Route::get('staff', [\App\Http\Controllers\FrontendV2\HomeController::class, 'staff']);
 Route::get('contact-us', [\App\Http\Controllers\FrontendV2\HomeController::class, 'contact_us']);
 
-
-
-
 Route::get('gallery', [\App\Http\Controllers\FrontendV2\MediaController::class, 'all']);
 Route::get('media/{media}', [\App\Http\Controllers\FrontendV2\MediaController::class, 'show']);
 
