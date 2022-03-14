@@ -45,6 +45,11 @@
             + "textarea[cols|rows|disabled|name|readonly],tt,var,big"|"article",
         toolbar: "undo redo  | bold italic | alignleft aligncenter alignright alignjustify | fontselect | fontsizeselect | bullist numlist outdent indent | code link image media template",
         fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+        directionality : 'ltr',
+        content_langs: [
+            { title: 'English', code: 'en' },
+            { title: 'Arabic', code: 'ar' },
+        ],
         file_browser_callback : function(field_name, url, type, win) {
             var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
             var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;

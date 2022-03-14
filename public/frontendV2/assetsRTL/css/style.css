@@ -6,7 +6,7 @@ is the file you need to edit to change the look of the template.
 
 This files table contents are outlined below>>>>>
 
-******************************************* 
+*******************************************
 ** - DEFAULT AREA STYLE - **
 
 ** - Default Btn Area Style
@@ -15,8 +15,8 @@ This files table contents are outlined below>>>>>
 
 ** - HOME PAGE STYLE - **
 
-** - Top Header Area  
-** - Nav Area Style 
+** - Top Header Area
+** - Nav Area Style
 ** - Banner Area Style
 ** - About Area Style
 ** - Study Area Style
@@ -185,7 +185,7 @@ Banner Area Style
 }
 
 .banner-area.bg-1 {
-  background-image: url(../../assets/images/banner/banner-bg-1.jpg);
+  background-color: #817d6f;
 }
 
 .banner-area.bg-2 {
@@ -1797,13 +1797,14 @@ Team Area Style
 Application Submit Area Style
 ======================================================*/
 .application-submit-bg {
-  background-image: url(../../assets/images/application-submit-bg.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  padding: 100px;
-  overflow: hidden;
+    background-image: url(../../assets/images/application-submit-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50% !important;
+    /* padding: 100px; */
+    padding-top: 30px;
+    overflow: hidden;
 }
 
 .application-submit-bg .col-lg-6 {

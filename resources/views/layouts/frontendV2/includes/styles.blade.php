@@ -130,4 +130,8 @@ position: absolute;
         border-radius: 20px;
     }
 
+    .banner-area::after {
+        width: 500px;
+    }
+
 </style>

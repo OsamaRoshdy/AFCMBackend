@@ -137,19 +137,14 @@
                     </div>
                     </div>
                 @endforeach
-                    <div class="col-lg-4 col-md-6"></div>
-                    <div class="col-lg-4 col-md-6 row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
-                            <a href="{{ url('/news') }}" class="default-btn text-center">
-                                {{ getSection('home_events_and_news')->button }}
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </div>
-                        <div class="col-sm-3"></div>
-                    </div>
-                    <div class="col-lg-4 col-md-6"></div>
             </div>
+            <div class="section-title">
+                <a href="{{ url('/news') }}" class="default-btn text-center">
+                    {{ getSection('home_events_and_news')->button }}
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+=
         </div>
     </section>
     <!-- End Blog Area -->
@@ -301,10 +296,6 @@
             <div class="section-title">
                 <h2>{{ getSection('media')->title }}
                 </h2>
-                <a href="{{ url('/gallery') }}" class="default-btn text-center">
-                    {{ getSection('media')->button }}
-                    <i class="ri-arrow-right-line"></i>
-                </a>
             </div>
 
             <div class="row align-items-center">
@@ -349,6 +340,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="section-title ">
+                <a href="{{ url('/gallery') }}" class="default-btn text-center">
+                    {{ getSection('media')->button }}
+                    <i class="ri-arrow-right-line"></i>
+                </a>
             </div>
         </div>
     </section>
