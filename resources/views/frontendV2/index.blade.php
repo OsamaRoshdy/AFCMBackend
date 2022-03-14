@@ -74,7 +74,7 @@
                             <div class="banner-img">
                                 <div class="lightSliderHome">
                                     <ul id="lightSlider">
-                                        @foreach($sliderGroup->sliders->skip(1) as $slider)
+                                        @foreach($sliderGroup->sliders as $slider)
                                             <li data-thumb="{{ $slider->image }}">
                                                 <img src="{{ $slider->image }}"/>
                                                 <div class="caption">
