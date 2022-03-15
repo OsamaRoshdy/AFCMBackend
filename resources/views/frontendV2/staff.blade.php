@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.css" integrity="sha512-+1GzNJIJQ0SwHimHEEDQ0jbyQuglxEdmQmKsu8KI7QkMPAnyDrL9TAnVyLPEttcTxlnLVzaQgxv2FpLCLtli0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .lightSliderHome {
-            width:800px;
+            width:100%;
         }
         .lightSliderHome ul {
             list-style: none outside none;
@@ -66,18 +66,15 @@
             slideMargin: 2,
             thumbItem: 6,
             vertical:true,
-            @if(app()->getLocale() !== 'en')
-            rtl:true
-            @endif
+            controls: false,
+
         });
     </script>
 @endsection
 @section('content')
     <!-- Start Banner Area -->
     <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.5}'>
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
+    <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="banner-content">
@@ -113,8 +110,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
     </section>
