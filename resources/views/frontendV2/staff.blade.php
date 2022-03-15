@@ -60,11 +60,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.js" integrity="sha512-sww7U197vVXpRSffZdqfpqDU2SNoFvINLX4mXt1D6ZecxkhwcHmLj3QcL2cJ/aCxrTkUcaAa6EGmPK3Nfitygw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript">
         $('#lightSlider').lightSlider({
-            gallery: false,
+            gallery: true,
             item: 1,
             loop:true,
-            slideMargin: 0,
+            slideMargin: 2,
             thumbItem: 6,
+            vertical:true,
             @if(app()->getLocale() !== 'en')
             rtl:true
             @endif
@@ -107,16 +108,6 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                                {{--                                <ul id="imageGallery">--}}
-
-                                {{--                                    @foreach($sliderGroup->sliders->skip(1) as $slider)--}}
-                                {{--                                        <li data-thumb="{{ $slider->image }}" data-src="{{ $slider->image }}">--}}
-                                {{--                                            <img src="{{ $slider->image }}" style="height: 500px!important; width: 800px!important;"/>--}}
-                                {{--                                        </li>--}}
-                                {{--                                    @endforeach--}}
-
-                                {{--                                </ul>--}}
-                                {{--                                <img src="http://127.0.0.1:8000/storage/images/blocks/news.jpg" alt="Image">--}}
                             </div>
 
                         </div>
@@ -150,7 +141,6 @@
                                 <h3 class="text-center">
                                     <p>{{ $department->name }}</p>
                                 </h3>
-
                             </div>
                         @endforeach
                     </div>

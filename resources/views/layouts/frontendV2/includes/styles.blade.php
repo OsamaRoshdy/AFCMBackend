@@ -126,8 +126,8 @@ position: absolute;
         height: 170px;
     }
 
-    img, .events-timer, .events-date {
-        border-radius: 20px;
+    img, .events-timer, .events-date{
+        border-radius: 20px !important;
     }
 
     .banner-area::after {
