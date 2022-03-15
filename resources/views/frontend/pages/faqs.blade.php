@@ -144,7 +144,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div style="background: #e1e1e1;  border-radius: 25px; padding: 15px; " class="new_keywords">
-                        <h3>{{ __('related_pages') }}</h3>
+                        <h3>{{ __('frontend.related_pages') }}</h3>
                         <br>
                         @foreach($relatedPages as $linkPage)
                             <h5>

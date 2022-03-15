@@ -37,10 +37,10 @@ class AdminController extends CommonController
 
     public function store(AdminRequest $request)
     {
-        $data = $request->except(['role_id', 'image']);
+        $data = $request->except(['role', 'image']);
         $data['image'] = $this->storeImage($request->image, $this->module);
         $admin = Admin::create($data);
-        $admin->assignRole($request->role_id);
+        $admin->assignRole($request->role);
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
@@ -54,10 +54,10 @@ class AdminController extends CommonController
 
     public function update(AdminRequest $request,Admin $admin)
     {
-        $data = $request->except(['role_id', 'image']);
+        $data = $request->except(['role', 'image']);
         $data['image'] = $this->updateImage($request->image, $admin->image,$this->module);
         $admin->update($data);
-        $admin->syncRoles($request->role_id);
+        $admin->syncRoles($request->role);
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }

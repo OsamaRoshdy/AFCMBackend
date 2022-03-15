@@ -19,25 +19,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <div style="background: #f5f5f5; padding: 15px" class="new_keywords">
-                        <h3>{{ __('frontend.related_news') }}</h3>
-                        @foreach($relatedNews as $relatedNew)
-                        <div class="card_latest mb-3 hvr-forward">
-                            <a href="{{ url('news/' .  $relatedNew->id) }}">
-                                <div class="card">
-                                    <img src="{{$relatedNew->image}}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <span>{{ $relatedNew->date }}</span>
-                                        <h5 class="card-title">{{$relatedNew->title}}</h5>
-                                        <p class="card-text">{{ $relatedNew->description }}</p>
-                                        <a href="{{ url('news/' .  $relatedNew->id) }}" class="learn_more">{{__('frontend.learn_more')}} <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
+                    <div style=" padding: 15px" class="new_keywords">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>{{ __('frontend.related_news') }}</h3>
 
+                            @foreach($relatedNews as $relatedNew)
+                                    <div class="card_latest mb-3 hvr-forward">
+                                        <a href="{{ url('news/' .  $relatedNew->id) }}">
+                                            <div class="card">
+                                                <img src="{{$relatedNew->image}}" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <span>{{ $relatedNew->date }}</span>
+                                                    <h5 class="card-title">{{$relatedNew->title}}</h5>
+                                                    <p class="card-text">{{ $relatedNew->description }}</p>
+                                                    <a href="{{ url('news/' .  $relatedNew->id) }}" class="learn_more">{{__('frontend.learn_more')}} <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-8">

@@ -45,12 +45,16 @@ return [
             'name' => 'faqs',
             'icon' => 'flaticon-graphic',
         ],
+//        [
+//            'name' => 'jobs',
+//            'icon' => 'flaticon-graphic',
+//        ],
     ],
     'frontend' =>[
-        [
-            'name' => 'staff',
-            'icon' => 'flaticon-graphic',
-        ],
+//        [
+//            'name' => 'staff',
+//            'icon' => 'flaticon-graphic',
+//        ],
         [
             'name' => 'slider_groups',
             'icon' => 'flaticon-graphic',

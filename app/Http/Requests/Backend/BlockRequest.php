@@ -30,7 +30,7 @@ class BlockRequest extends FormRequest
             'date' => 'required',
             'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
             'images' => 'nullable|array',
-            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ];
     }
 }

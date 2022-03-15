@@ -19,7 +19,7 @@
     <section class="section section--padding section--bg">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-6 hvr-backward">
+                <div class="col-md-12 col-lg-12 col-xl-5 xxl-6">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             @foreach($news->take(2) as $index => $new)
@@ -34,9 +34,9 @@
                             @foreach($news->take(2) as $new)
                                 @if($loop->first)
                                     <div class="carousel-item active">
-                                        <a href="{{ url('news/' . $new->id) }}">
-                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block w-100">
+                                        <a href="{{ url('news/' . $new->id) }}"  class="carousel_item">
+                                            <img src="{{ $new->image }}" class="d-block w-100 customImage" alt="...">
+                                            <div class="carousel-caption">
                                                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                     {{ $new->date }}
                                                 </button>
@@ -50,9 +50,9 @@
                                     </div>
                                 @else
                                     <div class="carousel-item">
-                                        <a href="{{ url('news/' . $new->id) }}">
-                                            <img src="{{ $new->image }}" style="height: 600px" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block w-100">
+                                        <a href="{{ url('news/' . $new->id) }}"  class="carousel_item">
+                                            <img src="{{ $new->image }}" class="d-block w-100 customImage" alt="...">
+                                            <div class="carousel-caption">
                                                 <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
                                                     {{ $new->date }}
                                                 </button>
@@ -69,7 +69,7 @@
 
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-6">
+                <div class="col-md-12 col-lg-12 col-xl-7 xxl-6">
 
                     <div class="row align-items-center">
                         @foreach($news->skip(1)->take(4) as $new)
@@ -152,7 +152,7 @@
                         <p class="title_p">{{ getSection('home_events_and_news')->description }}</p>
                         <div class="row">
                             @foreach($news as $new)
-                                <div class="col-md-3">
+                                <div class="col-md-6 col-lg-4 col-xl-3">
                                 <div class="card_latest mb-3 hvr-forward">
                                     <div class="card">
                                         <a href="{{ url('news/' . $new->id) }}">

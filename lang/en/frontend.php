@@ -2,10 +2,13 @@
 
 
 return array(
-    'add_ads' => 'Add Ads',
-    'signin_signup' => 'SingIn / SignUp',
-    'site_categories' => 'Categories',
-    'search' => 'Search ..',
-    'special_ads' => 'Special Ads',
-    'ads' => 'Ads',
+    'what_you_search_for' => 'What You Search For',
+    'learn_more' => 'Read More',
+    'related_pages' => 'Related Pages',
+    'related_news' => 'Related News',
+    'related_events' => 'Related Events',
+    'contact_us' => 'Contact Us',
+    'success_partners' => 'Success Partners',
+    'site_map' => 'Site Map',
+    'about_afcm' => 'About AFCM',
 );

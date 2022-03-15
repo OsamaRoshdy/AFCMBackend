@@ -38,8 +38,9 @@ class DepartmentController extends CommonController
             'name_ar' => 'required',
             'name_en' => 'required',
             'status' => 'required',
-            'image_name' => 'required',
-        ]);
+            'image_name' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+
+            ]);
         $data = $request->except(['image_name']);
         $data['image_name'] = $this->storeImage($request->image_name, 'departments');
         Department::create($data);
@@ -55,6 +56,13 @@ class DepartmentController extends CommonController
 
     public function update(Request $request,Department $department)
     {
+        $request->validate([
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'status' => 'required',
+            'image_name' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+
+        ]);
         $data = $request->except(['image_name']);
         if ($request->image_name) {
             $data['image_name'] = $this->updateImage($request->image_name, $department->image_name,'departments');

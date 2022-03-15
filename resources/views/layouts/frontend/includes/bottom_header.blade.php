@@ -6,17 +6,17 @@
                     <a class="logo__img" href="{{ url('/') }}">
                         <img src=" {{ asset('frontend/images/logo.png') }}" alt="Logo">
                     </a>
-                    <a class="logo__dis" href="http://localhost/AFCM/en">
+                    <a class="logo__dis" href="{{ url('/') }}">
                         <bold style="color: #d70000; font-size: 20px; font-weight: 900">A</bold>rmed <bold style="color: #d70000; font-size: 20px; font-weight: 900">F</bold>orces <span> <bold style="color: #d70000; font-size: 20px; font-weight: 900">C</bold>ollege Of <bold style="color: #d70000; font-size: 20px; font-weight: 900">M</bold>edicine </span>
                     </a>
                 </div>
-                <form class="input-btn d-flex" method="GET" action="http://localhost/AFCM/en/search">
+                {{ Form::open(['route' => 'search', 'method' => 'get', 'class' => 'input-btn d-flex']) }}
                     <input class="input form-control" type="search" name="search"
-                           placeholder="What you search for" aria-label="Search">
+                           placeholder="{{ __('frontend.what_you_search_for') }}" aria-label="Search">
                     <button class="btn btn-link" type="submit">
                         <i class="bi bi-search"></i>
                     </button>
-                </form>
+                {{ Form::close() }}
                 <button class="navbar-toggle" id="navbarOpen" type="button">
                     <i class="bi bi-list"></i>
                 </button>
@@ -44,14 +44,14 @@
                                                     @foreach($subLink->children as $child)
                                                     <li>
                                                         <a class="dropdown-item "
-                                                           href="{{ $child->route }}">{{ $child->name }}</a>
+                                                           href="{{ url('/' . $child->route) }}">{{ $child->name }}</a>
                                                     </li>
                                                     @endforeach
                                                 </ul>
                                             </li>
                                         @else
                                            <li>
-                                                <a class="dropdown-item" href="{{ url($subLink->route)  }}">{{ $subLink->name }}</a>
+                                                <a class="dropdown-item" href="{{ url('/'.$subLink->route)  }}">{{ $subLink->name }}</a>
                                             </li>
                                         @endif
                                     @endforeach

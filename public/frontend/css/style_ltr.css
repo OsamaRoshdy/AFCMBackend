@@ -3644,8 +3644,8 @@ textarea.form-control-lg {
     border: 0;
 }
 .dropdown-item:hover, .dropdown-item:focus {
-    color: #1e2125;
-    background-color: #e9ecef;
+    color: #1e2125 !important;
+    background-color: #e9ecef !important;
 }
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
@@ -13600,6 +13600,25 @@ body {
 }
 
 
+.learning_slider .swiper-slide a {
+    position: absolute;
+    width: 700px;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px 40px 20px;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    max-lines: 3;
+    text-align: left;
+    background-color: #ffffff52;
+    padding: 15px 20px;
+    border-left: 6px solid #012a69;
+    color: #012a69;
+    margin-left: 20px;
+}
+
+
 
 
 
@@ -14089,7 +14108,7 @@ body {
 .slider_body_bg {
     text-align: left;
     background-color: #ffffffa8;
-    width: 500px;
+    /* width: 500px; */
     padding: 15px 20px;
     border-left: 6px solid #012a69;
 }
@@ -14164,7 +14183,9 @@ body {
 
 
 
-
+.my_button {
+    text-align: end !important;
+}
 
 .horVerSlider i {
     border: none !important;
@@ -14187,10 +14208,106 @@ body {
     background-color: rgba(1, 42, 105, 0.7);
     border-radius: 200px;
 }
+
 .swiper-button-next , .swiper-button-prev {
     color: #012a69 !important;
 }
 .swiper-button-next:after, .swiper-rtl .swiper-button-next:after ,
 .swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after {
     font-size: 25px  !important;
+}
+@media (max-width: 575.98px) {
+
+
+}
+@media (max-width: 1199.98px) {
+    .customSwiper2 .customSwipperSlider img {
+        height: 200px !important;
+    }
+    .latet_sec .sec_images {
+        width: 100%;
+        object-fit: cover;
+    }
+    .carousel_item {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+    .carousel_item img {
+        object-fit: cover;
+    }
+ }
+
+ @media (max-width: 991.98px) {
+     .footer__contact {
+         text-align: center;
+     }
+     .footer__contact li {
+         display: block;
+     }
+     .footer__block {
+         text-align: center;
+     }
+     .center_btn {
+         text-align: center;
+         display: inline-block;
+     }
+    .student_faq h2 , .student_faq p.header_p {
+        text-align: center;
+    }
+     .student_services{
+         text-align: center;
+     }
+
+    .why_join {
+        text-align: center;
+    }
+    .glance .logo__dis {
+        text-align: center;
+        display: block;
+    }
+    .upcoming_events .events {
+        max-height: fit-content;
+    }
+    .section__title {
+        text-align: center;
+    }
+    .my_button {
+        text-align: center !important;
+        margin: auto;
+    }
+ }
+ .dropdown-item:focus {
+     background-color: transparent !important;
+     color: #212529 !important;
+ }
+
+ @media (min-width: 1368px){
+     .customImage {
+         height: 453px !important;
+     }
+ }
+ @media (min-width: 1599px){
+    .customImage {
+        height: 533px !important;
+    }
+}
+@media (max-width: 1368px){
+    .customImage {
+        height: 430px !important;
+    }
+}
+
+
+.news_events h2 {
+    color: #012a69;
+}
+.news_events p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+.card_latest .card {
+    min-height: 400px !important;
 }

@@ -25,7 +25,9 @@
     </head>
 
     <body>
-        <div id="root">
+    @include('sweetalert::alert')
+
+    <div id="root">
             @include('layouts.frontend.includes.header')
         </div>
 
@@ -37,14 +39,16 @@
             <div class="container">
                 <h4 class="section-title section-title--white">{{ getSection('subscribe')->title }}</h4>
                 <p>{{ getSection('subscribe')->description }}</p>
-                <form class="newsletter_form " method="POST" action="">
-                    <input class="input" type="email" name="email" placeholder="Your Email ..." aria-label="email" autocomplete="off">
-                    <button type="button" class="btn btn-primary custom_button hvr-wobble-vertical">
+                {{ Form::open(['route' => 'subscribe', 'class' => 'newsletter_form']) }}
+                    @if ($errors->has("email"))
+                        <span class="form-text text-danger">{{$errors->first('email')}}</span>
+                    @endif
+                    {{ Form::email('email', old('email'), ['class'=>'input', 'placeholder' => 'Your Email ...']) }}
+                    <button type="submit" class="btn btn-primary custom_button hvr-wobble-vertical">
                         <img src="{{ asset('frontend/icons/check.png') }}" class="check" alt="">
                         {{ getSection('subscribe')->button }}
                     </button>
-
-                </form>
+                {{ Form::close() }}
             </div>
         </div>
         @include('layouts.frontend.includes.footer')

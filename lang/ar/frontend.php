@@ -2,10 +2,13 @@
 
 
 return array(
-    'add_ads' => 'إضافة إعلان',
-    'signin_signup' => 'دخول / تسجيل',
-    'site_categories' => 'اقسام الموقع',
-    'search' => 'ابحث عن المنتجات',
-    'special_ads' => 'الاعلانات المميزة',
-    'ads' => 'الاعلانات',
+    'what_you_search_for' => 'ماذا تبحث عن',
+    'learn_more' => 'أقرء المزيد',
+    'related_pages' => 'صفحات ذات صلة',
+    'related_news' => 'اخبار ذات صلة',
+    'related_events' => 'فاعليات ذات صلة',
+    'contact_us' => 'تواصل معنا',
+    'success_partners' => 'شركاء ',
+    'site_map' => 'خريطة الموقع',
+    'about_afcm' => 'عن AFCM',
 );

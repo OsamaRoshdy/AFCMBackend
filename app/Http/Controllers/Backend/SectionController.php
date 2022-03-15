@@ -34,8 +34,11 @@ class SectionController extends CommonController
             ->with(['module' => $this->module, 'action' => 'create']);
     }
 
-    public function store(BlockRequest $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+        ]);
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_SECTIONS;
         $data['image_name'] = $this->storeImage($request->image_name, 'blocks');
@@ -46,6 +49,7 @@ class SectionController extends CommonController
 
     public function edit($id)
     {
+
         $block = Block::find($id)->load('images');
         return view('backend.' . $this->module . '.edit', compact( 'block'))
             ->with(['module' => $this->module, 'action' => 'edit']);
@@ -53,6 +57,9 @@ class SectionController extends CommonController
 
     public function update(Request $request,$id)
     {
+        $request->validate([
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+        ]);
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);
         $data['image_name'] = $this->updateImage($request->image_name, $block->image_name,'blocks');

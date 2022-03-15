@@ -6,7 +6,7 @@ use App\Http\Foundation\Classes\Helper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Staff extends CommonModel
 {
     use HasFactory;
 

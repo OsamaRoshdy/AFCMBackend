@@ -6,13 +6,13 @@ use App\Http\Foundation\Classes\Helper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Slider extends Model
+class Slider extends CommonModel
 {
     use HasFactory;
 
     const LOCATION = 'sliders';
 
-    protected $fillable = ['description_ar','description_en', 'slider_group_id', 'sort', 'image_name', 'status'];
+    protected $fillable = ['description_ar','description_en', 'slider_group_id', 'sort', 'image_name', 'status', 'url'];
 
     protected $appends = ['description', 'image'];
 
