@@ -11,7 +11,7 @@ class NewController extends Controller
     public function all()
     {
         $latestNews = Block::where('type', Block::TYPE_NEWS)->active()->latest()->take(7)->get();
-        $news = Block::where('type', Block::TYPE_NEWS)->active()->whereNotIn('id', $latestNews->pluck('id')->toArray())->latest()->skip(7)->paginate(20);
+        $news = Block::where('type', Block::TYPE_NEWS)->active()->whereNotIn('id', $latestNews->pluck('id')->toArray())->latest()->paginate(20);
         $events = Block::upCommingEvents()->active()->take(2)->get();
         return view('frontendV2.news.all', compact('latestNews','news', 'events'));
     }
