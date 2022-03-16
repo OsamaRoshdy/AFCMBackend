@@ -76,10 +76,10 @@
     <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>
     <div class="container">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <div class="banner-content">
                                 <span>{{ getSection('e-learning')->title }}</span>
-                                <h1 style="font-size: 45px">{{ getSection('e-learning')->description }}</h1>
+                                <h1>{{ getSection('e-learning')->description }}</h1>
 
                                 <div class="banner-btn">
                                     <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
@@ -91,7 +91,7 @@
 
                             </div>
                         </div>
-                        <div class="col-lg-8">
+                        <div class="col-lg-7">
                             <div class="banner-img">
                                 <div class="lightSliderHome" >
                                     <ul id="lightSlider">

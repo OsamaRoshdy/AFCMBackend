@@ -53,7 +53,7 @@
     <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>
     <div class="container">
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-5">
                             <div class="banner-content">
                                 <span>{{ getSection('e-learning')->title }}</span>
                                 <h1>{{ getSection('e-learning')->description }}</h1>
@@ -68,7 +68,7 @@
 
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-7">
                             <div class="banner-img">
                                 <div class="lightSliderHome">
                                     <ul id="lightSlider">

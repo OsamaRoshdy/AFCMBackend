@@ -46,37 +46,7 @@
                         </div>
                     </div>
                 </div>
-1
-                <div class="col-lg-4">
-                    <div class="widget-sidebar ml-15">
-                        <div class="sidebar-widget search">
-                            <form class="search-form">
-                                <input class="form-control" name="search" placeholder="{{ __('frontend.search') }}" type="text">
-                                <button class="search-button" type="submit">
-                                    <i class="ri-search-line"></i>
-                                </button>
-                            </form>
-                        </div>
 
-
-                        <div class="sidebar-widget recent-post">
-                            <h3 class="widget-title">{{ __('frontend.related_news') }}</h3>
-
-                            <ul>
-                                @foreach($relatedPages as $relatedPage)
-                                    <li>
-                                        <a href="{{ $relatedPage->id }}">
-                                            {{ $relatedPage->name }}
-                                            <img src="{{ asset('frontendV2/assets/images/logo.png') }}" style="width: 40px;" alt="Image">
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-
-                    </div>
-                </div>
             </div>
         </div>
     </section>

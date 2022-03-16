@@ -134,4 +134,8 @@ position: absolute;
         width: 500px;
     }
 
+    .banner-content h1 {
+        font-size : 40px
+    }
+
 </style>
