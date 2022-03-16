@@ -74,7 +74,7 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
 
-                            @foreach(bottom_header($mainPage->id ?? 1) as $link)
+                            @foreach(bottom_header($mainPage ?? 1) as $link)
                                 @if($link->hasChildren())
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card card-custom gutter-b example example-compact">
-        {!! Form::model($block,['route'=> ['dashboard.' . $module .'.update', $block->id], 'method'=>'patch', 'id' => "kt_form"]) !!}
+        {!! Form::model($block,['route'=> ['dashboard.' . $module .'.update', $block->id], 'method'=>'patch', 'id' => "kt_form", 'files' => true]) !!}
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-2"></div>
