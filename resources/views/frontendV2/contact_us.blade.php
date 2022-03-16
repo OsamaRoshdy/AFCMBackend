@@ -1,26 +1,4 @@
 @extends('layouts.frontendV2.app')
-@section('styles')
-    <style>
-        .input {
-            height: 50px;
-            width: 100%;
-            border: none;
-            background-color: #FFF;
-            color: #131D3C;
-            border-radius: 40px !important;
-            padding: 5px 15px;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-            -ms-border-radius: 0;
-            border-radius: 0;
-            -webkit-transition: all 0.5s;
-            -moz-transition: all 0.5s;
-            -ms-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s;
-        }
-    </style>
-@endsection
 @section('content')
     <!-- Start Page Title Area -->
     <div class="page-title-area bg-26 pb-100" style="background-image: url('http://localhost/AFCMBackend/public/storage/images/blocks/item5.jpg')">
@@ -45,8 +23,8 @@
     <!-- Start Contact Area -->
     <section class="contact-area ptb-70">
         <div class="container">
-            <form id="contactForm">
-                <div class="row">
+                {{ Form::open(['route' => 'contact.store']) }}
+                    <div class="row">
                     <div class="col-lg-6 col-sm-6">
                         <div class="form-group">
                             <label>Name</label>
@@ -71,14 +49,6 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>Subject</label>
-                            <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label>Message</label>
@@ -86,7 +56,7 @@
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
-
+                        <br>
                     <div class="col-lg-12 col-md-12">
                         <button type="submit" class="default-btn">
                             <span>Send message</span>
@@ -95,7 +65,8 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-            </form>
+
+                {{ Form::close() }}
         </div>
     </section>
     <!-- End Contact Area -->

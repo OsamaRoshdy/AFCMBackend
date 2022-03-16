@@ -57,9 +57,6 @@
         </div>
     </section>
 
-
-
-
     <!-- Latest Events & News -->
     <div class="upcoming_events">
         <div class="container">

@@ -58,4 +58,20 @@ class HomeController extends Controller
         return view('frontendV2.contact_us');
     }
 
+    public function search(Request $request)
+    {
+        $news = Block::where('type', Block::TYPE_NEWS)
+            ->where('title_en', 'like', '%' . $request->search . '%')
+            ->orWhere('title_ar', 'like', '%' . $request->search . '%')
+            ->get();
+
+        $events = Block::where('type', Block::TYPE_EVENTS)
+            ->where('title_en', 'like', '%' . $request->search . '%')
+            ->orWhere('title_ar', 'like', '%' . $request->search . '%')
+            ->get();
+
+        return view('frontendV2.search', compact('news', 'events'));
+    }
+
+
 }

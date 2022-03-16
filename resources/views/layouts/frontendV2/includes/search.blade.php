@@ -7,15 +7,15 @@
             </button>
 
             <div class="modal-body">
-                <form class="search-box">
+                {{ Form::open(['route' => 'search', 'method' => 'get', 'class' => 'search-box']) }}
                     <div class="search-input">
-                        <input type="text" name="Search" placeholder="Search for..." class="form-control">
-
+                        <input class="form-control" type="text" name="search"
+                               placeholder="{{ __('frontend.what_you_search_for') }}" aria-label="Search">
                         <button type="submit" class="search-btn">
                             <i class="ri-search-line"></i>
                         </button>
                     </div>
-                </form>
+                {{ Form::close() }}
             </div>
         </div>
     </div>

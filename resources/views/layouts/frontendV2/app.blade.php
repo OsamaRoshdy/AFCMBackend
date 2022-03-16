@@ -24,6 +24,7 @@
 
 @include('layouts.frontendV2.includes.search')
 
+@include('sweetalert::alert')
 
     @yield('content')
 

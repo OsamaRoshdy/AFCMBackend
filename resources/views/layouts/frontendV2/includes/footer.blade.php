@@ -5,13 +5,16 @@
         <div class="application-submit-content">
             <div class="section-title">
                 <h2 class="color-white">Subscribe Now</h2>
+                {{ Form::open(['route' => 'subscribe', 'class' => 'newsletter_form']) }}
                 <div class="form-group">
-                    <input class="input" type="text" placeholder="Keyword search">
+                    {{ Form::email('email', old('email'), ['class'=>'input', 'placeholder' => 'Your Email ...']) }}
                 </div>
                 <br>
-                <a href="application.html" class="default-btn">
-                    Subscribe
-                </a>
+                <button type="Submit" class="default-btn">
+                    {{ getSection('subscribe')->button }}
+                </button>
+                {{ Form::close() }}
+
             </div>
         </div>
     </div>

@@ -22,6 +22,9 @@ Route::get('/', [\App\Http\Controllers\FrontendV2\HomeController::class, 'index'
 Route::get('students', [\App\Http\Controllers\FrontendV2\HomeController::class, 'students']);
 Route::get('staff', [\App\Http\Controllers\FrontendV2\HomeController::class, 'staff']);
 Route::get('contact-us', [\App\Http\Controllers\FrontendV2\HomeController::class, 'contact_us']);
+Route::get('search', [\App\Http\Controllers\FrontendV2\HomeController::class, 'search'])->name('search');
+Route::post('subscribe', [\App\Http\Controllers\FrontendV2\ContactController::class, 'subscribe'])->name('subscribe');
+Route::post('contact', [\App\Http\Controllers\FrontendV2\ContactController::class, 'contact_us'])->name('contact.store');
 
 Route::get('gallery', [\App\Http\Controllers\FrontendV2\MediaController::class, 'all']);
 Route::get('media/{media}', [\App\Http\Controllers\FrontendV2\MediaController::class, 'show']);
@@ -42,43 +45,10 @@ Route::get('pages/{page}', [\App\Http\Controllers\FrontendV2\PageController::cla
 
 
 
+
+
+
 Route::get('switch/{lang}', function ($lang) {
     Session::put('app_locale', $lang);
     return back();
 })->name('switchLang');
-
-Route::get('/v2', function () {
-    $sliderGroup = SliderGroup::find(1)->load('sliders');
-    $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->take(3);
-    $events = Block::upCommingEvents()->active()->take(3)->get();
-
-    return view('frontendV2.index', compact('sliderGroup', 'news', 'events'));
-});
-
-
-Route::get('/v2/staff', function () {
-    $sliderGroup = SliderGroup::find(1)->load('sliders');
-    $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->take(3);
-    $events = Block::upCommingEvents()->active()->take(3)->get();
-
-    $departments = Department::active()->orderBy('sort', 'asc')->get();
-
-    return view('frontendV2.staff', compact('sliderGroup', 'news', 'events', 'departments'));
-});
-
-
-Route::get('/v2/students', function () {
-    $sliderGroup = SliderGroup::find(1)->load('sliders');
-    $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->take(3);
-    $events = Block::upCommingEvents()->active()->take(3)->get();
-
-    $departments = Department::active()->orderBy('sort', 'asc')->get();
-
-    return view('frontendV2.students', compact('sliderGroup', 'news', 'events', 'departments'));
-});
-
-
-Route::get('/v2/contact_us', function () {
-    return view('frontendV2.contact_us');
-});
-
