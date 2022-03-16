@@ -51,11 +51,9 @@
 @section('content')
     <!-- Start Banner Area -->
     <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
+    <div class="container">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-xl-6">
                             <div class="banner-content">
                                 <span>{{ getSection('e-learning')->title }}</span>
                                 <h1>{{ getSection('e-learning')->description }}</h1>
@@ -70,7 +68,7 @@
 
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-xl-6">
                             <div class="banner-img">
                                 <div class="lightSliderHome">
                                     <ul id="lightSlider">
@@ -84,22 +82,11 @@
                                         @endforeach
                                     </ul>
                                 </div>
-{{--                                <ul id="imageGallery">--}}
 
-{{--                                    @foreach($sliderGroup->sliders->skip(1) as $slider)--}}
-{{--                                        <li data-thumb="{{ $slider->image }}" data-src="{{ $slider->image }}">--}}
-{{--                                            <img src="{{ $slider->image }}" style="height: 500px!important; width: 800px!important;"/>--}}
-{{--                                        </li>--}}
-{{--                                    @endforeach--}}
-
-{{--                                </ul>--}}
-{{--                                <img src="http://127.0.0.1:8000/storage/images/blocks/news.jpg" alt="Image">--}}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
     <!-- End Banner Area -->
 

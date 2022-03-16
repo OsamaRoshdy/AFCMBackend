@@ -74,9 +74,7 @@
 @section('content')
     <!-- Start Banner Area -->
     <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
+    <div class="container">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="banner-content">
@@ -111,8 +109,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
 
     <!-- End Banner Area -->

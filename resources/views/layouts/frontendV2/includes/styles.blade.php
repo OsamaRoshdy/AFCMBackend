@@ -60,7 +60,7 @@
         transition: all 0.5s;
     }
     .lightSliderHome {
-        width:800px;
+        width:100%;
     }
     .lightSliderHome ul {
         list-style: none outside none;
