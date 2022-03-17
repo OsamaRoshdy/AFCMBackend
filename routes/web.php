@@ -22,6 +22,7 @@ Route::get('/', [\App\Http\Controllers\FrontendV2\HomeController::class, 'index'
 Route::get('students', [\App\Http\Controllers\FrontendV2\HomeController::class, 'students']);
 Route::get('staff', [\App\Http\Controllers\FrontendV2\HomeController::class, 'staff']);
 Route::get('contact-us', [\App\Http\Controllers\FrontendV2\HomeController::class, 'contact_us']);
+Route::get('partners/{partner}', [\App\Http\Controllers\FrontendV2\HomeController::class, 'partner']);
 Route::get('search', [\App\Http\Controllers\FrontendV2\HomeController::class, 'search'])->name('search');
 Route::post('subscribe', [\App\Http\Controllers\FrontendV2\ContactController::class, 'subscribe'])->name('subscribe');
 Route::post('contact', [\App\Http\Controllers\FrontendV2\ContactController::class, 'contact_us'])->name('contact.store');

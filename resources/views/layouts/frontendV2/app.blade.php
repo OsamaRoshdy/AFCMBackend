@@ -8,7 +8,7 @@
 
     @yield('styles')
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <style type="text/css">
+    <style >
         .loader {
             border: 16px solid #f3f3f3;
             /* Light grey */
@@ -51,20 +51,14 @@
 
 <body>
 <!-- Start Preloader Area -->
-<div class="section-title">
-    <div class="preloader">
-        <div class="lds-ripple">
+
+<div class="preloader">
+    <div class="lds-ripple">
             <div class="loader">
                 <img style="margin: 5px" src="{{ asset('frontendV2/assets/images/logo.png') }}" width="50%" />
             </div>
         </div>
-    </div>
 </div>
-
-{{--<div class="loader">--}}
-{{--    <img src="{{ asset('frontendV2/assets/images/logo.png') }}" />--}}
-{{--</div>--}}
-<!-- End Preloader Area -->
 
 @include('layouts.frontendV2.includes.header')
 

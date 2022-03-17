@@ -21,7 +21,7 @@
 <div class="form-group row">
     {{ Form::label('description_ar', __('common.description_ar'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
-        {{ Form::text('description_ar',old('description_ar'), ['class' => 'form-control', 'id' => 'description_ar', 'placeholder' => __('common.description_ar')]) }}
+        {{ Form::textarea('description_ar',old('description_ar'), ['class' => 'form-control editor', 'id' => 'description_ar', 'placeholder' => __('common.description_ar')]) }}
         @if ($errors->has("description_ar"))
             <span class="form-text text-danger">{{$errors->first('description_ar')}}</span>
         @endif
@@ -31,7 +31,7 @@
 <div class="form-group row">
     {{ Form::label('description_en', __('common.description_en'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
-        {{ Form::text('description_en',old('description_en'), ['class' => 'form-control', 'id' => 'description_en', 'placeholder' => __('common.name_en')]) }}
+        {{ Form::textarea('description_en',old('description_en'), ['class' => 'form-control editor', 'id' => 'description_en', 'placeholder' => __('common.name_en')]) }}
         @if ($errors->has("description_en"))
             <span class="form-text text-danger">{{$errors->first('description_en')}}</span>
         @endif
@@ -71,5 +71,7 @@
 
 
 @section('scripts')
+    @include('layouts.backend.includes.tinyMCE_config')
+
     <script src="{{ asset('backend/plugins/fileinput/js/fileinput.js') }}"></script>
 @endsection

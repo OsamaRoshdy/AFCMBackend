@@ -73,5 +73,9 @@ class HomeController extends Controller
         return view('frontendV2.search', compact('news', 'events'));
     }
 
+    public function partner(Partner $partner)
+    {
+        return view('frontendV2.partners.show', compact('partner'));
+    }
 
 }
