@@ -64,6 +64,7 @@
                 </div>
 
             </div>
+            </div>
         </div>
     </section>
     <!-- End Blog Details Area -->

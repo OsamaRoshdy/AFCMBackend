@@ -11,4 +11,6 @@ return array(
     'success_partners' => 'Success Partners',
     'site_map' => 'Site Map',
     'about_afcm' => 'About AFCM',
+    'search' => 'Search',
+    'faqs' => 'FAQs',
 );

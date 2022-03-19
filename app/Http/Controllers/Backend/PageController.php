@@ -47,9 +47,9 @@ class PageController extends CommonController
     public function store(Request $request)
     {
         $request->validate([
-            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
             'images' => 'required|array',
-            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:3048',
         ]);
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_PAGES;
@@ -70,9 +70,9 @@ class PageController extends CommonController
     public function update(Request $request,$id)
     {
         $request->validate([
-            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
             'images' => 'nullable|array',
-            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
         ]);
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);

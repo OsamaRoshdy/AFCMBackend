@@ -11,4 +11,6 @@ return array(
     'success_partners' => 'شركاء ',
     'site_map' => 'خريطة الموقع',
     'about_afcm' => 'عن AFCM',
+    'faqs' => 'الاسألة الشائعة',
+    'search' => 'بحث'
 );
