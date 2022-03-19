@@ -93,14 +93,14 @@
                                                         <ul class="dropdown-menu">
                                                             @foreach($subLink->children as $child)
                                                                 <li class="nav-item">
-                                                                    <a href="{{ $child->route }}" class="nav-link">{{ $child->name }}</a>
+                                                                    <a href="{{ url('/'. $child->route) }}" class="nav-link">{{ $child->name }}</a>
                                                                 </li>
                                                             @endforeach
                                                         </ul>
                                                     </li>
                                                 @else
                                                     <li class="nav-item">
-                                                        <a href="{{ url($subLink->route)  }}" class="nav-link">{{ $subLink->name }}</a>
+                                                        <a href="{{ url('/'. $subLink->route)  }}" class="nav-link">{{ $subLink->name }}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
