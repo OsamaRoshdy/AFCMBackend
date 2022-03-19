@@ -3,16 +3,25 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Foundation\Classes\Blocks;
 use App\Http\Foundation\Traits\ImageTrait;
 use App\Http\Requests\Backend\BlockRequest;
 use App\Models\Block;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Html\Builder;
 
 class PageController extends CommonController
 {
     use ImageTrait;
     protected string $module = 'pages';
+    protected Blocks $blocks;
+
+    public function __construct(Builder $htmlBuilder, Blocks $blocks)
+    {
+        parent::__construct($htmlBuilder);
+        $this->blocks = $blocks;
+    }
 
     public function index(Request $request)
     {
@@ -44,7 +53,9 @@ class PageController extends CommonController
         ]);
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_PAGES;
-        Block::create($data);
+        $block = Block::create($data);
+        $this->blocks->afterCreate($block);
+
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
@@ -66,6 +77,8 @@ class PageController extends CommonController
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);
         $block->update($data);
+        $this->blocks->afterUpdate($block);
+
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
