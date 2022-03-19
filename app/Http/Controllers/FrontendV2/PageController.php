@@ -18,12 +18,12 @@ class PageController extends Controller
 
         if ($link->id == 17) {
             $faqs = FAQ::active()->orderBy('sort', 'asc')->get();
-            return view('frontendV2.pages.faqs', compact('page', 'relatedPages', 'faqs'));
+            return view('frontendV2.pages.faqs', compact('page', 'relatedPages', 'faqs', 'link'));
         }
 
         if (in_array($page->id, [54, 55,62, 63, 57], true)) {
-            return view('frontendV2.pages.with_out_related', compact('page'));
+            return view('frontendV2.pages.with_out_related', compact('page', 'link'));
         }
-        return view('frontendV2.pages.show', compact('page', 'relatedPages'));
+        return view('frontendV2.pages.show', compact('page', 'relatedPages','link') );
     }
 }

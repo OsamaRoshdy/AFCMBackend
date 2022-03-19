@@ -76,7 +76,7 @@
                                             <li data-thumb="{{ $slider->image }}">
                                                 <img src="{{ $slider->image }}"/>
                                                 <div class="caption">
-                                                    <a href="">{{ $slider->description }}</a>
+                                                    <a href="{{ $slider->url ? url($slider->url) : '#' }}">{{ $slider->description }}</a>
                                                 </div>
                                             </li>
                                         @endforeach

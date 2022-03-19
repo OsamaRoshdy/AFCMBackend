@@ -14,7 +14,7 @@
             "advlist autolink lists link  charmap  preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars code fullscreen",
             "insertdatetime  nonbreaking save table contextmenu directionality",
-            "emoticons  paste textcolor colorpicker textpattern"
+            "emoticons  paste textcolor colorpicker textpattern textcolor"
         ],
         relative_urls: false,
         height: 350,
@@ -43,7 +43,7 @@
             + "kbd,label[for],legend,noscript,optgroup[label|disabled],option[disabled|label|selected|value],"
             + "q[cite],samp,select[disabled|multiple|name|size],small,"
             + "textarea[cols|rows|disabled|name|readonly],tt,var,big"|"article",
-        toolbar: "undo redo  | bold italic | alignleft aligncenter alignright alignjustify | fontselect | fontsizeselect | bullist numlist outdent indent | code link image media template",
+        toolbar: "undo redo  | bold italic | alignleft aligncenter alignright alignjustify | fontselect | fontsizeselect | bullist numlist outdent indent | code link image media template| forecolor backcolor",
         fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
         directionality : 'ltr',
         content_langs: [
