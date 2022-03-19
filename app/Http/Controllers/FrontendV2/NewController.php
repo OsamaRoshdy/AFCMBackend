@@ -10,10 +10,19 @@ class NewController extends Controller
 {
     public function all()
     {
-        $latestNews = Block::where('type', Block::TYPE_NEWS)->active()->latest()->take(7)->get();
-        $news = Block::where('type', Block::TYPE_NEWS)->active()->latest()->paginate(20);
+
+        $news = Block::where('type', Block::TYPE_NEWS)->active();
+        if (\request()->p) {
+            $news->whereHas('blockMainPages', function ($query) {
+                $query->whereHas('mainPage', function ($subQuery) {
+                    $subQuery->where('id', request()->p);
+                });
+            });
+        }
+        $news = $news->latest()->paginate(20);
+
         $events = Block::upCommingEvents()->active()->take(2)->get();
-        return view('frontendV2.news.all', compact('latestNews','news', 'events'));
+        return view('frontendV2.news.all', compact('news', 'events'));
     }
 
     public function show($slug)

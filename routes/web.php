@@ -32,7 +32,7 @@ Route::get('media/{media}', [\App\Http\Controllers\FrontendV2\MediaController::c
 
 
 
-Route::get('news', [\App\Http\Controllers\FrontendV2\NewController::class, 'all']);
+Route::get('news', [\App\Http\Controllers\FrontendV2\NewController::class, 'all'])->name('news');
 Route::get('news/{new}', [\App\Http\Controllers\FrontendV2\NewController::class, 'show']);
 Route::get('categories/{category}', [\App\Http\Controllers\FrontendV2\NewController::class, 'byCategory']);
 

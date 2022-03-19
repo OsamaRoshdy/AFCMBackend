@@ -89,6 +89,11 @@ class Block extends CommonModel
         return $this->belongsToMany(MainPage::class, 'main_page_blocks')->withPivot('type', 'date', 'sort');
     }
 
+    public function blockMainPages()
+    {
+        return $this->hasMany(MainPageBlock::class);
+    }
+
     public function scopeActive($query)
     {
         $query->where('status', 1);

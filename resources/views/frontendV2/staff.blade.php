@@ -187,7 +187,7 @@
                 @endforeach
             </div>
             <div class="section-title">
-                <a href="{{ url('/news') }}" class="default-btn text-center">
+                <a href="{{ route('news', ['p' => 3]) }}" class="default-btn text-center">
                     {{ getSection('home_events_and_news')->button }}
                     <i class="ri-arrow-right-line"></i>
                 </a>
