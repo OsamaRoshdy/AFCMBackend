@@ -30,10 +30,14 @@
                         <div class="blog-top-content">
                             <div class="blog-content">
                                 {!! $page->content !!}
-                                @if($page->images->count())
                                     <br>
                                     <div class="lightSliderHome" >
                                         <ul id="lightSlider">
+                                            @if($page->image_name)
+                                            <li data-thumb="{{ $page->image }}">
+                                                <img src="{{ $page->image }}"/>
+                                            </li>
+                                            @endif
                                             @foreach($page->images as $image)
                                                 <li data-thumb="{{ $image->image }}">
                                                     <img src="{{ $image->image }}"/>
@@ -41,7 +45,6 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                @endif
                             </div>
                         </div>
                     </div>
