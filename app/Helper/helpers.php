@@ -42,7 +42,7 @@ if (!function_exists('slug_ar')) {
 
 if (!function_exists('getMainPages')) {
     function getMainPages() {
-       $mainPages = \App\Models\MainPage::where('id','!=' ,1)->get();
+       $mainPages = \App\Models\MainPage::where('id','!=' ,1)->active()->get();
         return $mainPages;
     }
 }
