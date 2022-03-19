@@ -77,7 +77,7 @@
     <div class="page-title-area bg-23">
         <div class="container">
             <div class="page-title-content">
-                <h2>{{ $new->title }}</h2>
+                <h2>{{ $event->title }}</h2>
 
                 <ul>
                     <li>
@@ -86,7 +86,7 @@
                         </a>
                     </li>
 
-                    <li class="active">{{ $new->title }}</li>
+                    <li class="active">{{ $event->title }}</li>
                 </ul>
             </div>
         </div>
@@ -99,21 +99,21 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog-details-content mr-15">
-                        @if($new->image_name)
-                        <div class="blog-details-img">
-                            <img src="{{ $new->image }}" alt="Image">
-                        </div>
+                        @if($event->image_name)
+                            <div class="blog-details-img">
+                                <img src="{{ $event->image }}" alt="Image">
+                            </div>
                         @endif
 
                         <div class="blog-top-content">
                             <div class="blog-content">
-                                {!! $new->content !!}
+                                {!! $event->content !!}
 
-                                @if($new->images->count())
+                                @if($event->images->count())
                                     <br>
                                     <div class="lightSliderHome" >
                                         <ul id="lightSlider">
-                                            @foreach($new->images as $image)
+                                            @foreach($event->images as $image)
                                                 <li data-thumb="{{ $image->image }}">
                                                     <img src="{{ $image->image }}"/>
                                                 </li>
@@ -142,14 +142,14 @@
                             <h3 class="widget-title">{{ __('frontend.related_news') }}</h3>
 
                             <ul>
-                                @foreach($relatedNews as $relatedNew)
+                                @foreach($events as $relatedEvent)
                                     <li>
-                                    <a href="{{ $relatedNew->id }}">
-                                        {{ $relatedNew->title }}
-                                        <img src="{{ $relatedNew->image }}" style="width: 80px;" alt="Image">
-                                    </a>
-                                    <span>{{ $relatedNew->date }}</span>
-                                </li>
+                                        <a href="{{ $relatedEvent->id }}">
+                                            {{ $relatedEvent->title }}
+                                            <img src="{{ $relatedEvent->image }}" style="width: 80px;" alt="Image">
+                                        </a>
+                                        <span>{{ $relatedEvent->date }}</span>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

@@ -35,31 +35,6 @@
                         To achieve excellence in medical education and scientific research and to become the regional reference in military medicine.
                     </p>
 
-                    <ul class="social-icon">
-                        <li>
-                            <span>Follow us:</span>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <i class="ri-facebook-fill"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" target="_blank">
-                                <i class="ri-instagram-line"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" target="_blank">
-                                <i class="ri-linkedin-fill"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
 

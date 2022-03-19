@@ -39,7 +39,7 @@ Route::get('categories/{category}', [\App\Http\Controllers\FrontendV2\NewControl
 
 
 Route::get('events', [\App\Http\Controllers\Frontend\EventsController::class, 'index']);
-Route::get('events/{event}', [\App\Http\Controllers\Frontend\EventsController::class, 'show']);
+Route::get('events/{event}', [\App\Http\Controllers\FrontendV2\EventController::class, 'show']);
 
 
 Route::get('pages/{page}', [\App\Http\Controllers\FrontendV2\PageController::class, 'show']);
