@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Block;
 use App\Models\Category;
 use App\Models\Department;
+use App\Models\FAQ;
 use App\Models\MainPage;
 use App\Models\Media;
 use App\Models\MediaGroup;
@@ -33,7 +34,7 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(2);
         if ($mainPage && $mainPage->status == true) {
-            $faqs = $mainPage->faqs;
+            $faqs = FAQ::active()->get();
             $sliderGroup = SliderGroup::find(1)->load('sliders');
             $news = $mainPage->blocks->where('type', Block::TYPE_NEWS)->where('status', 1);
             return view('frontendV2.students', compact( 'faqs', 'news', 'sliderGroup'));

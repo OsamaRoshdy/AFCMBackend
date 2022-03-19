@@ -40,55 +40,22 @@
 
             <div class="col-lg-3 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Site Map</h3>
+                    <h3>{{ __('frontend.site_map') }}</h3>
 
                     <ul class="import-link">
+                        @foreach(getLinksFooter() as $link)
                         <li>
-                            <a href="application.html">Application</a>
+                            <a href="{{ url('/' . $link->route) }}">{{ $link->name }}</a>
                         </li>
-                        <li>
-                            <a href="faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="alumni.html">Alumni</a>
-                        </li>
-                        <li>
-                            <a href="terms-conditions.html">Terms & conditions</a>
-                        </li>
-                        <li>
-                            <a href="privacy-policy.html">Privacy policy</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-footer-widget">
-                    <h3>Study</h3>
-
-                    <ul class="import-link">
-                        <li>
-                            <a href="courses.html">Find a course</a>
-                        </li>
-                        <li>
-                            <a href="application.html">Admissions</a>
-                        </li>
-                        <li>
-                            <a href="our-professors.html">Scholarships</a>
-                        </li>
-                        <li>
-                            <a href="campus-information.html">Study on campus</a>
-                        </li>
-                        <li>
-                            <a href="tuition-fees.html">Fees and costs</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
             <div class="col-lg-3 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Contact Us</h3>
+                    <h3>{{ __('frontend.contact_us') }}</h3>
 
                     <ul class="address">
                         <li class="location">
