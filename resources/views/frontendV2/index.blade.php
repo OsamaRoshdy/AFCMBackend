@@ -101,7 +101,7 @@
                     <div class="col-lg-4 col-md-6"  >
                         <div class="single-blog">
                         <a href="{{ url('news/' . $new->id) }}" class="blog-img">
-                            <img src="{{ $new->image }}" alt="Image">
+                            <img src="{{ $new->image }}" style="width: 500px!important;height: 350px!important;" alt="Image">
                         </a>
                         <div class="blog-content">
                             <ul>
