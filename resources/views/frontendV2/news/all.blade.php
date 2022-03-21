@@ -1,4 +1,4 @@
-@extends('layouts.frontendV2.app')
+@extends('layouts.frontendV2.app', ['mainPage' => $page->id])
 
 @section('content')
     <!-- Start Page Title Area -->
@@ -9,7 +9,7 @@
 
                 <ul>
                     <li>
-                        <a href="{{ url('/') }}">
+                        <a href="{{ $page->id == 1 ?  url('/') : url('/' . $page->slug) }}">
                             {{ $page->name }}
                         </a>
                     </li>
