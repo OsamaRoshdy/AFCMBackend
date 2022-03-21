@@ -356,7 +356,7 @@
                     <ul id="PartnerSlider">
                         @foreach($partners as $partner)
                             <li class="text-center">
-                                <a href="{{ url('partners/' . $partner->id) }}">
+                                <a href="{{ $partner->url}}">
                                     <img src="{{$partner->image}}" style="height: 150px;height: 150px" class="img-fluid customSliderImage" alt="">
                                     <h3>{{$partner->name}}</h3>
                                 </a>
