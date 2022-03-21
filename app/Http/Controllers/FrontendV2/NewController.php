@@ -54,11 +54,15 @@ class NewController extends Controller
 
     public function byCategory($id)
     {
+        $page = MainPage::find(1);
+        if ($id == 6 || $id == 4) {
+            $page = MainPage::find(3);
+        }
         $news = Block::news()->whereHas('categories', function ($query) use ($id){
             $query->where('category_id', $id);
         })->paginate(20);
 
         $category = Category::findOrFail($id);
-        return view('frontendV2.news.byCategory', compact('news', 'category'));
+        return view('frontendV2.news.byCategory', compact('news', 'category', 'page'));
     }
 }
