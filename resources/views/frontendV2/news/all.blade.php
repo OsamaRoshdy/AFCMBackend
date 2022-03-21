@@ -10,7 +10,7 @@
                 <ul>
                     <li>
                         <a href="{{ url('/') }}">
-                            {{ getMainPage(1)->name }}
+                            {{ $page->name }}
                         </a>
                     </li>
 

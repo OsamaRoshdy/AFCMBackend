@@ -6,7 +6,7 @@ is the file you need to edit to change the look of the template.
 
 This files table contents are outlined below>>>>>
 
-******************************************* 
+*******************************************
 ** - DEFAULT AREA STYLE - **
 
 ** - Default Btn Area Style
@@ -15,8 +15,8 @@ This files table contents are outlined below>>>>>
 
 ** - HOME PAGE STYLE - **
 
-** - Top Header Area  
-** - Nav Area Style 
+** - Top Header Area
+** - Nav Area Style
 ** - Banner Area Style
 ** - About Area Style
 ** - Study Area Style
@@ -175,7 +175,7 @@ Banner Area Style
 			display: none;
 		}
 		.banner-content {
-			margin-top: 50px;
+			//margin-top: 50px;
 			span {
 				color: var(--white-color);
 			}
@@ -236,7 +236,7 @@ Banner Area Style
 		padding: 0;
 		margin: 0;
 		transform: rotate(-180deg);
-		li {   
+		li {
 			margin: 35px 0;
 			a {
 				display: block;
@@ -540,7 +540,7 @@ Study Area Style
 		}
 	}
 	&.study-area-style-two {
-		&::after { 
+		&::after {
 			height: 100%;
 		}
 		.owl-theme  {
@@ -758,7 +758,7 @@ Our Campus Information Area Style
 }
 .campus-img {
 	margin-top: 100px;
-	
+
 }
 .campus-content {
 	background-color: var(--main-color);
@@ -1193,7 +1193,7 @@ Single Check Area Style
 				border-color: var(--main-color);
 				&:after {
 					display: block;
-					
+
 				}
 			}
 		}
@@ -1370,7 +1370,7 @@ Campus Experience Area Style
 	&:hover {
 		&.owl-theme  {
 			.owl-nav {
-				.owl-prev, .owl-next { 
+				.owl-prev, .owl-next {
 					opacity: 1;
 				}
 			}

@@ -97,14 +97,14 @@
                                                         <ul class="dropdown-menu">
                                                             @foreach($subLink->children as $child)
                                                                 <li class="nav-item">
-                                                                    <a href="{{ url('/'. $child->route) }}" class="nav-link">{{ $child->name }}</a>
+                                                                    <a href="{{ $child->type == 1 ? url('/'. $child->route) : $child->route }}" @if($child->type == 2) target="_blank" @endif class="nav-link">{{ $child->name }}</a>
                                                                 </li>
                                                             @endforeach
                                                         </ul>
                                                     </li>
                                                 @else
                                                     <li class="nav-item">
-                                                        <a href="{{ url('/'. $subLink->route)  }}" class="nav-link">{{ $subLink->name }}</a>
+                                                        <a href="{{ $subLink->type == 1 ? url('/'. $subLink->route) : $subLink->route }}" @if($subLink->type == 2) target="_blank" @endif class="nav-link">{{ $subLink->name }}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
@@ -114,7 +114,7 @@
                                     </li>
                                 @else
                                     <li class="nav-item">
-                                        <a href="{{ url('/'. $link->route)  }}" class="nav-link">{{ $link->name }}</a>
+                                        <a href="{{ $link->type == 1 ? url('/'. $link->route) : $link->route }}" @if($link->type == 2) target="_blank" @endif class="nav-link">{{ $link->name }}</a>
                                     </li>
                                 @endif
                             @endforeach

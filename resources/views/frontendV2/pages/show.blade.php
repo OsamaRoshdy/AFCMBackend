@@ -80,8 +80,11 @@
                 <h2>{{ $page->title }}</h2>
                 <ul>
                     <li>
-                        <a href="{{ url('/') }}">
-                            {{ getMainPage(1)->name }}
+                        @php
+                            $url = $link->menuLink->mainPage->id == 1 ? url('/') : url('/' . $link->menuLink->mainPage->slug)
+                        @endphp
+                        <a href="{{$url}}">
+                            {{ $link->menuLink->mainPage->name }}
                         </a>
                     </li>
                     @if($link->parent)

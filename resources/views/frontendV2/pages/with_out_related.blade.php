@@ -55,7 +55,7 @@
                                     <br>
                                     <div class="lightSliderHome" >
                                         <ul id="lightSlider">
-                                            @foreach($new->images as $image)
+                                            @foreach($page->images as $image)
                                                 <li data-thumb="{{ $image->image }}">
                                                     <img src="{{ $image->image }}"/>
                                                 </li>

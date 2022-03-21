@@ -79,15 +79,7 @@
             <div class="page-title-content">
                 <h2>{{ $new->title }}</h2>
 
-                <ul>
-                    <li>
-                        <a href="{{ url('/') }}">
-                            {{ getMainPage(1)->name }}
-                        </a>
-                    </li>
 
-                    <li class="active">{{ $new->title }}</li>
-                </ul>
             </div>
         </div>
     </div>

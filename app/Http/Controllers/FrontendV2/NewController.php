@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontendV2;
 use App\Http\Controllers\Controller;
 use App\Models\Block;
 use App\Models\Category;
+use App\Models\MainPage;
 use Illuminate\Http\Request;
 
 class NewController extends Controller
@@ -12,6 +13,7 @@ class NewController extends Controller
     public function all()
     {
 
+        $page = MainPage::find(1);
         $news = Block::where('type', Block::TYPE_NEWS)->active();
         if (\request()->p) {
             $news->whereHas('blockMainPages', function ($query) {
@@ -19,11 +21,15 @@ class NewController extends Controller
                     $subQuery->where('id', request()->p);
                 });
             });
+
+            $mainPage = MainPage::find(\request()->p);
+            if ($mainPage) {
+                $page = $mainPage;
+            }
         }
         $news = $news->latest()->paginate(20);
-
         $events = Block::upCommingEvents()->active()->take(2)->get();
-        return view('frontendV2.news.all', compact('news', 'events'));
+        return view('frontendV2.news.all', compact('news', 'events', 'page'));
     }
 
     public function show($slug)
