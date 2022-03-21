@@ -23,7 +23,7 @@
             $("#PartnerSlider").lightSlider({
                 loop:true,
                 item: 5,
-                auto:true,
+                // auto:true,
                 @if(app()->getLocale() !== 'en')
                 rtl:true,
                 @endif
@@ -357,7 +357,7 @@
                         @foreach($partners as $partner)
                             <li class="text-center">
                                 <a href="{{ url('partners/' . $partner->id) }}">
-                                    <img src="{{$partner->image}}" width="150px" class="img-fluid customSliderImage" alt="">
+                                    <img src="{{$partner->image}}" style="height: 150px;height: 150px" class="img-fluid customSliderImage" alt="">
                                     <h3>{{$partner->name}}</h3>
                                 </a>
 
