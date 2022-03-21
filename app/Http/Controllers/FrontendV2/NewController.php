@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontendV2;
 
 use App\Http\Controllers\Controller;
 use App\Models\Block;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class NewController extends Controller
@@ -51,6 +52,7 @@ class NewController extends Controller
             $query->where('category_id', $id);
         })->paginate(20);
 
-        return view('frontendV2.news.all', compact('news'));
+        $category = Category::findOrFail($id);
+        return view('frontendV2.news.byCategory', compact('news', 'category'));
     }
 }

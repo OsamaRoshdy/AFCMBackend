@@ -84,6 +84,22 @@
                             {{ getMainPage(1)->name }}
                         </a>
                     </li>
+                    @if($link->parent)
+                        @if($link->parent->parent)
+                        <li class="active">
+                            <a>
+                                {{$link->parent->parent->name}}
+                            </a>
+                        </li>
+                        @endif
+
+                        <li class="active">
+                        <a>
+                            {{$link->parent->name}}
+                        </a>
+                        </li>
+
+                    @endif
                     <li class="active">{{ $page->title }}</li>
                 </ul>
             </div>
@@ -97,6 +113,11 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog-details-content mr-15">
+                        @if($page->image_name)
+                            <div class="blog-details-img">
+                                <img src="{{ $page->image }}" alt="Image">
+                            </div>
+                        @endif
                         <div class="blog-top-content">
                             <div class="blog-content">
                                 {!! $page->content !!}

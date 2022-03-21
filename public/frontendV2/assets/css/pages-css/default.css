@@ -283,8 +283,7 @@ Read More Btn Area Style*/
 Section Title Area Style*/
 .section-title {
   max-width: 750px;
-  margin: -8px auto 50px;
-  text-align: center;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -298,7 +297,9 @@ Section Title Area Style*/
 
 .section-title h2 {
   font-size: 45px;
-  margin-bottom: 15px;
+    color: var(--main-color);
+
+    margin-bottom: 15px;
   position: relative;
 }
 

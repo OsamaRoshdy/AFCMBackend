@@ -189,7 +189,7 @@ Banner Area Style
 }
 
 .banner-area.bg-2 {
-  background-image: url(../../assets/images/banner/banner-bg-2.jpg);
+  /*background-image: url(../../assets/images/banner/banner-bg-2.jpg);*/
 }
 
 .banner-area.bg-3 {
@@ -404,8 +404,8 @@ Banner Area Style
 }
 
 .banner-content span {
-  font-size: 16px;
-  display: block;
+    font-size: 32px;
+    font-weight: 900;  display: block;
   color: var(--main-color);
   margin-bottom: 10px;
 }
@@ -416,7 +416,7 @@ Banner Area Style
   color: var(--heading-color);
   -webkit-animation: 0.6s fadeInUpBig;
           animation: 0.6s fadeInUpBig;
-  font-weight: 900;
+    font-weight: 500;
   line-height: 1.3;
 }
 
@@ -1013,8 +1013,8 @@ Events Area Style
 }
 
 .events-content span {
-  font-size: 15px;
-  font-weight: 600;
+    font-size: 32px;
+    font-weight: 900;
   color: var(--main-color);
   display: block;
   margin-bottom: 10px;

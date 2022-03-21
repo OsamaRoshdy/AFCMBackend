@@ -125,7 +125,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="section-title">
+            <div class="section-title" style="  margin: -8px auto 50px;text-align: center;">
                 <a href="{{ route('news', ['p' => 1]) }}" class="default-btn text-center">
                     {{ getSection('home_events_and_news')->button }}
                     <i class="ri-arrow-right-line"></i>
@@ -138,7 +138,7 @@
     <!-- Start Events Area -->
     <section class="events-area bg-color ptb-100">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row ">
                 <div class="col-lg-7">
                     <div class="events-content mr-15">
                         <span>{{ getSection('home_upcoming_events')->title }}</span>
@@ -253,12 +253,19 @@
                     @foreach($statistics as $statistic)
                         <div class="col-lg-3 col-sm-6">
                             <div class="single-counter bg-style">
-                                <i class="{{ $statistic->icon }}"></i>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <i class="{{ $statistic->icon }}"></i>
+                                        <h2>
+                                            <span dir="ltr" class="odometer odometer-auto-theme" data-count="{{ $statistic->count }}"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">4</span></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">7</span></span></span></span></span></div></span>
+                                        </h2>
+                                    </div>
+                                    <div class="col-12">
+                                        <h4>{{ $statistic->name }}</h4>
 
-                                <h2>
-                                    <span dir="ltr" class="odometer odometer-auto-theme" data-count="{{ $statistic->count }}"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">4</span></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">7</span></span></span></span></span></div></span>
-                                </h2>
-                                <h4>{{ $statistic->name }}</h4>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     @endforeach
@@ -327,7 +334,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section-title ">
+            <div class="section-title pt-70" style="  margin: -8px auto 50px;text-align: center;">
                 <a href="{{ url('/gallery') }}" class="default-btn text-center">
                     {{ getSection('media')->button }}
                     <i class="ri-arrow-right-line"></i>

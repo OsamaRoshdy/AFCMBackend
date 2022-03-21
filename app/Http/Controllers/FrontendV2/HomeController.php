@@ -26,7 +26,7 @@ class HomeController extends Controller
         $videos = Media::videos()->active()->home()->orderBy('sort', 'asc')->take(5)->get();
         $partners = Partner::active()->home()->orderBy('sort', 'asc')->get();
         $mainPage = MainPage::find(1);
-        $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS);
+        $news = MainPage::find(1)->blocks->where('type', Block::TYPE_NEWS)->where('status', 1)->take(6);
         return view('frontendV2.index', compact('sliderGroup', 'news', 'events', 'statistics', 'videos', 'partners', 'mainPage'));
     }
 

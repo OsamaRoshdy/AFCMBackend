@@ -3,7 +3,7 @@
 <section class="application-submit-area">
     <div class="application-submit-bg">
         <div class="application-submit-content">
-            <div class="section-title">
+            <div class="section-title" style="  margin: -8px auto 50px;text-align: center;">
                 <h2 class="color-white">Subscribe Now</h2>
                 {{ Form::open(['route' => 'subscribe', 'class' => 'newsletter_form']) }}
                 <div class="form-group">

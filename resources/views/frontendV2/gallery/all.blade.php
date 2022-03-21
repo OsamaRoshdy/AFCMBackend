@@ -23,26 +23,15 @@
     <section class="banner-area bg-2 banner-area-style-two jarallax " data-jarallax='{"speed": 0.3}'>
         <div class="container">
             <div class="row align-items-center">
+                <div class="section-title">
+                    <h2>{{ __('frontend.videos') }}</h2>
+                </div>
                 <div class="col-lg-12">
                     <div class="ml-15">
                         <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                @if($videos->count())
-                                    <div class="video-banner">
-                                        <img src="https://i.ytimg.com/vi/{{$videos->first()->url}}/hqdefault.jpg" width="100%" alt="Image">
 
-                                        <div class="video-button">
-                                            <a href="https://www.youtube.com/watch?v={{$videos->first()->url}}" class="popup-youtube video-btn">
-                                                <i class="flaticon-play-button"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="row">
-                                    @foreach($videos->skip(1) as $video)
-                                        <div class="col-lg-6 col-sm-6" style="margin-bottom: 18px">
+                                    @foreach($videos as $video)
+                                        <div class="col-lg-4 col-sm-6" style="margin-bottom: 18px">
                                             <div class="video-banner">
                                                 <img src="https://i.ytimg.com/vi/{{$video->url}}/hqdefault.jpg" alt="Image">
 
@@ -57,9 +46,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach
-                                </div>
-                            </div>
+            @endforeach
                         </div>
                     </div>
                 </div>
@@ -70,6 +57,9 @@
     <!-- Start Gallery Area -->
     <div class="gallery-area ptb-100">
         <div class="container">
+            <div class="section-title">
+                <h2>{{ __('frontend.photos') }}</h2>
+            </div>
             <div class="row justify-content-center">
 
                 @foreach($mediaGroups as $mediaGroup)

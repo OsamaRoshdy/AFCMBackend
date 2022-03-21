@@ -13,4 +13,6 @@ return array(
     'about_afcm' => 'About AFCM',
     'search' => 'Search',
     'faqs' => 'FAQs',
+    'videos' => 'Videos',
+    'photos' => 'Photos',
 );
