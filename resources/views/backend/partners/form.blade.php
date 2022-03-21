@@ -39,6 +39,16 @@
 </div>
 
 <div class="form-group row">
+    {{ Form::label('url', __('common.url'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::text('url',old('url'), ['class' => 'form-control', 'id' => 'url', 'placeholder' => __('common.url')]) }}
+        @if ($errors->has("url"))
+            <span class="form-text text-danger">{{$errors->first('url')}}</span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     {{ Form::label('sort', __('common.sort'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
         {{ Form::number('sort',old('sort'), ['class' => 'form-control', 'id' => 'sort', 'placeholder' => __('common.sort')]) }}

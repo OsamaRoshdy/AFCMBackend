@@ -40,6 +40,8 @@ class PartnerController extends CommonController
             'status' => 'required',
             'image_name' => 'required|image|mimes:jpg,png,jpeg,gif|max:3048',
             'type' => 'required',
+            'url' => 'required',
+            'sort' => 'required',
         ]);
         $data = $request->except(['image_name']);
         $data['image_name'] = $this->storeImage($request->image_name, 'partners');
@@ -64,6 +66,8 @@ class PartnerController extends CommonController
             'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
             'images' => 'nullable|array',
             'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'url' => 'required',
+            'sort' => 'required',
         ]);
         $data = $request->except(['image_name']);
         if ($request->image_name) {

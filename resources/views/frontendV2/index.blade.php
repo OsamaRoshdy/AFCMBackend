@@ -23,7 +23,7 @@
             $("#PartnerSlider").lightSlider({
                 loop:true,
                 item: 5,
-                // auto:true,
+                auto:true,
                 @if(app()->getLocale() !== 'en')
                 rtl:true,
                 @endif
