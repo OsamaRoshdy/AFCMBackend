@@ -65,7 +65,7 @@
                 @foreach($mediaGroups as $mediaGroup)
                     <div class="col-lg-4 col-md-6">
                         <div class="single-gallery">
-                            <img src="{{ $mediaGroup->mainImage()->image }}" alt="Image">
+                            <img src="{{ $mediaGroup->mainImage()->image }}"  style="height: 250px; width: 100%"  alt="Image">
                             <div class="gallery-item-content">
                                 <div class="gallery-link">
                                     <a href="{{ url('/media/'.$mediaGroup->slug) }}">

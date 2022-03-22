@@ -27,9 +27,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 @foreach($media->images as $image)
-                    <div class="col-lg-3 col-md-6">
-                    <div class="single-gallery">
-                        <img src="{{ $image->image }}" alt="Image">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-gallery" >
+                        <img src="{{ $image->image }}"  style="height: 250px; width: 100%" alt="Image">
 
                         <div class="gallery-item-content">
                             <div class="gallery-link">
