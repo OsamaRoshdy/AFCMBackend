@@ -155,11 +155,11 @@
                                         {{ $event->title }}
                                     </a>
                                 </h3>
-                                <p>
+                                <p style="margin: 10px">
                                     {{ $event->description }}
                                 </p>
 
-                                <a href="{{ url('events/' . $event->id) }}" class="read-more">
+                                <a href="{{ url('events/' . $event->id) }}" class="read-more" style="margin: 10px">
                                     Find out more
                                     <i class="ri-arrow-right-line"></i>
                                 </a>

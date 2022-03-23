@@ -16,12 +16,22 @@ class NewController extends Controller
         $page = MainPage::find(1);
         $news = Block::where('type', Block::TYPE_NEWS)->active();
         if (\request()->p) {
-            $news->whereHas('blockMainPages', function ($query) {
-                $query->whereHas('mainPage', function ($subQuery) {
-                    $subQuery->where('id', request()->p);
-                });
-            });
+            if (\request()->p == 3) {
 
+                $news->whereDoesntHave('categories', function ($query) {
+                    $query->where('category_id', '!=',  3);
+                })->whereHas('blockMainPages', function ($query) {
+                    $query->whereHas('mainPage', function ($subQuery) {
+                        $subQuery->where('id', request()->p);
+                    });
+                });
+            } else {
+                $news->whereHas('blockMainPages', function ($query) {
+                    $query->whereHas('mainPage', function ($subQuery) {
+                        $subQuery->where('id', request()->p);
+                    });
+                });
+            }
             $mainPage = MainPage::find(\request()->p);
             if ($mainPage) {
                 $page = $mainPage;

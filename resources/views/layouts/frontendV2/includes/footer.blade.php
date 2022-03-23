@@ -25,11 +25,16 @@
 <footer class="footer-area black-bg-color">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-footer-widget bg-f9f5f1">
-                    <a href="index.html" class="logo">
-                        <img width="60%" src="{{ asset('frontendV2/assets/images/logo.png') }}" alt="Image">
-                    </a>
+            <div class="col-lg-5 col-sm-6">
+                <div class="single-footer-widget bg-f9f5f1 row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <a href="{{ url('/') }}" class="logo" >
+                            <img width="100%" src="{{ asset('frontendV2/assets/images/logo.png') }}" alt="Image">
+                        </a>
+                    </div>
+                    <div class="col-lg-4"></div>
+
 
                     <p>
                         To achieve excellence in medical education and scientific research and to become the regional reference in military medicine.
@@ -53,7 +58,7 @@
             </div>
 
 
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="single-footer-widget">
                     <h3>{{ __('frontend.contact_us') }}</h3>
 

@@ -409,6 +409,8 @@ Banner Area Style
   display: block;
   color: var(--main-color);
   margin-bottom: 10px;
+    text-decoration: underline;
+
 }
 
 .banner-content h1 {
@@ -1019,7 +1021,9 @@ Events Area Style
   font-weight: 900;
   color: var(--main-color);
   display: block;
-  margin-bottom: 10px;
+    text-decoration: underline;
+
+    margin-bottom: 10px;
 }
 
 .events-content h2 {
@@ -1069,6 +1073,7 @@ Events Area Style
 
 .events-content .events-list li h3 {
   font-size: 24px;
+    margin: 10px;
   margin-bottom: 15px;
 }
 

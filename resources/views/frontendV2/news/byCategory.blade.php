@@ -5,7 +5,7 @@
     <div class="page-title-area bg-23">
         <div class="container">
             <div class="page-title-content">
-                <h2>{{ getSection('news_header')->title }}</h2>
+                <h2>{{ $category->name }}</h2>
 
                 <ul>
                     <li>
@@ -13,12 +13,6 @@
                             {{ $page->name }}
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="{{ url('news') }}">
-                            {{ getSection('news_header')->title }}
-                        </a>
-                    </li>
-
                     <li class="active">
                             {{ $category->name }}
                     </li>

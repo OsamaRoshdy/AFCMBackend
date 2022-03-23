@@ -408,6 +408,8 @@ Banner Area Style
     font-weight: 900;  display: block;
   color: var(--main-color);
   margin-bottom: 10px;
+    text-decoration: underline;
+
 }
 
 .banner-content h1 {
@@ -1018,6 +1020,8 @@ Events Area Style
   color: var(--main-color);
   display: block;
   margin-bottom: 10px;
+    text-decoration: underline;
+
 }
 
 .events-content h2 {

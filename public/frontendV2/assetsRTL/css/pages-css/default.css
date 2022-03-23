@@ -299,6 +299,8 @@ Section Title Area Style*/
   font-size: 45px;
   margin-bottom: 15px;
   position: relative;
+    text-decoration: underline;
+
 }
 
 .section-title h2:last-child {

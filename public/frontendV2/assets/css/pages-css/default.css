@@ -298,6 +298,8 @@ Section Title Area Style*/
 .section-title h2 {
   font-size: 45px;
     color: var(--main-color);
+    text-decoration: underline;
+
 
     margin-bottom: 15px;
   position: relative;
