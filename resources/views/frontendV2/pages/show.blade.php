@@ -70,9 +70,7 @@
             gallery: false,
             item: 1,
             loop:true,
-            slideMargin: 2,table, th, td {
-  border: 1px solid;
-}
+            slideMargin: 2,
             thumbItem: 6,
             auto:true,
             @if(app()->getLocale() !== 'en')
@@ -136,11 +134,6 @@
                                     <br>
                                     <div class="lightSliderHome" >
                                         <ul id="lightSlider">
-                                            @if($page->image_name)
-                                            <li data-thumb="{{ $page->image }}">
-                                                <img src="{{ $page->image }}"/>
-                                            </li>
-                                            @endif
                                             @foreach($page->images as $image)
                                                 <li data-thumb="{{ $image->image }}">
                                                     <img src="{{ $image->image }}"/>
