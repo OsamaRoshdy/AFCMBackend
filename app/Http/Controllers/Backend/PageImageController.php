@@ -49,7 +49,7 @@ class PageImageController extends CommonController
             'image_name' => 'required|image|mimes:jpg,png,jpeg,gif|max:4048',
         ]);
         Media::create([
-            'media_group_id' =>  7,
+            'media_group_id' =>  21,
             'image_name' => $this->storeImage($request->image_name, 'media'),
             'type' => Media::TYPE_IMAGE
         ]);
