@@ -1,6 +1,6 @@
 @php
     $show = [];
-    $disableEdit = [];
+    $disableEdit = ['pages_images'];
     $disableDelete = ['main_pages', 'menu_links', 'links', 'slider_groups', 'categories'];
 @endphp
 <td nowrap="nowrap">

@@ -178,7 +178,7 @@
                         <h3 style="color: white">{{ getSection('medical_scientific_sections')->title }}</h3>
                         <span>{{ getSection('medical_scientific_sections')->description }}</span>
 
-                        <a href="{{ url('/staff') }}" class="default-btn">
+                        <a href="{{ getSection('medical_scientific_sections')->content_en }}" target="_blank" class="default-btn">
                             {{ getSection('medical_scientific_sections')->button }}
                             <i class="ri-arrow-right-line"></i>
                         </a>

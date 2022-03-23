@@ -11,7 +11,7 @@
         },
         theme: 'modern',
         plugins: [
-            "advlist autolink lists link  charmap  preview hr anchor pagebreak",
+            "advlist autolink lists link image imagetools  charmap  preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars code fullscreen",
             "insertdatetime  nonbreaking save table contextmenu directionality",
             "emoticons  paste textcolor colorpicker textpattern textcolor"

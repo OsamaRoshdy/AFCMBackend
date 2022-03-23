@@ -54,6 +54,13 @@
         .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
             background-color: var(--main-color);
         }
+        table, th, td {
+            border: 2px solid;
+        }
+        .tinymce-content p {
+            padding: 0;
+            margin: 2px 0;
+        }
     </style>
 @endsection
 @section('scripts')
@@ -63,7 +70,9 @@
             gallery: false,
             item: 1,
             loop:true,
-            slideMargin: 2,
+            slideMargin: 2,table, th, td {
+  border: 1px solid;
+}
             thumbItem: 6,
             auto:true,
             @if(app()->getLocale() !== 'en')

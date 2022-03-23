@@ -42,6 +42,10 @@ return [
             'icon' => 'flaticon-graphic',
         ],
         [
+            'name' => 'pages_images',
+            'icon' => 'flaticon-graphic',
+        ],
+        [
             'name' => 'faqs',
             'icon' => 'flaticon-graphic',
         ],

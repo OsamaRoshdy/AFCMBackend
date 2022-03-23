@@ -48,25 +48,39 @@
     </div>
 </div>
 
-<div class="form-group row">
-    {{ Form::label('content_ar', __('common.content_ar'), ['class' => 'col-sm-3']) }}
-    <div class="col-sm-9">
-        {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control editor form-control', 'id'=> 'content_ar']) }}
-        @if ($errors->has("content_ar"))
-            <span class="form-text text-danger">{{$errors->first('content_ar')}}</span>
-        @endif
-    </div>
-</div>
+@if($update ?? null)
+    @if($block->id == 4)
+        <div class="form-group row">
+            {{ Form::label('url', __('common.url'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+                {{ Form::text('content_en', old('content_en'), ['class' => 'form-control form-control', 'id'=> 'content_en']) }}
+                @if ($errors->has("content_en"))
+                    <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
+                @endif
+            </div>
+        </div>
+    @else
+        <div class="form-group row">
+            {{ Form::label('content_ar', __('common.content_ar'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+                {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control editor form-control', 'id'=> 'content_ar']) }}
+                @if ($errors->has("content_ar"))
+                    <span class="form-text text-danger">{{$errors->first('content_ar')}}</span>
+                @endif
+            </div>
+        </div>
 
-<div class="form-group row">
-    {{ Form::label('content_en', __('common.content_en'), ['class' => 'col-sm-3']) }}
-    <div class="col-sm-9">
-        {{ Form::textarea('content_en', old('content_en'), ['class' => 'form-control editor form-control', 'id'=> 'content_en']) }}
-        @if ($errors->has("content_en"))
-            <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
-        @endif
-    </div>
-</div>
+        <div class="form-group row">
+            {{ Form::label('content_en', __('common.content_en'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+                {{ Form::textarea('content_en', old('content_en'), ['class' => 'form-control editor form-control', 'id'=> 'content_en']) }}
+                @if ($errors->has("content_en"))
+                    <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
+                @endif
+            </div>
+        </div>
+    @endif
+@endif
 
 @include('backend.shared.forms.image_input', ['oldImage' => $update ?? null ? $block->image : null])
 

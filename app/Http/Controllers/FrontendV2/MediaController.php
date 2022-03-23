@@ -12,7 +12,7 @@ class MediaController extends Controller
     public function all()
     {
         $videos = Media::videos()->active()->take(5)->get();
-        $mediaGroups = MediaGroup::whereHas('images')->active()->latest()->get();
+        $mediaGroups = MediaGroup::whereHas('images')->where('id', '!=', 21)->active()->latest()->get();
 
         return view('frontendV2.gallery.all', compact('videos', 'mediaGroups'));
     }

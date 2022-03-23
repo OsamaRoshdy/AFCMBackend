@@ -16,7 +16,7 @@ class ImageController extends CommonController
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return $this->makeDatatable(MediaGroup::latest(),$this->module, true);
+            return $this->makeDatatable(MediaGroup::where('id', '!=', 21)->latest(),$this->module, true);
         }
         $columns = [
             'id' => ['title' => 'ID', 'searchable' => false, 'orderable' => true],
