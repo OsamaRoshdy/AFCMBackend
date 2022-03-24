@@ -13,6 +13,7 @@ class PageController extends Controller
     public function show($id)
     {
         $page = Block::where('slug_ar', $id)->orWhere('slug_en', $id)->orWhere('id', $id)->first();
+        dd($page);
         if ($page) {
             $link = Link::where('block_id', $page->id)->first();
             $relatedPages = Link::where('menu_link_id', $link->menu_link_id)->doesnthave('children')->get();
@@ -27,5 +28,6 @@ class PageController extends Controller
             }
             return view('frontendV2.pages.show', compact('page', 'relatedPages','link') );
         }
+        abort(404);
     }
 }
