@@ -154,6 +154,8 @@ textarea.form-control {
 
 .pt-70 {
   padding-top: 70px;
+}.pt-20 {
+  padding-top: 20px;
 }
 
 .pb-70 {
@@ -162,6 +164,10 @@ textarea.form-control {
 
 .pb-40 {
   padding-bottom: 40px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
 }
 
 .mt-100 {

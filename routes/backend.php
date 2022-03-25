@@ -39,6 +39,7 @@ Route::group(['middleware' => 'admin:admin'], function () {
     Route::resource('events', \App\Http\Controllers\Backend\EventController::class);
     Route::resource('sections', \App\Http\Controllers\Backend\SectionController::class);
     Route::resource('pages', \App\Http\Controllers\Backend\PageController::class);
+    Route::get('blocks/{block}', [\App\Http\Controllers\Backend\PageController::class, 'deleteImageMainImage'])->name('blocks.deleteImage');
     Route::resource('pages_images', \App\Http\Controllers\Backend\PageImageController::class);
     Route::resource('staff', \App\Http\Controllers\Backend\StaffController::class);
     Route::resource('faqs', \App\Http\Controllers\Backend\FAQController::class);

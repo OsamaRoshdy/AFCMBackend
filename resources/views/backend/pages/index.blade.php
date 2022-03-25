@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+
     <div class="card card-custom">
         <div class="card-body">
             {!! $html->table(['class'=>'table table-separate table-head-custom table-checkable'],true)!!}

@@ -50,48 +50,87 @@
 @endsection
 @section('content')
     <!-- Start Banner Area -->
-    <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>
-    <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <div class="banner-content">
-                                <span>{{ getSection('e-learning')->title }}</span>
-                                <h1>{{ getSection('e-learning')->description }}</h1>
+{{--    <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-xl-5">--}}
+{{--                    <div class="banner-content">--}}
+{{--                        <span>{{ getSection('e-learning')->title }}</span>--}}
+{{--                        <h1>{{ getSection('e-learning')->description }}</h1>--}}
 
-                                <div class="banner-btn">
-                                    <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
-                                        {{ getSection('e-learning')->button }}
-                                        <i class="ri-arrow-right-line"></i>
-                                    </a>
-                                </div>
-                                <br>
+{{--                        <div class="banner-btn">--}}
+{{--                            <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">--}}
+{{--                                {{ getSection('e-learning')->button }}--}}
+{{--                                <i class="ri-arrow-right-line"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <br>--}}
 
-                            </div>
-                        </div>
-                        <div class="col-xl-7">
-                            <div class="banner-img">
-                                <div class="lightSliderHome">
-                                    <ul id="lightSlider">
-                                        @foreach($sliderGroup->sliders as $slider)
-                                            <li data-thumb="{{ $slider->image }}">
-                                                <img src="{{ $slider->image }}"/>
-                                                <div class="caption">
-                                                    <a href="{{ $slider->url ? url($slider->url) : '#' }}">{{ $slider->description }}</a>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-7">--}}
+{{--                    <div class="banner-img">--}}
+{{--                        <div class="lightSliderHome">--}}
+{{--                            <ul id="lightSlider">--}}
+{{--                                @foreach($sliderGroup->sliders as $slider)--}}
+{{--                                    <li data-thumb="{{ $slider->image }}">--}}
+{{--                                        <img src="{{ $slider->image }}"/>--}}
+{{--                                        <div class="caption">--}}
+{{--                                            <a href="{{ $slider->url ? url($slider->url) : '#' }}">{{ $slider->description }}</a>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    </section>
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- End Banner Area -->
 
+
+    <section class="events-area events-area-style-two pt-20 pb-20">
+        <div class="container">
+            <div class="row ">
+{{--            <div class="row align-items-center">--}}
+                <div class="col-lg-8">
+                    <div class="banner-img">
+                        <div class="lightSliderHome">
+                            <ul id="lightSlider">
+                                @foreach($sliderGroup->sliders as $slider)
+                                    <li data-thumb="{{ $slider->image }}">
+                                        <img src="{{ $slider->image }}"/>
+                                        <div class="caption">
+                                            <a href="{{ $slider->url ? url($slider->url) : '#' }}">{{ $slider->description }}</a>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 " >
+                    <div class="events-timer mb-0 ml-15 row align-items-center" style="height: 100%!important;">
+
+                        <span style="font-size: 45px;text-decoration: underline" >{{ getSection('e-learning')->title }}</span>
+
+                        <p style="font-size: 20px; color: #FFF" > {{ getSection('e-learning')->description }}</p>
+
+                        <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
+                            {{ getSection('e-learning')->button }}
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Start Blog Area -->
-    <section  class="blog-area pt-100 pb-70">
+    <section  class="blog-area pt-20">
         <div class="container">
             <div class="section-title">
                 <h2>{{getSection('home_events_and_news')->title}}</h2>
@@ -136,7 +175,7 @@
     <!-- End Blog Area -->
 
     <!-- Start Events Area -->
-    <section class="events-area bg-color ptb-100">
+    <section class="events-area bg-color pt-20 pb-20">
         <div class="container">
             <div class="row ">
                 <div class="col-lg-7">
@@ -190,7 +229,7 @@
     <!-- End Events Area -->
 
     <!-- Stat About Area -->
-    <section class="about-area ptb-100">
+    <section class="about-area pt-20 pb-20">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -219,7 +258,7 @@
     <!-- End About Area -->
 
     <!-- Stat Admission Area -->
-    <section class="admission-area ptb-100">
+    <section class="admission-area pt-20 pb-20">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -243,7 +282,7 @@
     <!-- End Admission Area -->
 
     <!-- Start Statistics Area -->
-    <section class="counter-area bg-color-f8fafb pt-100 pb-70">
+    <section class="counter-area bg-color-f8fafb pt-20 pb-20">
         <div class="container">
             <div class="section-title">
                 <h2>{{ getSection('statistics')->title }}</h2>
@@ -284,7 +323,7 @@
 
 
     <!-- Start Find A Courses Area -->
-    <section class="banner-area bg-2 banner-area-style-two jarallax pb-100 " data-jarallax='{"speed": 0.3}'>
+    <section style="padding-top: 20px!important; padding-bottom: 0px!important;" class="banner-area  banner-area-style-two  pt-20 pb-20" data-jarallax='{"speed": 0.3}'>
         <div class="container">
             <div class="section-title">
                 <h2>{{ getSection('media')->title }}
@@ -346,7 +385,7 @@
     <!-- End Find A Courses Area -->
 
     <!-- Start Partners Area -->
-    <section class="counter-area pb-70 pt-100">
+    <section class="counter-area pb-20">
         <div class="container">
             <div class="section-title">
                 <h2>{{ getSection('home_partners')->title }}</h2>

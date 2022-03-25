@@ -164,7 +164,7 @@
                             <ul>
                                 @foreach($relatedPages as $relatedPage)
                                     <li>
-                                        <a href="{{ $relatedPage->id }}">
+                                        <a href="{{ url($relatedPage->route) }}">
                                             {{ $relatedPage->name }}
                                             <img src="{{ asset('frontendV2/assets/images/logo.png') }}" style="width: 40px;" alt="Image">
                                         </a>

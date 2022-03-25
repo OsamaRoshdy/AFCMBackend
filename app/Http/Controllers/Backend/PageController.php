@@ -90,4 +90,12 @@ class PageController extends CommonController
         toast(__('common.deleted_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
+
+    public function deleteImageMainImage(Block $block)
+    {
+        $block->update([
+           'image_name' => null
+        ]);
+        return redirect()->back();
+    }
 }
