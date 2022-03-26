@@ -1,4 +1,4 @@
-@extends('layouts.frontendV2.app')
+@extends('layouts.frontendV2.app', ['mainPage' => $link->menuLink->main_page_id])
 @section('styles')
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.css" integrity="sha512-+1GzNJIJQ0SwHimHEEDQ0jbyQuglxEdmQmKsu8KI7QkMPAnyDrL9TAnVyLPEttcTxlnLVzaQgxv2FpLCLtli0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -54,6 +54,13 @@
         .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
             background-color: var(--main-color);
         }
+        table, th, td {
+            border: 2px solid;
+        }
+        .tinymce-content p {
+            padding: 0;
+            margin: 2px 0;
+        }
     </style>
 @endsection
 @section('scripts')
@@ -77,9 +84,34 @@
     <div class="page-title-area bg-23">
         <div class="container">
             <div class="page-title-content">
-                <h2>{{ $new->title }}</h2>
+                <h2>{{ $page->title }}</h2>
+                <ul>
+                    <li>
+                        @php
+                            $url = $link->menuLink->mainPage->id == 1 ? url('/') : url('/' . $link->menuLink->mainPage->slug)
+                        @endphp
+                        <a href="{{$url}}">
+                            {{ $link->menuLink->mainPage->name }}
+                        </a>
+                    </li>
+                    @if($link->parent)
+                        @if($link->parent->parent)
+                            <li class="active">
+                                <a>
+                                    {{$link->parent->parent->name}}
+                                </a>
+                            </li>
+                        @endif
 
+                        <li class="active">
+                            <a>
+                                {{$link->parent->name}}
+                            </a>
+                        </li>
 
+                    @endif
+                    <li class="active">{{ $page->title }}</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -91,28 +123,27 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog-details-content mr-15">
-                        @if($new->image_name)
-                        <div class="blog-details-img">
-                            <img src="{{ $new->image }}" alt="Image">
-                        </div>
+                        @if($sliderGroup->sliders)
+                            <div class="banner-img">
+                                <div class="lightSliderHome">
+                                    <ul id="lightSlider">
+                                        @foreach($sliderGroup->sliders as $slider)
+                                            <li data-thumb="{{ $slider->image }}">
+                                                <img src="{{ $slider->image }}"/>
+                                                <div class="caption">
+                                                    <a href="">{{ $slider->description }}</a>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                            <br>
                         @endif
-
                         <div class="blog-top-content">
                             <div class="blog-content">
-                                {!! $new->content !!}
-
-                                @if($new->images->count())
-                                    <br>
-                                    <div class="lightSliderHome" >
-                                        <ul id="lightSlider">
-                                            @foreach($new->images as $image)
-                                                <li data-thumb="{{ $image->image }}">
-                                                    <img src="{{ $image->image }}"/>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
+                                {!! $page->content !!}
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -122,26 +153,25 @@
                     <div class="widget-sidebar ml-15">
                         <div class="sidebar-widget search">
                             {{ Form::open(['route' => 'search', 'method' => 'get', 'class' => 'search-form']) }}
-                                <input class="form-control" name="search" placeholder="{{ __('frontend.search') }}" type="text">
-                                <button class="search-button" type="submit">
-                                    <i class="ri-search-line"></i>
-                                </button>
+                            <input class="form-control" name="search" placeholder="{{ __('frontend.search') }}" type="text">
+                            <button class="search-button" type="submit">
+                                <i class="ri-search-line"></i>
+                            </button>
                             </form>
                         </div>
 
 
                         <div class="sidebar-widget recent-post">
-                            <h3 class="widget-title">{{ __('frontend.related_news') }}</h3>
+                            <h3 class="widget-title">{{ __('frontend.related_pages') }}</h3>
 
                             <ul>
-                                @foreach($relatedNews as $relatedNew)
+                                @foreach($relatedPages as $relatedPage)
                                     <li>
-                                    <a href="{{ $relatedNew->id }}">
-                                        {{ $relatedNew->title }}
-                                        <img src="{{ $relatedNew->image }}" style="width: 80px;" alt="Image">
-                                    </a>
-                                    <span>{{ $relatedNew->date }}</span>
-                                </li>
+                                        <a href="{{ url($relatedPage->route) }}">
+                                            {{ $relatedPage->name }}
+                                            <img src="{{ asset('frontendV2/assets/images/logo.png') }}" style="width: 40px;" alt="Image">
+                                        </a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

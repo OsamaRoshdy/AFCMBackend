@@ -49,47 +49,6 @@
     </script>
 @endsection
 @section('content')
-    <!-- Start Banner Area -->
-{{--    <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-xl-5">--}}
-{{--                    <div class="banner-content">--}}
-{{--                        <span>{{ getSection('e-learning')->title }}</span>--}}
-{{--                        <h1>{{ getSection('e-learning')->description }}</h1>--}}
-
-{{--                        <div class="banner-btn">--}}
-{{--                            <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">--}}
-{{--                                {{ getSection('e-learning')->button }}--}}
-{{--                                <i class="ri-arrow-right-line"></i>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <br>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-7">--}}
-{{--                    <div class="banner-img">--}}
-{{--                        <div class="lightSliderHome">--}}
-{{--                            <ul id="lightSlider">--}}
-{{--                                @foreach($sliderGroup->sliders as $slider)--}}
-{{--                                    <li data-thumb="{{ $slider->image }}">--}}
-{{--                                        <img src="{{ $slider->image }}"/>--}}
-{{--                                        <div class="caption">--}}
-{{--                                            <a href="{{ $slider->url ? url($slider->url) : '#' }}">{{ $slider->description }}</a>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-    <!-- End Banner Area -->
-
 
     <section class="events-area events-area-style-two pt-20 pb-20">
         <div class="container">
@@ -397,7 +356,6 @@
                             <li class="text-center">
                                 <a href="{{ $partner->url}}">
                                     <img src="{{$partner->image}}" style="height: 150px;height: 150px" class="img-fluid customSliderImage" alt="">
-                                    <h3>{{$partner->name}}</h3>
                                 </a>
 
                             </li>

@@ -20,7 +20,7 @@
     </div>
     <!-- End Page Title Area -->
 
-    <section class="banner-area bg-2 banner-area-style-two jarallax " data-jarallax='{"speed": 0.3}'>
+    <section class="banner-area bg-2 banner-area-style-two jarallax " style="padding-top: 20px!important;" data-jarallax='{"speed": 0.3}'>
         <div class="container">
             <div class="row align-items-center">
                 <div class="section-title">
@@ -55,7 +55,7 @@
     </section>
 
     <!-- Start Gallery Area -->
-    <div class="gallery-area ptb-100">
+    <div class="gallery-area pt-20 pb-20">
         <div class="container">
             <div class="section-title">
                 <h2>{{ __('frontend.photos') }}</h2>

@@ -73,48 +73,49 @@
 @endsection
 @section('content')
     <!-- Start Banner Area -->
-    <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'>
-    <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="banner-content">
-                                <span>{{ getSection('e-learning')->title }}</span>
-                                <h1>{{ getSection('e-learning')->description }}</h1>
-
-                                <div class="banner-btn">
-                                    <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
-                                        {{ getSection('e-learning')->button }}
-                                        <i class="ri-arrow-right-line"></i>
-                                    </a>
-                                </div>
-                                <br>
-
-                            </div>
+    <section class="events-area events-area-style-two pt-20 pb-20">
+        <div class="container">
+            <div class="row ">
+                {{--            <div class="row align-items-center">--}}
+                <div class="col-lg-8">
+                    <div class="banner-img">
+                        <div class="lightSliderHome">
+                            <ul id="lightSlider">
+                                @foreach($sliderGroup->sliders as $slider)
+                                    <li data-thumb="{{ $slider->image }}">
+                                        <img src="{{ $slider->image }}"/>
+                                        <div class="caption">
+                                            <a href="{{ $slider->url ? url($slider->url) : '#' }}">{{ $slider->description }}</a>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="banner-img">
-                                <div class="lightSliderHome" >
-                                    <ul id="lightSlider">
-                                        @foreach($sliderGroup->sliders as $slider)
-                                            <li data-thumb="{{ $slider->image }}">
-                                                <img src="{{ $slider->image }}"/>
-                                                <div class="caption">
-                                                    <a href="">{{ $slider->description }}</a>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
+
+                <div class="col-lg-4 " >
+                    <div class="events-timer mb-0 ml-15 row align-items-center" style="height: 100%!important;">
+
+                        <span style="font-size: 45px;text-decoration: underline" >{{ getSection('e-learning')->title }}</span>
+
+                        <p style="font-size: 20px; color: #FFF" > {{ getSection('e-learning')->description }}</p>
+
+                        <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
+                            {{ getSection('e-learning')->button }}
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- End Banner Area -->
 
     <!-- Start Blog Area -->
-    <section class="blog-area pt-100 pb-70">
+    <section class="blog-area pt-20 pb-20">
         <div class="container">
             <div class="section-title">
                 <h2>{{getSection('home_events_and_news')->title}}</h2>
@@ -149,7 +150,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="section-title">
+            <div class="section-title" style="  margin: -8px auto 50px;text-align: center;">
                 <a href="{{ route('news', ['p' => 2]) }}" class="default-btn text-center">
                     {{ getSection('home_events_and_news')->button }}
                     <i class="ri-arrow-right-line"></i>
@@ -161,7 +162,7 @@
     <!-- End Blog Area -->
 
 
-    <section class="faq-area pb-70">
+    <section class="faq-area pb-20">
         <div class="container">
             <div class="section-title">
                 <h2>{{ __('frontend.faqs') }}</h2>

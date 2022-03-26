@@ -22,7 +22,7 @@
     <!-- End Page Title Area -->
 
     <!-- Start Blog Area -->
-    <section  class="blog-area pt-100 pb-70">
+    <section  class="blog-area pt-20 pb-20">
         <div class="container">
             <div class="row justify-content-md-center">
                 @foreach($news as $new)

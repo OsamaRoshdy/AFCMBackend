@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Block;
 use App\Models\FAQ;
 use App\Models\Link;
+use App\Models\SliderGroup;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -20,6 +21,15 @@ class PageController extends Controller
             if ($link->id == 17) {
                 $faqs = FAQ::active()->orderBy('sort', 'asc')->get();
                 return view('frontendV2.pages.faqs', compact('page', 'relatedPages', 'faqs', 'link'));
+            }
+
+            if ($page->id == 60 || $page->id == 61) {
+                if ($page->id == 60 ) {
+                    $sliderGroup = SliderGroup::find(4)->load('sliders');
+                } else {
+                    $sliderGroup = SliderGroup::find(5)->load('sliders');
+                }
+                return view('frontendV2.pages.partners', compact('page', 'relatedPages', 'link', 'sliderGroup'));
             }
 
             if (in_array($page->id, [54, 55,62, 63, 57], true)) {

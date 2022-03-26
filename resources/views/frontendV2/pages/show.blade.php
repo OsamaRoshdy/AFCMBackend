@@ -118,7 +118,7 @@
     <!-- End Page Title Area -->
 
     <!-- Start Blog Details Area -->
-    <section class="blog-details-area ptb-100">
+    <section class="blog-details-area pt-20 pb-20">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">

@@ -23,7 +23,7 @@
 
 
     <!-- Start Gallery Area -->
-    <div class="gallery-area gallery-popup ptb-100">
+    <div class="gallery-area gallery-popup pt-20 pb-20">
         <div class="container">
             <div class="row justify-content-center">
                 @foreach($media->images as $image)

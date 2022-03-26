@@ -35,7 +35,7 @@ class HomeController extends Controller
         $mainPage = MainPage::find(2);
         if ($mainPage && $mainPage->status == true) {
             $faqs = FAQ::active()->get();
-            $sliderGroup = SliderGroup::find(1)->load('sliders');
+            $sliderGroup = SliderGroup::find(3)->load('sliders');
             $news = $mainPage->blocks->where('type', Block::TYPE_NEWS)->where('status', 1)->take(6);
             return view('frontendV2.students', compact( 'faqs', 'news', 'sliderGroup'));
         }
@@ -46,7 +46,7 @@ class HomeController extends Controller
     {
         $mainPage = MainPage::find(3);
         if ($mainPage && $mainPage->status == true) {
-            $sliderGroup = SliderGroup::find(1)->load('sliders');
+            $sliderGroup = SliderGroup::find(2)->load('sliders');
             $news = MainPage::find(3)->blocks->where('type', Block::TYPE_NEWS)->where('status', 1)->take(6);
             $departments = Department::active()->orderBy('sort', 'asc')->get();
             return view('frontendV2.staff', compact('departments', 'news', 'sliderGroup'));

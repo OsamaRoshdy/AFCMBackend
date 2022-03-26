@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-5 col-sm-6">
-                <div class="single-footer-widget bg-f9f5f1 row">
+                <div class="single-footer-widget bg-f9f5f1 row" style="padding-top: 30px; padding-bottom: 30px">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4">
                         <a href="{{ url('/') }}" class="logo" >
