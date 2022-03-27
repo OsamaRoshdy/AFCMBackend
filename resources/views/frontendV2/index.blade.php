@@ -79,6 +79,7 @@
                         <div class="event-img">
                             <img src="{{ getSection('medical_scientific_sections')->image }}" style="width: 100%" alt="Image">
                         </div>
+                        <p style="font-size: 20px; color: #FFF" > {{ getSection('e-learning')->description }}</p>
 
                         <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
                             {{ getSection('e-learning')->button }}
