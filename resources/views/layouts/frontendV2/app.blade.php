@@ -7,7 +7,7 @@
     @include('layouts.frontendV2.includes.styles')
 
     @yield('styles')
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" href="{{ asset('frontend/images/logo.png') }}" type="image/x-icon">
     <style >
         .loader {
             border: 16px solid #f3f3f3;

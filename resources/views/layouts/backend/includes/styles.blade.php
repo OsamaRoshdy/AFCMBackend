@@ -29,5 +29,5 @@
 @yield('styles')
 
 <!--end::Layout Themes-->
-<link rel="shortcut icon" href="{{ asset('backend/media/logos/favicon.ico') }}" />
+<link rel="icon" href="{{ asset('frontend/images/logo.png') }}" type="image/x-icon">
 
