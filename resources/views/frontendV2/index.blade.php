@@ -75,9 +75,9 @@
                 <div class="col-lg-4 " >
                     <div class="events-timer mb-0 ml-15 row align-items-center" style="height: 100%!important;">
 
-                        <span style="font-size: 45px;text-decoration: underline" >{{ getSection('e-learning')->title }}</span>
+                        <span style="font-size: 35px;text-decoration: underline" >{{ getSection('e-learning')->title }}</span>
                         <div class="event-img">
-                            <img src="{{ getSection('e-learning')->image }}" style="width: 100%" alt="Image">
+                            <img src="{{ getSection('e-learning')->image }}" style="width: 50%" alt="Image">
                         </div>
                         <p style="font-size: 14px; color: #FFF" > {{ getSection('e-learning')->description }}</p>
 
