@@ -56,7 +56,7 @@ if (!function_exists('getMainPage')) {
 
 if (!function_exists('bottom_header')) {
     function bottom_header($mainPage) {
-        $links = \App\Models\Link::parents()->where('menu_link_id', $mainPage)->with('children')->get();
+        $links = \App\Models\Link::parents()->where('menu_link_id', $mainPage)->with('children')->active()->get();
         return $links;
     }
 }

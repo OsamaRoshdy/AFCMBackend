@@ -11,13 +11,13 @@
                             @php
                                 $mainPage =$mainPage ?? 1
                             @endphp
-                            <a style="font-weight: 700 ;{{ in_array(request()->segment(1), ['staff', 'students', 'contact-us']) || $mainPage != 1 ? '' : 'color:#172f41' }}" href="{{ url('/') }}">
+                            <a style="font-weight: 700;font-size: 18px ;{{ in_array(request()->segment(1), ['staff', 'students', 'contact-us']) || $mainPage != 1 ? '' : 'color:#172f41' }}" href="{{ url('/') }}">
                                 {{ getMainPage(1)->name }}
                             </a>
                         </li>
                         @foreach(getMainPages() as $page)
                             <li style="margin: 5px">
-                                <a style="font-weight: 700 ;{{ $mainPage == $page->id  ? 'color:#172f41' : '' }}" href="{{ url('/' . $page->slug) }}">{{ $page->name }}</a>
+                                <a style="font-weight: 700 ;font-size: 18px ;{{ $mainPage == $page->id  ? 'color:#172f41' : '' }}" href="{{ url('/' . $page->slug) }}">{{ $page->name }}</a>
                             </li>
                         @endforeach
                     </ul>

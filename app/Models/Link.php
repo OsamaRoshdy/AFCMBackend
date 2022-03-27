@@ -47,9 +47,9 @@ class Link extends CommonModel
         return $this->where('link_id', null);
     }
 
-    public function scopeActive()
+    public function scopeActive($query)
     {
-        return $this->where('status', 1);
+        return $query->where('status', 1);
     }
 
 }
