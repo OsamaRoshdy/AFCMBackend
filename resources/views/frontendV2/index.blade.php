@@ -76,8 +76,9 @@
                     <div class="events-timer mb-0 ml-15 row align-items-center" style="height: 100%!important;">
 
                         <span style="font-size: 45px;text-decoration: underline" >{{ getSection('e-learning')->title }}</span>
-
-                        <p style="font-size: 20px; color: #FFF" > {{ getSection('e-learning')->description }}</p>
+                        <div class="event-img">
+                            <img src="{{ getSection('medical_scientific_sections')->image }}" style="width: 100%" alt="Image">
+                        </div>
 
                         <a href="https://afcm.brightspace.com/d2l/login" target="_blank" class="default-btn">
                             {{ getSection('e-learning')->button }}
@@ -145,7 +146,7 @@
                             @foreach($events as $event)
                                 <li>
                                 <div class="events-date">
-                                    <h3 style="color: white" class="mb-2">{{ eventDate($event->date)->format('d') }} </h3>
+                                    <h3 style="color: white; font-size: 35px" class="mb-2">{{ eventDate($event->date)->format('d') }} </h3>
                                     <span>{{ eventDate($event->date)->format('M Y') }}</span>
                                 </div>
                                 <h3>
