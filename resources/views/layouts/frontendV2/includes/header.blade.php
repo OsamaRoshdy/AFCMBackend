@@ -88,6 +88,7 @@
                                         <ul class="dropdown-menu">
                                             @foreach($link->children as $subLink)
                                                 @if($subLink->hasChildren())
+                                                    @if($subLink->status == 1)
                                                     <li class="nav-item">
                                                         <a href="#" class="nav-link">
                                                             {{ $subLink->name }}
@@ -96,16 +97,21 @@
 
                                                         <ul class="dropdown-menu">
                                                             @foreach($subLink->children as $child)
-                                                                <li class="nav-item">
-                                                                    <a href="{{ $child->type == 1 ? url('/'. $child->route) : $child->route }}" @if($child->type == 2) target="_blank" @endif class="nav-link">{{ $child->name }}</a>
-                                                                </li>
+                                                                @if($child->status == 1)
+                                                                    <li class="nav-item">
+                                                                        <a href="{{ $child->type == 1 ? url('/'. $child->route) : $child->route }}" @if($child->type == 2) target="_blank" @endif class="nav-link">{{ $child->name }}</a>
+                                                                    </li>
+                                                                @endif
                                                             @endforeach
                                                         </ul>
                                                     </li>
+                                                    @endif
                                                 @else
+                                                    @if($subLink->status == 1)
                                                     <li class="nav-item">
                                                         <a href="{{ $subLink->type == 1 ? url('/'. $subLink->route) : $subLink->route }}" @if($subLink->type == 2) target="_blank" @endif class="nav-link">{{ $subLink->name }}</a>
                                                     </li>
+                                                    @endif
                                                 @endif
                                             @endforeach
 

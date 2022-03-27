@@ -77,7 +77,7 @@
 
                         <span style="font-size: 45px;text-decoration: underline" >{{ getSection('e-learning')->title }}</span>
                         <div class="event-img">
-                            <img src="{{ getSection('medical_scientific_sections')->image }}" style="width: 100%" alt="Image">
+                            <img src="{{ getSection('e-learning')->image }}" style="width: 100%" alt="Image">
                         </div>
                         <p style="font-size: 14px; color: #FFF" > {{ getSection('e-learning')->description }}</p>
 
