@@ -71,7 +71,9 @@
             vertical:true,
             thumbItem:8,
             thumbMargin:4,
-            slideMargin:0
+            slideMargin:0,
+            verticalHeight:'100%',
+
         });
 
     </script>
