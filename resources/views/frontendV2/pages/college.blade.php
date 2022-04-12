@@ -46,7 +46,7 @@
             color: white;
         }
         .lSPager li a img {
-            height: 100px !important;
+            height: 100% !important;
         }
         .lSPager .lSpg {
             text-align: center;
@@ -67,16 +67,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.js" integrity="sha512-sww7U197vVXpRSffZdqfpqDU2SNoFvINLX4mXt1D6ZecxkhwcHmLj3QcL2cJ/aCxrTkUcaAa6EGmPK3Nfitygw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript">
         $('#lightSlider').lightSlider({
-            gallery: false,
-            item: 1,
-            loop:true,
-            slideMargin: 2,
-            thumbItem: 6,
-            auto:true,
-            @if(app()->getLocale() !== 'en')
-            rtl:true
-            @endif
+            item:1,
+            vertical:true,
+            thumbItem:8,
+            thumbMargin:4,
+            slideMargin:0
         });
+
     </script>
 @endsection
 @section('content')

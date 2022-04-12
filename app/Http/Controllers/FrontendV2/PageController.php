@@ -18,6 +18,10 @@ class PageController extends Controller
             $link = Link::where('block_id', $page->id)->first();
             $relatedPages = Link::where('menu_link_id', $link->menu_link_id)->doesnthave('children')->get();
 
+            if ($page->id == 51) {
+                return view('frontendV2.pages.howToApply', compact('page', 'relatedPages', 'link'));
+            }
+
             if ($link->id == 17) {
                 $faqs = FAQ::active()->orderBy('sort', 'asc')->get();
                 return view('frontendV2.pages.faqs', compact('page', 'relatedPages', 'faqs', 'link'));
