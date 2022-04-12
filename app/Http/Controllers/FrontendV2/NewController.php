@@ -57,6 +57,9 @@ class NewController extends Controller
             if (!$relatedNews->count()) {
                 $relatedNews = Block::news()->active()->where('id', '!=', $new->id)->take(4)->get();
             }
+            if ($new->id == 137 ||$new->id == 138) {
+                return view('frontendV2.news.college', compact('relatedNews','new'));
+            }
             return view('frontendV2.news.show', compact('relatedNews','new'));
         }
         abort(404);
