@@ -95,7 +95,7 @@
                     <div class="blog-details-content mr-15">
                         <div class="blog-top-content">
                             <div class="blog-content">
-                                {!! $page->content !!}
+                                {!! $new->content !!}
                                 <br>
                                 <div class="lightSliderHome" >
                                     <ul id="lightSlider">
