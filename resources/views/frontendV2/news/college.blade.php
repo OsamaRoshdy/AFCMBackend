@@ -81,34 +81,7 @@
     <div class="page-title-area bg-23">
         <div class="container">
             <div class="page-title-content">
-                <h2>{{ $page->title }}</h2>
-                <ul>
-                    <li>
-                        @php
-                            $url = $link->menuLink->mainPage->id == 1 ? url('/') : url('/' . $link->menuLink->mainPage->slug)
-                        @endphp
-                        <a href="{{$url}}">
-                            {{ $link->menuLink->mainPage->name }}
-                        </a>
-                    </li>
-                    @if($link->parent)
-                        @if($link->parent->parent)
-                            <li class="active">
-                                <a>
-                                    {{$link->parent->parent->name}}
-                                </a>
-                            </li>
-                        @endif
-
-                        <li class="active">
-                            <a>
-                                {{$link->parent->name}}
-                            </a>
-                        </li>
-
-                    @endif
-                    <li class="active">{{ $page->title }}</li>
-                </ul>
+                <h2>{{ $new->title }}</h2>
             </div>
         </div>
     </div>
@@ -120,18 +93,13 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog-details-content mr-15">
-                        @if($page->image_name)
-                            <div class="blog-details-img">
-                                <img src="{{ $page->image }}" alt="Image">
-                            </div>
-                        @endif
                         <div class="blog-top-content">
                             <div class="blog-content">
                                 {!! $page->content !!}
                                 <br>
                                 <div class="lightSliderHome" >
                                     <ul id="lightSlider">
-                                        @foreach($page->images as $image)
+                                        @foreach($new->images as $image)
                                             <li data-thumb="{{ $image->image }}">
                                                 <img src="{{ $image->image }}"/>
                                             </li>
@@ -156,15 +124,16 @@
 
 
                         <div class="sidebar-widget recent-post">
-                            <h3 class="widget-title">{{ __('frontend.related_pages') }}</h3>
+                            <h3 class="widget-title">{{ __('frontend.related_news') }}</h3>
 
                             <ul>
-                                @foreach($relatedPages as $relatedPage)
+                                @foreach($relatedNews as $relatedNew)
                                     <li>
-                                        <a href="{{ url($relatedPage->route) }}">
-                                            {{ $relatedPage->name }}
-                                            <img src="{{ asset('frontendV2/assets/images/logo.png') }}" style="width: 40px;" alt="Image">
+                                        <a href="{{ $relatedNew->id }}">
+                                            {{ $relatedNew->title }}
+                                            <img src="{{ $relatedNew->image }}" style="width: 80px;" alt="Image">
                                         </a>
+                                        <span>{{ $relatedNew->date }}</span>
                                     </li>
                                 @endforeach
                             </ul>
