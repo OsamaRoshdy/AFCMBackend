@@ -7,7 +7,7 @@
                 <h2>Search</h2>
                 <ul>
                     <li>
-                        <a href="index.html">
+                        <a href="{{ url('/') }}l">
                             Home
                         </a>
                     </li>

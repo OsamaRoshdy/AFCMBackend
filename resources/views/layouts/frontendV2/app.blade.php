@@ -75,6 +75,7 @@
 
 @include('layouts.frontendV2.includes.scripts')
 @yield('scripts')
+<script> var _token = '<?php echo csrf_token(); ?>'; </script>
 
 </body>
 </html>
