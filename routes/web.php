@@ -43,6 +43,9 @@ Route::get('events/{event}', [\App\Http\Controllers\FrontendV2\EventController::
 
 
 Route::get('pages/{page}', [\App\Http\Controllers\FrontendV2\PageController::class, 'show']);
+Route::get('crashtest-8c3021d1.html',function (){
+    echo '8c3021d1-50e2-4279-af8e-37c1a8f62d52';
+});
 
 
 
