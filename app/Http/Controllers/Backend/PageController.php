@@ -3,16 +3,25 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Foundation\Classes\Blocks;
 use App\Http\Foundation\Traits\ImageTrait;
 use App\Http\Requests\Backend\BlockRequest;
 use App\Models\Block;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Html\Builder;
 
 class PageController extends CommonController
 {
     use ImageTrait;
     protected string $module = 'pages';
+    protected Blocks $blocks;
+
+    public function __construct(Builder $htmlBuilder, Blocks $blocks)
+    {
+        parent::__construct($htmlBuilder);
+        $this->blocks = $blocks;
+    }
 
     public function index(Request $request)
     {
@@ -38,13 +47,15 @@ class PageController extends CommonController
     public function store(Request $request)
     {
         $request->validate([
-            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-            'images' => 'required|array',
-            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
+            'images' => 'nullable|array',
+            'images.*' => 'required|image|mimes:jpg,png,jpeg,gif|max:3048',
         ]);
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_PAGES;
-        Block::create($data);
+        $block = Block::create($data);
+        $this->blocks->afterCreate($block);
+
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
@@ -59,13 +70,15 @@ class PageController extends CommonController
     public function update(Request $request,$id)
     {
         $request->validate([
-            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
             'images' => 'nullable|array',
-            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
         ]);
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);
         $block->update($data);
+        $this->blocks->afterUpdate($block);
+
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
     }
@@ -76,5 +89,13 @@ class PageController extends CommonController
         $block->delete();
         toast(__('common.deleted_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
+    }
+
+    public function deleteImageMainImage(Block $block)
+    {
+        $block->update([
+           'image_name' => null
+        ]);
+        return redirect()->back();
     }
 }

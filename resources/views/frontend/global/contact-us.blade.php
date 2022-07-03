@@ -25,27 +25,34 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <form method="post" action="contact-us">
-                                        {{csrf_field()}}
+                                    {{ Form::open(['route' => 'contact_us.store']) }}
                                         <div class="form-group">
                                             <label for="name">Name</label>
-                                            <input type="text" class="form-control bg-hover-danger" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter name" required>
+                                            {{ Form::text('name', old('name'), ['class' => 'form-control bg-hover-danger']) }}
+                                            @if ($errors->has("name"))
+                                                <span class="form-text text-danger">{{$errors->first('name')}}</span>
+                                                @endif
                                             </br>
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email address</label>
-                                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                            <small id="emailHelp" class="form-text text-muted"></small>
+                                            {{ Form::email('email', old('email'), ['class' => 'form-control bg-hover-danger']) }}
+                                            @if ($errors->has("email"))
+                                                <span class="form-text text-danger">{{$errors->first('email')}}</span>
+                                            @endif
                                             <br>
                                         </div>
                                         <div class="form-group">
                                             <label for="message">Message</label>
-                                            <textarea class="form-control" id="message" name="email" rows="6" required></textarea>
+                                            {{ Form::textarea('message', old('message'), ['class' => 'form-control bg-hover-danger']) }}
+                                            @if ($errors->has("message"))
+                                                <span class="form-text text-danger">{{$errors->first('message')}}</span>
+                                                @endif
                                             </br>
                                         </div>
                                         <div class="mx-auto">
                                             <button id="contact" type="submit" class="btn text-right"  style="background: #d70000; color: white">Submit</button></div>
-                                    </form>
+                                    {{ Form::close() }}
                                 </div>
                             </div>
                         </div>

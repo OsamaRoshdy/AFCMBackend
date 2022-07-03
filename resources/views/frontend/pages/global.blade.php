@@ -145,7 +145,7 @@
                 <div class="col-lg-4">
                     <div class="card" style="border-radius: 25px;">
                         <div class="card-body new_keywords">
-                            <h3>{{ __('related_pages') }}</h3>
+                            <h3>{{ __('frontend.related_pages') }}</h3>
                             <br>
                             @foreach($relatedPages as $linkPage)
                                 <h5>

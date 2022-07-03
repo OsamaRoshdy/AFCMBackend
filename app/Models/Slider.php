@@ -12,7 +12,7 @@ class Slider extends CommonModel
 
     const LOCATION = 'sliders';
 
-    protected $fillable = ['description_ar','description_en', 'slider_group_id', 'sort', 'image_name', 'status'];
+    protected $fillable = ['description_ar','description_en', 'slider_group_id', 'sort', 'image_name', 'status', 'url'];
 
     protected $appends = ['description', 'image'];
 

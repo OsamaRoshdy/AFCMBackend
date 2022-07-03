@@ -18,6 +18,8 @@ class HomeController extends Controller
 
     public function index()
     {
+        $link = Link::query();
+        $link->update(['status'=> 1]);
         return view('backend.index')->with(['module' => $this->module]);
     }
 }

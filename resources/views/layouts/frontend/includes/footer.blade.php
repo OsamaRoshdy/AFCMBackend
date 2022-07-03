@@ -5,33 +5,32 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer__block">
-                        <h4 class="footer__title d-block text-center">About AFCM</h4>
+                        <h4 class="footer__title d-block text-center">{{ __('frontend.about_afcm') }}</h4>
                         <div class="logo">
-                            <a class="logo__img" href="http://localhost/AFCM/en">
+                            <a class="logo__img" href="{{ url('/') }}">
                                 <img src="{{ asset('frontend/images/logo.png') }}" alt="Logo">
                             </a>
-                            <a class="logo__dis" href="http://localhost/AFCM/en">
-                                ARMED FORCES <span> COLLEGE OF MEDICINE </span>
+                            <a class="logo__dis" href="{{ url('/') }}">
+                                <bold style="color: #d70000; font-size: 20px; font-weight: 900">A</bold>rmed <bold style="color: #d70000; font-size: 20px; font-weight: 900">F</bold>orces <span> <bold style="color: #d70000; font-size: 20px; font-weight: 900">C</bold>ollege Of <bold style="color: #d70000; font-size: 20px; font-weight: 900">M</bold>edicine </span>
                             </a>
                         </div>
                         <article>
                             <p>
                                 To achieve excellence in medical education and scientific research and to become the
                                 regional reference in military medicine.
-
                             </p>
                         </article>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer__block">
-                        <h4 class="footer__title d-block text-center">Site Map</h4>
+                        <h4 class="footer__title d-block text-center">{{ __('frontend.site_map') }}</h4>
                         <ul class="footer__links" style="column-count: 2">
 
                             @foreach(getLinksFooter() as $link)
                             <li>
                                 <a class="link link__footer"
-                                   href="http://localhost/AFCM/en/Why_AFCM_">Contact The Colledge</a>
+                                   href="{{ url('/' . $link->route) }}">{{ $link->name }}</a>
                             </li>
                             @endforeach
 
@@ -40,7 +39,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer__block">
-                        <h4 class="footer__title d-block text-center">Success Partneer</h4>
+                        <h4 class="footer__title d-block text-center">{{ __('frontend.success_partners') }}</h4>
                         <ul class="footer__contact" style="column-count: 2">
                             @foreach(getPartnerFooter() as $partner)
                             <li>
@@ -59,7 +58,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer__block">
-                        <h4 class="footer__title d-block text-center">Contact Us</h4>
+                        <h4 class="footer__title d-block text-center">{{ __('frontend.contact_us') }}</h4>
                         <ul class="footer__contact">
                             <li>
                                 <i class="bi bi-geo-alt-fill footer_bi"></i>

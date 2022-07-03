@@ -1,4 +1,14 @@
 <div class="form-group row">
+    {{ Form::label('sliders', __('common.sliders'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+        {{ Form::select('sliders[]',$sliderGroups,old('sliders[]'), [ 'multiple' => true,'class' => 'form-control search', 'id' => 'sliders']) }}
+        @if ($errors->has("sliders"))
+            <span class="form-text text-danger">{{$errors->first('sliders')}}</span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     {{ Form::label('date', __('common.date'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
     {{ Form::date('date',$update ?? old('date') ? old('date') : today(), ['class' => 'form-control', 'id' => 'date', 'placeholder' => __('common.date')]) }}
@@ -72,7 +82,7 @@
 <div class="form-group row">
     {{ Form::label('content_ar', __('common.content_ar'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
-        {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control ckeditor form-control', 'id'=> 'content_ar']) }}
+        {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control editor form-control', 'id'=> 'content_ar']) }}
         @if ($errors->has("content_ar"))
             <span class="form-text text-danger">{{$errors->first('content_ar')}}</span>
         @endif
@@ -82,7 +92,7 @@
 <div class="form-group row">
     {{ Form::label('content_en', __('common.content_en'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
-        {{ Form::textarea('content_en', old('content_en'), ['class' => 'form-control ckeditor form-control', 'id'=> 'content_en']) }}
+        {{ Form::textarea('content_en', old('content_en'), ['class' => 'form-control editor form-control', 'id'=> 'content_en']) }}
         @if ($errors->has("content_en"))
             <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
         @endif
@@ -102,10 +112,6 @@
 
 @section('scripts')
     <script src="{{ asset('backend/plugins/fileinput/js/fileinput.js') }}"></script>
-    <script src="{{ asset('backend/plugins/ckeditor/ckeditor.js') }}"></script>
-    <script>
-        CKEDITOR.replace('content_ar', {
-            language: 'ar'
-        });
-    </script>
+    @include('layouts.backend.includes.tinyMCE_config')
+
 @endsection

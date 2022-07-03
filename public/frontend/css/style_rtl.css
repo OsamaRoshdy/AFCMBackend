@@ -13576,6 +13576,24 @@ body {
     margin-right: 20px;
 }
 
+.learning_slider .swiper-slide a {
+    position: absolute;
+    width: 700px;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px 40px 20px;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    max-lines: 3;
+    text-align: right;
+    background-color: #ffffff52;
+    padding: 15px 20px;
+    border-right: 6px solid #012a69;
+    color: #012a69;
+    margin-right: 20px;
+}
+
 
 
 
@@ -14175,10 +14193,10 @@ body {
     font-size: 25px  !important;
 }
 @media (max-width: 575.98px) {
-  
+
 
 }
-@media (max-width: 1199.98px) { 
+@media (max-width: 1199.98px) {
     .customSwiper2 .customSwipperSlider img {
         height: 200px !important;
     }

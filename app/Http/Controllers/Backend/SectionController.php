@@ -41,6 +41,7 @@ class SectionController extends CommonController
         ]);
         $data = $request->except(['image_name', 'images']);
         $data['type'] = Block::TYPE_SECTIONS;
+        $data['image_name'] = $this->storeImage($request->image_name, 'blocks');
         Block::create($data);
         toast(__('common.added_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');
@@ -61,6 +62,7 @@ class SectionController extends CommonController
         ]);
         $block = Block::find($id);
         $data = $request->except(['image_name', 'images']);
+        $data['image_name'] = $this->updateImage($request->image_name, $block->image_name,'blocks');
         $block->update($data);
         toast(__('common.updated_successfully'),'success','top-right');
         return redirect()->route('dashboard.' . $this->module . '.index');

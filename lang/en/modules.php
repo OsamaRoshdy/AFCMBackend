@@ -27,4 +27,5 @@ return array(
     'main' => 'Main Pages',
     'slider' => 'Slider Groups',
     'menu' => 'Menu Links',
+    'pages_images' => 'Page Images',
 );

@@ -22,7 +22,7 @@ class Block extends CommonModel
 
     protected $appends = ['title', 'slug', 'description', 'content', 'image', 'button'];
 
-    protected $casts = ['date' => 'date'];
+//    protected $casts = ['date' => 'date'];
     protected $fillable = [
         'slug_en', 'slug_ar',
         'title_en', 'title_ar',
@@ -87,6 +87,11 @@ class Block extends CommonModel
     public function mainPages()
     {
         return $this->belongsToMany(MainPage::class, 'main_page_blocks')->withPivot('type', 'date', 'sort');
+    }
+
+    public function blockMainPages()
+    {
+        return $this->hasMany(MainPageBlock::class);
     }
 
     public function scopeActive($query)

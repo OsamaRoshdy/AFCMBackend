@@ -31,8 +31,8 @@ class Blocks
         }
 
 
-        $block->slug_en = str_slug($block->title_en);
-        $block->slug_ar = slug_ar($block->title_ar);
+//        $block->slug_en = str_slug($block->title_en);
+//        $block->slug_ar = slug_ar($block->title_ar);
         if (request()->image_name) {
             $block->image_name = $this->updateImage(request()->image_name, $block->image_name, 'blocks');
         }

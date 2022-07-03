@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Block;
+use App\Models\Department;
+use App\Models\MainPage;
+use App\Models\SliderGroup;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -14,32 +18,39 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\FrontendV2\HomeController::class, 'index']);
+Route::get('students', [\App\Http\Controllers\FrontendV2\HomeController::class, 'students']);
+Route::get('staff', [\App\Http\Controllers\FrontendV2\HomeController::class, 'staff']);
+Route::get('contact-us', [\App\Http\Controllers\FrontendV2\HomeController::class, 'contact_us']);
+Route::get('partners/{partner}', [\App\Http\Controllers\FrontendV2\HomeController::class, 'partner']);
+Route::get('search', [\App\Http\Controllers\FrontendV2\HomeController::class, 'search'])->name('search');
+Route::post('subscribe', [\App\Http\Controllers\FrontendV2\ContactController::class, 'subscribe'])->name('subscribe');
+Route::post('contact', [\App\Http\Controllers\FrontendV2\ContactController::class, 'contact_us'])->name('contact.store');
 
-Route::get('students', [\App\Http\Controllers\Frontend\HomeController::class, 'students']);
-
-Route::get('staff', [\App\Http\Controllers\Frontend\HomeController::class, 'staff']);
-Route::get('gallery', [\App\Http\Controllers\Frontend\HomeController::class, 'gallery']);
-Route::get('media/{media}', [\App\Http\Controllers\Frontend\HomeController::class, 'media']);
-
-Route::get('contact-us', [\App\Http\Controllers\Frontend\HomeController::class, 'contact_us']);
+Route::get('gallery', [\App\Http\Controllers\FrontendV2\MediaController::class, 'all']);
+Route::get('media/{media}', [\App\Http\Controllers\FrontendV2\MediaController::class, 'show']);
 
 
-Route::get('news', [\App\Http\Controllers\Frontend\NewsController::class, 'index']);
-Route::get('news/{new}', [\App\Http\Controllers\Frontend\NewsController::class, 'show']);
-Route::get('categories/{category}', [\App\Http\Controllers\Frontend\NewsController::class, 'byCategory']);
+
+Route::get('news', [\App\Http\Controllers\FrontendV2\NewController::class, 'all'])->name('news');
+Route::get('news/{new}', [\App\Http\Controllers\FrontendV2\NewController::class, 'show']);
+Route::get('categories/{category}', [\App\Http\Controllers\FrontendV2\NewController::class, 'byCategory']);
 
 
 
 Route::get('events', [\App\Http\Controllers\Frontend\EventsController::class, 'index']);
-Route::get('events/{event}', [\App\Http\Controllers\Frontend\EventsController::class, 'show']);
+Route::get('events/{event}', [\App\Http\Controllers\FrontendV2\EventController::class, 'show']);
 
 
-Route::get('pages/{page}', [\App\Http\Controllers\Frontend\HomeController::class, 'page']);
+Route::get('pages/{page}', [\App\Http\Controllers\FrontendV2\PageController::class, 'show']);
+Route::get('crashtest-8c3021d1.html',function (){
+    echo '8c3021d1-50e2-4279-af8e-37c1a8f62d52';
+});
 
 
-Route::get('jobs/{id}', [\App\Http\Controllers\Frontend\JobController::class, 'index']);
-Route::post('jobs/{id}/apply', [\App\Http\Controllers\Frontend\JobController::class, 'store'])->name('jobApply');
+
+
+
 
 Route::get('switch/{lang}', function ($lang) {
     Session::put('app_locale', $lang);

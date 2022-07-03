@@ -53,4 +53,9 @@ class MainPage extends CommonModel
     {
         return $this->belongsToMany(FAQ::class, 'f_a_q_main_pages', 'main_page_id','faq_id');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
 }

@@ -28,9 +28,9 @@ class BlockRequest extends FormRequest
             'title_ar' => 'required|string',
             'title_en' => 'required|string',
             'date' => 'required',
-            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'image_name' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
             'images' => 'nullable|array',
-            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:3048',
         ];
     }
 }

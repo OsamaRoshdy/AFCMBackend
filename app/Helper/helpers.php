@@ -1,23 +1,10 @@
 <?php
 
-if (!function_exists('pages')) {
-    function pages() {
-        $pages = \App\Models\Page::active()->get();
-        return $pages;
-    }
-}
-
-if (!function_exists('page')) {
-    function page($page) {
-        $page = \App\Models\Page::active()->where('name', $page)->first();
-        return $page;
-    }
-}
-
-if (!function_exists('allowRoutePages')) {
-    function allowRoutePages() {
-        $array = pages()->pluck('name')->toArray();
-        return implode('|', $array);
+if (!function_exists('eventDate')) {
+    function eventDate($date) {
+        $date = \Carbon\Carbon::create($date);
+//        $pages = \App\Models\Page::active()->get();
+        return $date;
     }
 }
 
@@ -55,7 +42,7 @@ if (!function_exists('slug_ar')) {
 
 if (!function_exists('getMainPages')) {
     function getMainPages() {
-       $mainPages = \App\Models\MainPage::where('id','!=' ,1)->get();
+       $mainPages = \App\Models\MainPage::where('id','!=' ,1)->active()->get();
         return $mainPages;
     }
 }
@@ -69,7 +56,7 @@ if (!function_exists('getMainPage')) {
 
 if (!function_exists('bottom_header')) {
     function bottom_header($mainPage) {
-        $links = \App\Models\Link::parents()->where('menu_link_id', $mainPage)->with('children')->get();
+        $links = \App\Models\Link::parents()->where('menu_link_id', $mainPage)->with('children')->active()->orderBy('sort', 'asc')->get();
         return $links;
     }
 }

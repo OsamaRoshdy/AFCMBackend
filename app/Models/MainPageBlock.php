@@ -11,4 +11,9 @@ class MainPageBlock extends CommonModel
 
     protected $fillable = ['main_page_id', 'block_id', 'sort', 'date', 'type'];
 
+    public function mainPage()
+    {
+        return $this->belongsTo(MainPage::class);
+    }
+
 }

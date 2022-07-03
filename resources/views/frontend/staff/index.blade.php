@@ -29,7 +29,7 @@
                             @foreach($sliderGroup->sliders as $slider)
                                 <div class="swiper-slide">
                                     <img src="{{ $slider->image }}"  class="image"/>
-                                    <p>{{ $slider->description }}</p>
+                                    <a href="{{ url('/' . $slider->url) }}">{{ $slider->description }}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -86,8 +86,6 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="slider_img">
-                                        <div class="overlay">
-                                        </div>
                                         <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid customSliderImage" alt="">
                                     </div>
                                 </div>

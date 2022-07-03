@@ -14,7 +14,7 @@ class Partner extends CommonModel
     const NATIONAL = 1;
     const INTERNATIONAL = 2;
 
-    protected $fillable = ['name_ar', 'name_en','description_ar', 'description_en', 'image_name', 'status','sort', 'type',  'show_in_home', 'show_in_footer'];
+    protected $fillable = ['name_ar', 'name_en','description_ar', 'description_en', 'image_name', 'status','sort', 'type',  'show_in_home', 'show_in_footer' , 'url'];
 
     protected $appends = ['name', 'description', 'image'];
 

@@ -1,14 +1,4 @@
 <div class="form-group row">
-    {{ Form::label('date', __('common.date'), ['class' => 'col-sm-3']) }}
-    <div class="col-sm-9">
-    {{ Form::date('date',old('date'), ['class' => 'form-control', 'id' => 'date', 'placeholder' => __('common.date')]) }}
-    @if ($errors->has("date"))
-        <span class="form-text text-danger">{{$errors->first('date')}}</span>
-    @endif
-    </div>
-</div>
-
-<div class="form-group row">
     {{ Form::label('title_ar', __('common.title_ar'), ['class' => 'col-sm-3']) }}
     <div class="col-sm-9">
     {{ Form::text('title_ar',old('title_ar'), ['class' => 'form-control', 'id' => 'title_ar', 'placeholder' => __('common.title_ar')]) }}
@@ -24,6 +14,26 @@
     {{ Form::text('title_en',old('title_en'), ['class' => 'form-control', 'id' => 'title_en', 'placeholder' => __('common.title_en')]) }}
     @if ($errors->has("title_en"))
         <span class="form-text text-danger">{{$errors->first('title_en')}}</span>
+    @endif
+    </div>
+</div>
+
+<div class="form-group row">
+    {{ Form::label('button_ar', __('common.button_ar'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+    {{ Form::text('button_ar',old('button_ar'), ['class' => 'form-control', 'id' => 'button_ar', 'placeholder' => __('common.button_ar')]) }}
+    @if ($errors->has("button_ar"))
+        <span class="form-text text-danger">{{$errors->first('button_ar')}}</span>
+    @endif
+    </div>
+</div>
+
+<div class="form-group row">
+    {{ Form::label('button_en', __('common.button_en'), ['class' => 'col-sm-3']) }}
+    <div class="col-sm-9">
+    {{ Form::text('button_en',old('button_en'), ['class' => 'form-control', 'id' => 'button_en', 'placeholder' => __('common.button_en')]) }}
+    @if ($errors->has("button_en"))
+        <span class="form-text text-danger">{{$errors->first('button_en')}}</span>
     @endif
     </div>
 </div>
@@ -48,29 +58,41 @@
     </div>
 </div>
 
-<div class="form-group row">
-    {{ Form::label('content_ar', __('common.content_ar'), ['class' => 'col-sm-3']) }}
-    <div class="col-sm-9">
-        {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control ckeditor form-control', 'id'=> 'content_ar']) }}
-        @if ($errors->has("content_ar"))
-            <span class="form-text text-danger">{{$errors->first('content_ar')}}</span>
-        @endif
-    </div>
-</div>
+@if($update ?? null)
+    @if($block->id == 4)
+        <div class="form-group row">
+            {{ Form::label('url', __('common.url'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+                {{ Form::text('content_en', old('content_en'), ['class' => 'form-control form-control', 'id'=> 'content_en']) }}
+                @if ($errors->has("content_en"))
+                    <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
+                @endif
+            </div>
+        </div>
+    @else
+        <div class="form-group row">
+            {{ Form::label('content_ar', __('common.content_ar'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+                {{ Form::textarea('content_ar', old('content_ar'), ['class' => 'form-control editor form-control', 'id'=> 'content_ar']) }}
+                @if ($errors->has("content_ar"))
+                    <span class="form-text text-danger">{{$errors->first('content_ar')}}</span>
+                @endif
+            </div>
+        </div>
 
-<div class="form-group row">
-    {{ Form::label('content_en', __('common.content_en'), ['class' => 'col-sm-3']) }}
-    <div class="col-sm-9">
-        {{ Form::textarea('content_en', old('content_en'), ['class' => 'form-control ckeditor form-control', 'id'=> 'content_en']) }}
-        @if ($errors->has("content_en"))
-            <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
-        @endif
-    </div>
-</div>
+        <div class="form-group row">
+            {{ Form::label('content_en', __('common.content_en'), ['class' => 'col-sm-3']) }}
+            <div class="col-sm-9">
+                {{ Form::textarea('content_en', old('content_en'), ['class' => 'form-control editor form-control', 'id'=> 'content_en']) }}
+                @if ($errors->has("content_en"))
+                    <span class="form-text text-danger">{{$errors->first('content_en')}}</span>
+                @endif
+            </div>
+        </div>
+    @endif
+@endif
 
 @include('backend.shared.forms.image_input', ['oldImage' => $update ?? null ? $block->image : null])
-
-@include('backend.shared.forms.multi_image_input')
 
 @section('styles')
 
@@ -81,10 +103,6 @@
 
 @section('scripts')
     <script src="{{ asset('backend/plugins/fileinput/js/fileinput.js') }}"></script>
-    <script src="{{ asset('backend/plugins/ckeditor/ckeditor.js') }}"></script>
-    <script>
-        CKEDITOR.replace('content_ar', {
-            language: 'ar'
-        });
-    </script>
+    @include('layouts.backend.includes.tinyMCE_config')
+
 @endsection
